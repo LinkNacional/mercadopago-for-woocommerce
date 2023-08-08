@@ -325,9 +325,10 @@ abstract class WC_WooMercadoPago_Preference_Abstract extends WC_Payment_Gateway 
 		foreach ( $this->order->get_items() as $item ) {
 			if ( $item['qty'] ) {
 				$product         = wc_get_product( $item['product_id'] );
-				$product_title   = method_exists( $product, 'get_name' ) ? $product->get_name() : $product->post->post_title;
-				$product_content = method_exists( $product, 'get_description' ) ? $product->get_description() : $product->post->post_content;
-				$product_image   = method_exists( $product, 'get_image_id' ) ? wp_get_attachment_url( $product->get_image_id() ) : plugins_url( '../../assets/images/cart.png', plugin_dir_path( __FILE__ ) );
+				// TODO Maybe add option to activate or deactivate anonymous products
+				$product_title   = "Product"; //method_exists( $product, 'get_name' ) ? $product->get_name() : $product->post->post_title;
+				$product_content = ""; //method_exists( $product, 'get_description' ) ? $product->get_description() : $product->post->post_content;
+				$product_image   = plugins_url( '../../assets/images/cart.png', plugin_dir_path( __FILE__ ) ); //  method_exists( $product, 'get_image_id' ) ? wp_get_attachment_url( $product->get_image_id() ) : plugins_url( '../../assets/images/cart.png', plugin_dir_path( __FILE__ ) );
 				// Calculates line amount and discounts.
 				$line_amount           = $item['line_total'] + $item['line_tax'];
 				$discount_by_gateway   = (float) $line_amount * ( $this->gateway_discount / 100 );
