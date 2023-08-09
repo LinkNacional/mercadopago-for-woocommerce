@@ -98,7 +98,6 @@ class WC_WooMercadoPago_Module extends WC_WooMercadoPago_Configs {
 
             add_filter( 'woocommerce_available_payment_gateways', array($this, 'filter_payment_method_by_shipping') );
             add_filter( 'plugin_action_links_' . WC_MERCADOPAGO_BASENAME, array($this, 'woomercadopago_settings_link') );
-            add_filter( 'plugin_row_meta', array($this, 'mp_plugin_row_meta'), 10, 2 );
             add_action( 'mercadopago_plugin_updated', array('WC_WooMercadoPago_Credentials', 'mercadopago_payment_update') );
             add_action( 'mercadopago_test_mode_update', array($this, 'update_credential_production') );
 
@@ -911,26 +910,6 @@ class WC_WooMercadoPago_Module extends WC_WooMercadoPago_Configs {
         }
 
         return $wc_country;
-    }
-
-    /**
-     * Show row meta on the plugin screen.
-     *
-     * @param mixed $links Plugin Row Meta.
-     * @param mixed $file Plugin Base file.
-     *
-     * @return array
-     */
-    public function mp_plugin_row_meta( $links, $file ) {
-        if ( WC_MERCADOPAGO_BASENAME === $file ) {
-            $new_link = array();
-            $new_link[] = $links[0];
-            $new_link[] = esc_html__( 'By Mercado Pago', WC_MERCADOPAGO_TEXT_DOMAIN );
-
-            return $new_link;
-        }
-
-        return (array) $links;
     }
 
     /**
