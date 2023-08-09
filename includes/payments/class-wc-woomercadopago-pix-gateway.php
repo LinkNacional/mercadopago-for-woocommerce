@@ -24,9 +24,9 @@ class WC_WooMercadoPago_Pix_Gateway extends WC_WooMercadoPago_Payment_Abstract {
      */
     public function __construct() {
         $this->id = self::ID;
-        $this->title = __( 'Pix', 'woocommerce-mercadopago' );
-        $this->title_gateway = __( 'Pix', 'woocommerce-mercadopago' );
-        $this->description = __( 'Transparent Checkout in your store environment', 'woocommerce-mercadopago' );
+        $this->title = __( 'Pix', WC_MERCADOPAGO_TEXT_DOMAIN );
+        $this->title_gateway = __( 'Pix', WC_MERCADOPAGO_TEXT_DOMAIN );
+        $this->description = __( 'Transparent Checkout in your store environment', WC_MERCADOPAGO_TEXT_DOMAIN );
         $this->mp_options = $this->get_mp_options();
 
         if ( ! $this->validate_section() ) {
@@ -34,8 +34,8 @@ class WC_WooMercadoPago_Pix_Gateway extends WC_WooMercadoPago_Payment_Abstract {
         }
 
         $this->form_fields = array();
-        $this->method_title = __( 'Mercado pago - Customized Checkout', 'woocommerce-mercadopago' );
-        $this->title = $this->get_option( 'title', __( 'Pix', 'woocommerce-mercadopago' ) );
+        $this->method_title = __( 'Mercado pago - Customized Checkout', WC_MERCADOPAGO_TEXT_DOMAIN );
+        $this->title = $this->get_option( 'title', __( 'Pix', WC_MERCADOPAGO_TEXT_DOMAIN ) );
         $this->method_description = $this->description;
         $this->date_expiration = (int) $this->get_option( 'checkout_pix_date_expiration', '1' );
         $this->type_payments = $this->get_option( 'type_payments', 'no' );
@@ -193,13 +193,13 @@ class WC_WooMercadoPago_Pix_Gateway extends WC_WooMercadoPago_Payment_Abstract {
      */
     public function field_enabled() {
         return array(
-            'title' => __( 'Enable the checkout', 'woocommerce-mercadopago' ),
-            'subtitle' => __( 'By disabling it, you will disable all Pix payments from Mercado Pago Transparent Checkout.', 'woocommerce-mercadopago' ),
+            'title' => __( 'Enable the checkout', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'subtitle' => __( 'By disabling it, you will disable all Pix payments from Mercado Pago Transparent Checkout.', WC_MERCADOPAGO_TEXT_DOMAIN ),
             'type' => 'mp_toggle_switch',
             'default' => 'no',
             'descriptions' => array(
-                'enabled' => __( 'The transparent checkout for Pix payment is <b>enabled</b>.', 'woocommerce-mercadopago' ),
-                'disabled' => __( 'The transparent checkout for Pix payment is <b>disabled</b>.', 'woocommerce-mercadopago' ),
+                'enabled' => __( 'The transparent checkout for Pix payment is <b>enabled</b>.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'disabled' => __( 'The transparent checkout for Pix payment is <b>disabled</b>.', WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
         );
     }
@@ -213,18 +213,18 @@ class WC_WooMercadoPago_Pix_Gateway extends WC_WooMercadoPago_Payment_Abstract {
         $steps_content = wc_get_template_html(
             'checkout/credential/steps-pix.php',
             array(
-                'title' => __( 'To activate Pix, you must have a key registered in Mercado Pago.', 'woocommerce-mercadopago' ),
-                'step_one_text' => __( 'Download the Mercado Pago app on your cell phone.', 'woocommerce-mercadopago' ),
-                'step_two_text_one' => __( 'Go to the ', 'woocommerce-mercadopago' ),
-                'step_two_text_two' => __( 'area and choose the ', 'woocommerce-mercadopago' ),
-                'step_two_text_highlight_one' => __( 'Your Profile ', 'woocommerce-mercadopago' ),
-                'step_two_text_highlight_two' => __( 'Your Pix Keys section.', 'woocommerce-mercadopago' ),
-                'step_three_text' => __( 'Choose which data to register as Pix keys. After registering, you can set up Pix in your checkout.', 'woocommerce-mercadopago' ),
-                'observation_one' => __( 'Remember that, for the time being, the Central Bank of Brazil is open Monday through Friday, from 9am to 6pm.', 'woocommerce-mercadopago' ),
-                'observation_two' => __( 'If you requested your registration outside these hours, we will confirm it within the next business day.', 'woocommerce-mercadopago' ),
-                'button_about_pix' => __( 'Learn more about Pix', 'woocommerce-mercadopago' ),
-                'observation_three' => __( 'If you have already registered a Pix key at Mercado Pago and cannot activate Pix in the checkout, ', 'woocommerce-mercadopago' ),
-                'link_title_one' => __( 'click here.', 'woocommerce-mercadopago' ),
+                'title' => __( 'To activate Pix, you must have a key registered in Mercado Pago.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'step_one_text' => __( 'Download the Mercado Pago app on your cell phone.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'step_two_text_one' => __( 'Go to the ', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'step_two_text_two' => __( 'area and choose the ', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'step_two_text_highlight_one' => __( 'Your Profile ', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'step_two_text_highlight_two' => __( 'Your Pix Keys section.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'step_three_text' => __( 'Choose which data to register as Pix keys. After registering, you can set up Pix in your checkout.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'observation_one' => __( 'Remember that, for the time being, the Central Bank of Brazil is open Monday through Friday, from 9am to 6pm.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'observation_two' => __( 'If you requested your registration outside these hours, we will confirm it within the next business day.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'button_about_pix' => __( 'Learn more about Pix', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'observation_three' => __( 'If you have already registered a Pix key at Mercado Pago and cannot activate Pix in the checkout, ', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'link_title_one' => __( 'click here.', WC_MERCADOPAGO_TEXT_DOMAIN ),
                 'link_url_one' => 'https://www.mercadopago.com.br/pix/',
                 'link_url_two' => 'https://www.mercadopago.com.br/developers/pt/support/contact',
             ),
@@ -249,11 +249,11 @@ class WC_WooMercadoPago_Pix_Gateway extends WC_WooMercadoPago_Payment_Abstract {
             'title' => sprintf(
                 '<div class="mp-row">
                 <div class="mp-col-md-12 mp_subtitle_header">
-                ' . __( 'Transparent Checkout | Pix', 'woocommerce-mercadopago' ) . '
+                ' . __( 'Transparent Checkout | Pix', WC_MERCADOPAGO_TEXT_DOMAIN ) . '
                  </div>
               <div class="mp-col-md-12">
                 <p class="mp-text-checkout-body mp-mb-0">
-                  ' . __( 'With the Transparent Checkout, you can sell inside your store environment, without redirection and all the safety from Mercado Pago. ', 'woocommerce-mercadopago' ) . '
+                  ' . __( 'With the Transparent Checkout, you can sell inside your store environment, without redirection and all the safety from Mercado Pago. ', WC_MERCADOPAGO_TEXT_DOMAIN ) . '
                 </p>
               </div>
             </div>'
@@ -270,7 +270,7 @@ class WC_WooMercadoPago_Pix_Gateway extends WC_WooMercadoPago_Payment_Abstract {
      */
     public function field_checkout_pix_payments_advanced_title() {
         return array(
-            'title' => __( 'Advanced configuration of the Pix experience', 'woocommerce-mercadopago' ),
+            'title' => __( 'Advanced configuration of the Pix experience', WC_MERCADOPAGO_TEXT_DOMAIN ),
             'type' => 'title',
             'class' => 'mp_subtitle_bd',
         );
@@ -283,23 +283,23 @@ class WC_WooMercadoPago_Pix_Gateway extends WC_WooMercadoPago_Payment_Abstract {
      */
     public function field_pix_date_expiration() {
         $pix_expiration_values = array(
-            '15 minutes' => __( '15 minutes', 'woocommerce-mercadopago' ),
-            '30 minutes' => __( '30 minutes (recommended)', 'woocommerce-mercadopago' ),
-            '60 minutes' => __( '60 minutes', 'woocommerce-mercadopago' ),
-            '12 hours' => __( '12 hours', 'woocommerce-mercadopago' ),
-            '24 hours' => __( '24 hours', 'woocommerce-mercadopago' ),
-            '2 days' => __( '2 days', 'woocommerce-mercadopago' ),
-            '3 days' => __( '3 days', 'woocommerce-mercadopago' ),
-            '4 days' => __( '4 days', 'woocommerce-mercadopago' ),
-            '5 days' => __( '5 days', 'woocommerce-mercadopago' ),
-            '6 days' => __( '6 days', 'woocommerce-mercadopago' ),
-            '7 days' => __( '7 days', 'woocommerce-mercadopago' ),
+            '15 minutes' => __( '15 minutes', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            '30 minutes' => __( '30 minutes (recommended)', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            '60 minutes' => __( '60 minutes', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            '12 hours' => __( '12 hours', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            '24 hours' => __( '24 hours', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            '2 days' => __( '2 days', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            '3 days' => __( '3 days', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            '4 days' => __( '4 days', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            '5 days' => __( '5 days', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            '6 days' => __( '6 days', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            '7 days' => __( '7 days', WC_MERCADOPAGO_TEXT_DOMAIN ),
         );
 
         return array(
-            'title' => __( 'Expiration for payments via Pix', 'woocommerce-mercadopago' ),
+            'title' => __( 'Expiration for payments via Pix', WC_MERCADOPAGO_TEXT_DOMAIN ),
             'type' => 'select',
-            'description' => __( 'Set the limit in minutes for your clients to pay via Pix.', 'woocommerce-mercadopago' ),
+            'description' => __( 'Set the limit in minutes for your clients to pay via Pix.', WC_MERCADOPAGO_TEXT_DOMAIN ),
             'default' => '30 minutes',
             'options' => $pix_expiration_values,
         );
@@ -314,10 +314,10 @@ class WC_WooMercadoPago_Pix_Gateway extends WC_WooMercadoPago_Payment_Abstract {
         $link_content = wc_get_template_html(
             'checkout/credential/generic-alert.php',
             array(
-                'title' => __( 'Want to learn how Pix works?', 'woocommerce-mercadopago' ),
-                'subtitle' => __( 'We have created a page to explain how this new payment method works and its advantages.', 'woocommerce-mercadopago' ),
+                'title' => __( 'Want to learn how Pix works?', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'subtitle' => __( 'We have created a page to explain how this new payment method works and its advantages.', WC_MERCADOPAGO_TEXT_DOMAIN ),
                 'url_link' => 'https://www.mercadopago.com.br/pix/',
-                'button_text' => __( 'Learn more about Pix', 'woocommerce-mercadopago' ),
+                'button_text' => __( 'Learn more about Pix', WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
             'woo/mercado/pago/about-pix/',
             WC_WooMercadoPago_Module::get_templates_path()
@@ -336,9 +336,9 @@ class WC_WooMercadoPago_Pix_Gateway extends WC_WooMercadoPago_Payment_Abstract {
      */
     public function field_checkout_pix_card_info() {
         $value = array(
-            'title' => __('Would you like to know how Pix works?', 'woocommerce-mercadopago'), __('Important! To sell you must enter your credentials.', 'woocommerce-mercadopago'),
-            'subtitle' => __('We have a dedicated page where we explain how it works and its advantages.', 'woocommerce-mercadopago'),
-            'button_text' => __('Find out more about Pix', 'woocommerce-mercadopago'),
+            'title' => __('Would you like to know how Pix works?', WC_MERCADOPAGO_TEXT_DOMAIN), __('Important! To sell you must enter your credentials.', WC_MERCADOPAGO_TEXT_DOMAIN),
+            'subtitle' => __('We have a dedicated page where we explain how it works and its advantages.', WC_MERCADOPAGO_TEXT_DOMAIN),
+            'button_text' => __('Find out more about Pix', WC_MERCADOPAGO_TEXT_DOMAIN),
             'button_url' => 'https://www.mercadopago.com.br/pix/',
             'icon' => 'mp-icon-badge-info',
             'color_card' => 'mp-alert-color-sucess',
@@ -392,13 +392,13 @@ class WC_WooMercadoPago_Pix_Gateway extends WC_WooMercadoPago_Payment_Abstract {
 
         if ( ! empty( $this->gateway_discount ) ) {
             $discount = ( $amount - $shipping_taxes ) * $this->gateway_discount / 100;
-            $order->update_meta_data( 'Mercado Pago: discount', __( 'discount of', 'woocommerce-mercadopago' ) . ' ' . $this->gateway_discount . '% / ' . __( 'discount of', 'woocommerce-mercadopago' ) . ' = ' . $discount );
+            $order->update_meta_data( 'Mercado Pago: discount', __( 'discount of', WC_MERCADOPAGO_TEXT_DOMAIN ) . ' ' . $this->gateway_discount . '% / ' . __( 'discount of', WC_MERCADOPAGO_TEXT_DOMAIN ) . ' = ' . $discount );
             $order->set_total($amount - $discount);
         }
 
         if ( ! empty( $this->commission ) ) {
             $comission = $amount * ( $this->commission / 100 );
-            $order->update_meta_data( 'Mercado Pago: comission', __( 'fee of', 'woocommerce-mercadopago' ) . ' ' . $this->commission . '% / ' . __( 'fee of', 'woocommerce-mercadopago' ) . ' = ' . $comission );
+            $order->update_meta_data( 'Mercado Pago: comission', __( 'fee of', WC_MERCADOPAGO_TEXT_DOMAIN ) . ' ' . $this->commission . '% / ' . __( 'fee of', WC_MERCADOPAGO_TEXT_DOMAIN ) . ' = ' . $comission );
         }
         $order->save();
 
@@ -415,20 +415,20 @@ class WC_WooMercadoPago_Pix_Gateway extends WC_WooMercadoPago_Payment_Abstract {
                         $order->update_meta_data( 'mp_transaction_amount', $response['transaction_amount'] );
                         $order->update_meta_data( 'mp_pix_qr_base64', $response['point_of_interaction']['transaction_data']['qr_code_base64'] );
                         $order->update_meta_data( 'mp_pix_qr_code', $response['point_of_interaction']['transaction_data']['qr_code'] );
-                        $order->update_meta_data( 'checkout_pix_date_expiration', __( $this->get_option( 'checkout_pix_date_expiration', '30 minutes' ), 'woocommerce-mercadopago' ) );
+                        $order->update_meta_data( 'checkout_pix_date_expiration', __( $this->get_option( 'checkout_pix_date_expiration', '30 minutes' ), WC_MERCADOPAGO_TEXT_DOMAIN ) );
                         $order->update_meta_data( 'pix_on', 1 );
                         $order->save();
 
                         // Shows some info in checkout page.
                         $order->add_order_note(
                             'Mercado Pago: ' .
-                            __( 'The customer has not paid yet.', 'woocommerce-mercadopago' )
+                            __( 'The customer has not paid yet.', WC_MERCADOPAGO_TEXT_DOMAIN )
                         );
 
                         if ( 'pix' === $response['payment_method_id'] ) {
                             $order->add_order_note(
-                                '<div style="text-align: justify;"><p>Mercado Pago: ' . __( 'Now you just need to pay with Pix to finalize your purchase.', 'woocommerce-mercadopago' ) . ' ' .
-                                __( 'Scan the QR code below or copy and paste the code into your bank\'s application.', 'woocommerce-mercadopago' ) . '</small></p>',
+                                '<div style="text-align: justify;"><p>Mercado Pago: ' . __( 'Now you just need to pay with Pix to finalize your purchase.', WC_MERCADOPAGO_TEXT_DOMAIN ) . ' ' .
+                                __( 'Scan the QR code below or copy and paste the code into your bank\'s application.', WC_MERCADOPAGO_TEXT_DOMAIN ) . '</small></p>',
                                 1,
                                 false
                             );
@@ -444,7 +444,7 @@ class WC_WooMercadoPago_Pix_Gateway extends WC_WooMercadoPago_Payment_Abstract {
                 // Process when fields are imcomplete.
                 wc_add_notice(
                     '<p>' .
-                    __( 'A problem occurred when processing your payment. Are you sure you have correctly filled in all the information on the checkout form?', 'woocommerce-mercadopago' ) . ' MERCADO PAGO: ' .
+                    __( 'A problem occurred when processing your payment. Are you sure you have correctly filled in all the information on the checkout form?', WC_MERCADOPAGO_TEXT_DOMAIN ) . ' MERCADO PAGO: ' .
                     WC_WooMercadoPago_Module::get_common_error_messages( $response ) .
                     '</p>',
                     'error'
@@ -459,7 +459,7 @@ class WC_WooMercadoPago_Pix_Gateway extends WC_WooMercadoPago_Payment_Abstract {
             // Process when fields are incomplete.
             wc_add_notice(
                 '<p>' .
-                __( 'A problem occurred when processing your payment. Please try again.', 'woocommerce-mercadopago' ) .
+                __( 'A problem occurred when processing your payment. Please try again.', WC_MERCADOPAGO_TEXT_DOMAIN ) .
                 '</p>',
                 'error'
             );
@@ -529,8 +529,8 @@ class WC_WooMercadoPago_Pix_Gateway extends WC_WooMercadoPago_Payment_Abstract {
         $message = wc_get_template_html(
             'checkout/credential/alert/alert-pix-not-registered.php',
             array(
-                'message' => __( 'Please note that to receive payments via Pix at our checkout, you must have a Pix key registered in your Mercado Pago account.', 'woocommerce-mercadopago' ),
-                'text_link' => __( 'Register your Pix key at Mercado Pago.', 'woocommerce-mercadopago' ),
+                'message' => __( 'Please note that to receive payments via Pix at our checkout, you must have a Pix key registered in your Mercado Pago account.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'text_link' => __( 'Register your Pix key at Mercado Pago.', WC_MERCADOPAGO_TEXT_DOMAIN ),
                 'url_link' => 'https://www.mercadopago.com.br/stop/pix?url=https%3A%2F%2Fwww.mercadopago.com.br%2Fadmin-pix-keys%2Fmy-keys&authentication_mode=required',
             ),
             'woo/mercado/pago/alert-pix-not-registered.php/',
@@ -590,7 +590,7 @@ class WC_WooMercadoPago_Pix_Gateway extends WC_WooMercadoPago_Payment_Abstract {
                 array(
                     'qr_code' => $qr_code,
                     'expiration_date' => $expiration_date,
-                    'text_expiration_date' => __( 'Code valid for ', 'woocommerce-mercadopago' ),
+                    'text_expiration_date' => __( 'Code valid for ', WC_MERCADOPAGO_TEXT_DOMAIN ),
                     'qr_code_image' => $qr_code_image,
                 ),
                 '',

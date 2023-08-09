@@ -18,7 +18,7 @@ class WC_WooMercadoPago_Init {
      * @since 3.0.1
      */
     public static function woocommerce_mercadopago_load_plugin_textdomain(): void {
-        $text_domain = 'woocommerce-mercadopago';
+        $text_domain = WC_MERCADOPAGO_TEXT_DOMAIN;
 
         /**
          * Apply filters plugin_locale.
@@ -42,7 +42,7 @@ class WC_WooMercadoPago_Init {
      */
     public static function wc_mercado_pago_unsupported_php_version_notice(): void {
         $type = 'error';
-        $message = __( 'Mercado Pago payments for WooCommerce requires PHP version 5.6 or later. Please update your PHP version.', 'woocommerce-mercadopago' );
+        $message = __( 'Mercado Pago payments for WooCommerce requires PHP version 5.6 or later. Please update your PHP version.', WC_MERCADOPAGO_TEXT_DOMAIN );
         echo wp_kses_post( WC_WooMercadoPago_Notices::get_alert_frame( $message, $type ));
     }
 
@@ -51,7 +51,7 @@ class WC_WooMercadoPago_Init {
      */
     public static function wc_mercado_pago_notify_curl_error(): void {
         $type = 'error';
-        $message = __( 'Mercado Pago Error: PHP Extension CURL is not installed.', 'woocommerce-mercadopago' );
+        $message = __( 'Mercado Pago Error: PHP Extension CURL is not installed.', WC_MERCADOPAGO_TEXT_DOMAIN );
         echo wp_kses_post( WC_WooMercadoPago_Notices::get_alert_frame( $message, $type ));
     }
 
@@ -60,7 +60,7 @@ class WC_WooMercadoPago_Init {
      */
     public static function wc_mercado_pago_notify_gd_error(): void {
         $type = 'error';
-        $message = __( 'Mercado Pago Error: PHP Extension GD is not installed. Installation of GD extension is required to send QR Code Pix by email.', 'woocommerce-mercadopago' );
+        $message = __( 'Mercado Pago Error: PHP Extension GD is not installed. Installation of GD extension is required to send QR Code Pix by email.', WC_MERCADOPAGO_TEXT_DOMAIN );
         echo wp_kses_post( WC_WooMercadoPago_Notices::get_alert_frame( $message, $type ));
     }
 
@@ -72,7 +72,7 @@ class WC_WooMercadoPago_Init {
         $type = 'error';
         $message = sprintf(
             /* translators: %s link to WooCommerce */
-            __( 'The Mercado Pago module needs an active version of %s in order to work!', 'woocommerce-mercadopago' ),
+            __( 'The Mercado Pago module needs an active version of %s in order to work!', WC_MERCADOPAGO_TEXT_DOMAIN ),
             ' <a href="https://wordpress.org/extend/plugins/woocommerce/">WooCommerce</a>'
         );
         WC_WooMercadoPago_Notices::get_alert_woocommerce_miss( $message, $type );
@@ -85,7 +85,7 @@ class WC_WooMercadoPago_Init {
      * @return array
      */
     public static function add_mp_order_meta_box_actions( $actions ) {
-        $actions['cancel_order'] = __( 'Cancel order', 'woocommerce-mercadopago' );
+        $actions['cancel_order'] = __( 'Cancel order', WC_MERCADOPAGO_TEXT_DOMAIN );
         return $actions;
     }
 
@@ -167,7 +167,7 @@ class WC_WooMercadoPago_Init {
      */
     public static function wc_mercado_pago_notify_sdk_package_error(): void {
         $type = 'error';
-        $message = __( 'The Mercado Pago module needs the SDK package to work!', 'woocommerce-mercadopago' );
+        $message = __( 'The Mercado Pago module needs the SDK package to work!', WC_MERCADOPAGO_TEXT_DOMAIN );
         echo wp_kses_post( WC_WooMercadoPago_Notices::get_alert_frame( $message, $type ));
     }
 

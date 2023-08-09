@@ -126,10 +126,10 @@ class WC_WooMercadoPago_Review_Notice {
                             <div class="mp-left-rating-text">
                                 <p class="mp-rating-title">' .
         							wp_get_current_user()->user_login . ', ' .
-        							__( 'do you have a minute to share your experience with our plugin?', 'woocommerce-mercadopago' ) .
+        							__( 'do you have a minute to share your experience with our plugin?', WC_MERCADOPAGO_TEXT_DOMAIN ) .
         						'</p>
                                 <p class="mp-rating-subtitle">' .
-        							__( 'Your opinion is very important so that we can offer you the best possible payment solution and continue to improve.', 'woocommerce-mercadopago' ) .
+        							__( 'Your opinion is very important so that we can offer you the best possible payment solution and continue to improve.', WC_MERCADOPAGO_TEXT_DOMAIN ) .
         						'</p>
                             </div>
                         </div>
@@ -138,7 +138,7 @@ class WC_WooMercadoPago_Review_Notice {
                                 class="mp-rating-link"
                                 href="https://wordpress.org/support/plugin/woocommerce-mercadopago/reviews/?filter=5#new-post" target="blank"
                             >'
-        						. __( 'Rate the plugin', 'woocommerce-mercadopago' ) .
+        						. __( 'Rate the plugin', WC_MERCADOPAGO_TEXT_DOMAIN ) .
         					'</a>
                         </div>
                     </div>

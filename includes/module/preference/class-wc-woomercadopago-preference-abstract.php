@@ -194,7 +194,7 @@ abstract class WC_WooMercadoPago_Preference_Abstract extends WC_Payment_Gateway 
             $this->currency_ratio = $this->get_currency_conversion();
         } catch ( Exception $e ) {
             $this->log->write_log( __FUNCTION__, 'Currency conversion rate failed: payment creation failed with exception: ' . $e->getMessage() );
-            throw new Exception( __( 'This payment method cannot process your payment.', 'woocommerce-mercadopago' ) );
+            throw new Exception( __( 'This payment method cannot process your payment.', WC_MERCADOPAGO_TEXT_DOMAIN ) );
         }
 
         $this->items = array();
@@ -362,7 +362,7 @@ abstract class WC_WooMercadoPago_Preference_Abstract extends WC_Payment_Gateway 
 
         return array(
             'title' => method_exists( $this->order, 'get_id' ) ? $this->order->get_shipping_method() : $this->order->shipping_method,
-            'description' => __( 'Shipping service used by the store.', 'woocommerce-mercadopago' ),
+            'description' => __( 'Shipping service used by the store.', WC_MERCADOPAGO_TEXT_DOMAIN ),
             'category_id' => get_option( '_mp_category_id', 'others' ),
             'quantity' => 1,
             'unit_price' => $this->number_format_value( $ship_cost ),
@@ -554,8 +554,8 @@ abstract class WC_WooMercadoPago_Preference_Abstract extends WC_Payment_Gateway 
      */
     public function add_discounts() {
         return array(
-            'title' => __( 'Discount provided by store', 'woocommerce-mercadopago' ),
-            'description' => __( 'Discount provided by store', 'woocommerce-mercadopago' ),
+            'title' => __( 'Discount provided by store', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'description' => __( 'Discount provided by store', WC_MERCADOPAGO_TEXT_DOMAIN ),
             'quantity' => 1,
             'category_id' => get_option( '_mp_category_name', 'others' ),
             'unit_price' => ( 'COP' === $this->site_data[ $this->site_id ]['currency'] || 'CLP' === $this->site_data[ $this->site_id ]['currency'] ) ?

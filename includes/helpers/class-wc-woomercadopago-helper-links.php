@@ -129,9 +129,9 @@ class WC_WooMercadoPago_Helper_Links {
         $links_mp = self::get_country_link_mp_terms();
         $link_prefix_mp = 'https://www.mercadopago.';
         return array (
-            'text_prefix' => __( 'By continuing, you agree to our ', 'woocommerce-mercadopago' ),
+            'text_prefix' => __( 'By continuing, you agree to our ', WC_MERCADOPAGO_TEXT_DOMAIN ),
             'link_terms_and_conditions' => $link_prefix_mp . $links_mp['sufix_url'] . $links_mp['help'] . $links_mp['term_conditition'],
-            'text_suffix' => __( 'Terms and Conditions', 'woocommerce-mercadopago' ),
+            'text_suffix' => __( 'Terms and Conditions', WC_MERCADOPAGO_TEXT_DOMAIN ),
         );
     }
 

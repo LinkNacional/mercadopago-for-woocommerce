@@ -24,11 +24,11 @@ class WC_WooMercadoPago_Notification_IPN extends WC_WooMercadoPago_Notification_
 
         if ( ! isset( $data['id'] ) || ! isset( $data['topic'] ) ) {
             $this->log->write_log( __FUNCTION__, 'No ID or TOPIC param in Request IPN.' );
-            $this->set_response( 422, null, __( 'No ID or TOPIC param in Request IPN', 'woocommerce-mercadopago' ) );
+            $this->set_response( 422, null, __( 'No ID or TOPIC param in Request IPN', WC_MERCADOPAGO_TEXT_DOMAIN ) );
         }
 
         if ( 'payment' === $data['topic'] || 'merchant_order' !== $data['topic'] ) {
-            $this->set_response( 200, null, __( 'Discarded notification. This notification is already processed as webhook-payment.', 'woocommerce-mercadopago' ) );
+            $this->set_response( 200, null, __( 'Discarded notification. This notification is already processed as webhook-payment.', WC_MERCADOPAGO_TEXT_DOMAIN ) );
         }
 
         $access_token = $this->mp->get_access_token();
@@ -43,13 +43,13 @@ class WC_WooMercadoPago_Notification_IPN extends WC_WooMercadoPago_Notification_
 
             if ( is_wp_error( $ipn_info ) || ( 200 !== $ipn_info['status'] && 201 !== $ipn_info['status'] ) ) {
                 $this->log->write_log( __FUNCTION__, ' IPN merchant_order not found ' . wp_json_encode( $ipn_info, \JSON_PRETTY_PRINT | \JSON_UNESCAPED_UNICODE ) );
-                $this->set_response( 422, null, __( 'IPN merchant_order not found', 'woocommerce-mercadopago' ) );
+                $this->set_response( 422, null, __( 'IPN merchant_order not found', WC_MERCADOPAGO_TEXT_DOMAIN ) );
             }
 
             $payments = $ipn_info['response']['payments'];
             if ( count( $payments ) < 1 ) {
                 $this->log->write_log( __FUNCTION__, 'Not found Payments into Merchant_Order' );
-                $this->set_response( 422, null, __( 'Not found Payments into Merchant_Order', 'woocommerce-mercadopago' ) );
+                $this->set_response( 422, null, __( 'Not found Payments into Merchant_Order', WC_MERCADOPAGO_TEXT_DOMAIN ) );
             }
 
             $ipn_info['response']['ipn_type'] = 'merchant_order';
@@ -128,13 +128,13 @@ class WC_WooMercadoPago_Notification_IPN extends WC_WooMercadoPago_Notification_
         // Updates the type of gateway.
         $order->update_meta_data( '_used_gateway', 'WC_WooMercadoPago_Basic_Gateway' );
         if ( ! empty( $data['payer']['email'] ) ) {
-            $order->update_meta_data( __( 'Buyer email', 'woocommerce-mercadopago' ), $data['payer']['email'] );
+            $order->update_meta_data( __( 'Buyer email', WC_MERCADOPAGO_TEXT_DOMAIN ), $data['payer']['email'] );
         }
         if ( ! empty( $data['payment_type_id'] ) ) {
-            $order->update_meta_data( __( 'Payment type', 'woocommerce-mercadopago' ), $data['payment_type_id'] );
+            $order->update_meta_data( __( 'Payment type', WC_MERCADOPAGO_TEXT_DOMAIN ), $data['payment_type_id'] );
         }
         if ( ! empty( $data['payment_method_id'] ) ) {
-            $order->update_meta_data( __( 'Payment method', 'woocommerce-mercadopago' ), $data['payment_method_id'] );
+            $order->update_meta_data( __( 'Payment method', WC_MERCADOPAGO_TEXT_DOMAIN ), $data['payment_method_id'] );
         }
         if ( ! empty( $data['payments'] ) ) {
             $payment_ids = array();

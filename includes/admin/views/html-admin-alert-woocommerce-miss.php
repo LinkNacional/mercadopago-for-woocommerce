@@ -28,7 +28,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     <button type="button" class="notice-dismiss">
         <span class="screen-reader-text">
             <?php
-echo esc_html_e( 'Discard', 'woocommerce-mercadopago' );
+echo esc_html_e( 'Discard', WC_MERCADOPAGO_TEXT_DOMAIN );
 ?>
         </span>
     </button>

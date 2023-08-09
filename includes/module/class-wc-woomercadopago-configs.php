@@ -114,7 +114,7 @@ class WC_WooMercadoPago_Configs {
      */
     public function notice_update_access_token(): void {
         $type = 'error';
-        $message = __( 'Update your credentials with the Access Token and Public Key, you need them to continue receiving payments!', 'woocommerce-mercadopago');
+        $message = __( 'Update your credentials with the Access Token and Public Key, you need them to continue receiving payments!', WC_MERCADOPAGO_TEXT_DOMAIN);
         echo wp_kses_post( WC_WooMercadoPago_Notices::get_alert_frame($message, $type ));
     }
 
@@ -123,7 +123,7 @@ class WC_WooMercadoPago_Configs {
      */
     public function notice_https(): void {
         $type = 'notice-warning';
-        $message = __( 'The store should have HTTPS in order to activate both Checkout Personalizado and Ticket Checkout.', 'woocommerce-mercadopago');
+        $message = __( 'The store should have HTTPS in order to activate both Checkout Personalizado and Ticket Checkout.', WC_MERCADOPAGO_TEXT_DOMAIN);
         echo wp_kses_post(WC_WooMercadoPago_Notices::get_alert_frame($message, $type ));
     }
 

@@ -108,12 +108,12 @@ class WC_WooMercadoPago_Notices {
         }
 
         if ( $is_installed && current_user_can( 'install_plugins' ) ) {
-            $button_url = '<a href="' . wp_nonce_url( self_admin_url( 'plugins.php?action=activate&plugin=woocommerce/woocommerce.php&plugin_status=active' ), 'activate-plugin_woocommerce/woocommerce.php' ) . '" class="button button-primary">' . __( 'Activate WooCommerce', 'woocommerce-mercadopago' ) . '</a>';
+            $button_url = '<a href="' . wp_nonce_url( self_admin_url( 'plugins.php?action=activate&plugin=woocommerce/woocommerce.php&plugin_status=active' ), 'activate-plugin_woocommerce/woocommerce.php' ) . '" class="button button-primary">' . __( 'Activate WooCommerce', WC_MERCADOPAGO_TEXT_DOMAIN ) . '</a>';
         } else {
             if ( current_user_can( 'install_plugins' ) ) {
-                $button_url = '<a href="' . wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=woocommerce' ), 'install-plugin_woocommerce' ) . '" class="button button-primary">' . __( 'Install WooCommerce', 'woocommerce-mercadopago' ) . '</a>';
+                $button_url = '<a href="' . wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=woocommerce' ), 'install-plugin_woocommerce' ) . '" class="button button-primary">' . __( 'Install WooCommerce', WC_MERCADOPAGO_TEXT_DOMAIN ) . '</a>';
             } else {
-                $button_url = '<a href="http://wordpress.org/plugins/woocommerce/" class="button button-primary">' . __( 'See WooCommerce', 'woocommerce-mercadopago' ) . '</a>';
+                $button_url = '<a href="http://wordpress.org/plugins/woocommerce/" class="button button-primary">' . __( 'See WooCommerce', WC_MERCADOPAGO_TEXT_DOMAIN ) . '</a>';
             }
         }
 

@@ -168,7 +168,7 @@ class Mp_Rest_Client_Abstract {
                 'Execute cURL',
                 sprintf(
                     /* translators: 1: total_time currency 2: url */
-                    __('Took %1$s seconds to transfer a request to %2$s', 'woocommerce-mercadopago'),
+                    __('Took %1$s seconds to transfer a request to %2$s', WC_MERCADOPAGO_TEXT_DOMAIN),
                     $info['total_time'],
                     $info['url']
                 )

@@ -31,9 +31,9 @@ class WC_WooMercadoPago_Credits_Gateway extends WC_WooMercadoPago_Payment_Abstra
      */
     public function __construct() {
         $this->id = self::ID;
-        $this->title = __('Installments without card', 'woocommerce-mercadopago');
-        $this->title_gateway = __('Installments without card', 'woocommerce-mercadopago');
-        $this->description = __('Customers who buy on spot and pay later in up to 12 installments', 'woocommerce-mercadopago');
+        $this->title = __('Installments without card', WC_MERCADOPAGO_TEXT_DOMAIN);
+        $this->title_gateway = __('Installments without card', WC_MERCADOPAGO_TEXT_DOMAIN);
+        $this->description = __('Customers who buy on spot and pay later in up to 12 installments', WC_MERCADOPAGO_TEXT_DOMAIN);
         $this->mp_options = $this->get_mp_options();
 
         if ( ! $this->validate_section() ) {
@@ -43,9 +43,9 @@ class WC_WooMercadoPago_Credits_Gateway extends WC_WooMercadoPago_Payment_Abstra
         add_action( 'admin_enqueue_scripts', array($this, 'load_admin_scripts') );
 
         $this->form_fields = array();
-        $this->method_title = __( 'Mercado Pago - Installments without card', 'woocommerce-mercadopago' );
+        $this->method_title = __( 'Mercado Pago - Installments without card', WC_MERCADOPAGO_TEXT_DOMAIN );
         $this->method = $this->get_option_mp( 'method', 'redirect' );
-        $this->title = $this->get_option_mp( 'title', __( 'Checkout without card', 'woocommerce-mercadopago' ) );
+        $this->title = $this->get_option_mp( 'title', __( 'Checkout without card', WC_MERCADOPAGO_TEXT_DOMAIN ) );
         $this->method_description = $this->description;
         $this->credits_banner = $this->get_option('credits_banner', 'no');
         $this->gateway_discount = $this->get_option('gateway_discount', 0);
@@ -101,8 +101,8 @@ class WC_WooMercadoPago_Credits_Gateway extends WC_WooMercadoPago_Payment_Abstra
                     'cellphoneGrayIcon' => plugins_url( '../assets/images/credits/cellphone-gray-icon.png', plugin_dir_path( __FILE__ ) ),
                     'viewMobile' => plugins_url( $this->get_mercado_credits_gif_path( $siteId, 'mobile' ), plugin_dir_path( __FILE__ ) ),
                     'viewDesktop' => plugins_url( $this->get_mercado_credits_gif_path( $siteId, 'desktop' ), plugin_dir_path( __FILE__ ) ),
-                    'footerDesktop' => __( 'Banner on the product page | Computer version', 'woocommerce-mercadopago' ),
-                    'footerCellphone' => __( 'Banner on the product page | Cellphone version', 'woocommerce-mercadopago' ),
+                    'footerDesktop' => __( 'Banner on the product page | Computer version', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                    'footerCellphone' => __( 'Banner on the product page | Cellphone version', WC_MERCADOPAGO_TEXT_DOMAIN ),
                 )
             );
         }
@@ -238,13 +238,13 @@ class WC_WooMercadoPago_Credits_Gateway extends WC_WooMercadoPago_Payment_Abstra
      */
     public function field_enabled() {
         return array(
-            'title' => __('Activate installments without card in your store checkout ', 'woocommerce-mercadopago'),
-            'subtitle' => __('Offer the option to pay in installments without card directly from your store\'s checkout.', 'woocommerce-mercadopago'),
+            'title' => __('Activate installments without card in your store checkout ', WC_MERCADOPAGO_TEXT_DOMAIN),
+            'subtitle' => __('Offer the option to pay in installments without card directly from your store\'s checkout.', WC_MERCADOPAGO_TEXT_DOMAIN),
             'type' => 'mp_toggle_switch',
             'default' => 'no',
             'descriptions' => array(
-                'enabled' => __('Payment in installments without card in the store checkout is <b>active</b>', 'woocommerce-mercadopago'),
-                'disabled' => __('Payment in installments without card in the store checkout is <b>inactive</b>', 'woocommerce-mercadopago'),
+                'enabled' => __('Payment in installments without card in the store checkout is <b>active</b>', WC_MERCADOPAGO_TEXT_DOMAIN),
+                'disabled' => __('Payment in installments without card in the store checkout is <b>inactive</b>', WC_MERCADOPAGO_TEXT_DOMAIN),
             ),
         );
     }
@@ -262,10 +262,10 @@ class WC_WooMercadoPago_Credits_Gateway extends WC_WooMercadoPago_Payment_Abstra
         return array(
             'type' => 'mp_checkout_visualization',
             'value' => array(
-                'title' => __('Checkout visualization', 'woocommerce-mercadopago'),
-                'subtitle' => __('Check below how this feature will be displayed to your customers:', 'woocommerce-mercadopago'),
-                'footer' => __('Checkout Preview', 'woocommerce-mercadopago'),
-                'pill_text' => __('PREVIEW', 'woocommerce-mercadopago'),
+                'title' => __('Checkout visualization', WC_MERCADOPAGO_TEXT_DOMAIN),
+                'subtitle' => __('Check below how this feature will be displayed to your customers:', WC_MERCADOPAGO_TEXT_DOMAIN),
+                'footer' => __('Checkout Preview', WC_MERCADOPAGO_TEXT_DOMAIN),
+                'pill_text' => __('PREVIEW', WC_MERCADOPAGO_TEXT_DOMAIN),
                 'image' => plugins_url($this->get_mercado_credits_preview_image($siteId), plugin_dir_path(__FILE__)),
             ),
         );
@@ -275,11 +275,11 @@ class WC_WooMercadoPago_Credits_Gateway extends WC_WooMercadoPago_Payment_Abstra
         return array(
             'type' => 'mp_credits_banner_visualization',
             'value' => array(
-                'desktop' => __('Computer', 'woocommerce-mercadopago'),
-                'cellphone' => __('Mobile', 'woocommerce-mercadopago'),
-                'footer' => __('Banner on the product page | Computer version', 'woocommerce-mercadopago'),
-                'title' => __('Component visualization', 'woocommerce-mercadopago'),
-                'subtitle' => __('Check below how this feature will be displayed to your customers:', 'woocommerce-mercadopago'),
+                'desktop' => __('Computer', WC_MERCADOPAGO_TEXT_DOMAIN),
+                'cellphone' => __('Mobile', WC_MERCADOPAGO_TEXT_DOMAIN),
+                'footer' => __('Banner on the product page | Computer version', WC_MERCADOPAGO_TEXT_DOMAIN),
+                'title' => __('Component visualization', WC_MERCADOPAGO_TEXT_DOMAIN),
+                'subtitle' => __('Check below how this feature will be displayed to your customers:', WC_MERCADOPAGO_TEXT_DOMAIN),
             ),
         );
     }
@@ -313,14 +313,14 @@ class WC_WooMercadoPago_Credits_Gateway extends WC_WooMercadoPago_Payment_Abstra
             'title' => sprintf(
                 '<div class="row">
 								<div class="mp-col-md-12 mp_subtitle_header">
-								' . __('Installments without card', 'woocommerce-mercadopago') . '
+								' . __('Installments without card', WC_MERCADOPAGO_TEXT_DOMAIN) . '
 								 </div>
 							<div class="mp-col-md-12">
 								<p class="mp-text-checkout-body mp-mb-0">
-									' . __('Reach millions of buyers by offering Mercado Credito as a payment method. Our flexible payment options <b>give your customers the possibility to buy today whatever they want in up to 12 installments without the need to use a credit card.</b>', 'woocommerce-mercadopago') . '
+									' . __('Reach millions of buyers by offering Mercado Credito as a payment method. Our flexible payment options <b>give your customers the possibility to buy today whatever they want in up to 12 installments without the need to use a credit card.</b>', WC_MERCADOPAGO_TEXT_DOMAIN) . '
 								</p>
 								<p class="mp-text-checkout-body mp-mb-0">
-									' . __('For your business, the approval of the purchase is immediate and guaranteed.', 'woocommerce-mercadopago') . '
+									' . __('For your business, the approval of the purchase is immediate and guaranteed.', WC_MERCADOPAGO_TEXT_DOMAIN) . '
 								</p>
 							</div>
 						</div>'
@@ -337,7 +337,7 @@ class WC_WooMercadoPago_Credits_Gateway extends WC_WooMercadoPago_Payment_Abstra
      */
     public function field_checkout_payments_advanced_title() {
         return array(
-            'title' => __('Advanced settings', 'woocommerce-mercadopago'),
+            'title' => __('Advanced settings', WC_MERCADOPAGO_TEXT_DOMAIN),
             'type' => 'title',
             'class' => 'mp_subtitle_bd',
         );
@@ -383,13 +383,13 @@ class WC_WooMercadoPago_Credits_Gateway extends WC_WooMercadoPago_Payment_Abstra
      */
     public function field_credits_banner_mode() {
         return array(
-            'title' => __('Inform your customers about the option of paying in installments without card', 'woocommerce-mercadopago'),
+            'title' => __('Inform your customers about the option of paying in installments without card', WC_MERCADOPAGO_TEXT_DOMAIN),
             'type' => 'mp_toggle_switch',
             'default' => 'no',
-            'subtitle' => __('<b>By activating the installments without card component</b>, you increase your chances of selling.', 'woocommerce-mercadopago'),
+            'subtitle' => __('<b>By activating the installments without card component</b>, you increase your chances of selling.', WC_MERCADOPAGO_TEXT_DOMAIN),
             'descriptions' => array(
-                'enabled' => __('The installments without card component is <b>active</b>.', 'woocommerce-mercadopago'),
-                'disabled' => __('The installments without card component is <b>inactive</b>.', 'woocommerce-mercadopago'),
+                'enabled' => __('The installments without card component is <b>active</b>.', WC_MERCADOPAGO_TEXT_DOMAIN),
+                'disabled' => __('The installments without card component is <b>inactive</b>.', WC_MERCADOPAGO_TEXT_DOMAIN),
             ),
         );
     }
@@ -430,13 +430,13 @@ class WC_WooMercadoPago_Credits_Gateway extends WC_WooMercadoPago_Payment_Abstra
 
         if ( ! empty($this->gateway_discount) ) {
             $discount = ( $amount - $shipping_taxes ) * $this->gateway_discount / 100;
-            $order->update_meta_data('Mercado Pago: discount', __('discount of', 'woocommerce-mercadopago') . ' ' . $this->gateway_discount . '% / ' . __('discount of', 'woocommerce-mercadopago') . ' = ' . $discount);
+            $order->update_meta_data('Mercado Pago: discount', __('discount of', WC_MERCADOPAGO_TEXT_DOMAIN) . ' ' . $this->gateway_discount . '% / ' . __('discount of', WC_MERCADOPAGO_TEXT_DOMAIN) . ' = ' . $discount);
             $order->set_total($amount - $discount);
         }
 
         if ( ! empty($this->commission) ) {
             $comission = $amount * ( $this->commission / 100 );
-            $order->update_meta_data('Mercado Pago: comission', __('fee of', 'woocommerce-mercadopago') . ' ' . $this->commission . '% / ' . __('fee of', 'woocommerce-mercadopago') . ' = ' . $comission);
+            $order->update_meta_data('Mercado Pago: comission', __('fee of', WC_MERCADOPAGO_TEXT_DOMAIN) . ' ' . $this->commission . '% / ' . __('fee of', WC_MERCADOPAGO_TEXT_DOMAIN) . ' = ' . $comission);
         }
 
         $order->save();

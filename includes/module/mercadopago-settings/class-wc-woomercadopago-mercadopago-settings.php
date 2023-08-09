@@ -135,7 +135,7 @@ class WC_WooMercadoPago_MercadoPago_Settings {
     public function register_mercadopago_in_woocommerce_menu(): void {
         add_submenu_page(
             'woocommerce',
-            __( 'Mercado Pago Settings', 'woocommerce-mercadopago' ),
+            __( 'Mercado Pago Settings', WC_MERCADOPAGO_TEXT_DOMAIN ),
             'Mercado Pago',
             'manage_options',
             'mercadopago-settings',
@@ -190,31 +190,31 @@ class WC_WooMercadoPago_MercadoPago_Settings {
      */
     public function mp_translation_admin_header() {
         return array(
-            'title_head_part_one' => __( 'Accept ', 'woocommerce-mercadopago' ),
-            'title_head_part_two' => __( 'payments on the spot ', 'woocommerce-mercadopago' ),
-            'title_head_part_three' => __( 'with', 'woocommerce-mercadopago' ),
-            'title_head_part_four' => __( 'the ', 'woocommerce-mercadopago' ),
-            'title_head_part_six' => __( 'security ', 'woocommerce-mercadopago' ),
-            'title_head_part_seven' => __( 'from Mercado Pago', 'woocommerce-mercadopago' ),
-            'title_requirements' => __( 'Technical requirements', 'woocommerce-mercadopago' ),
-            'ssl' => __( 'SSL', 'woocommerce-mercadopago' ),
-            'gd_extensions' => __( 'GD Extensions', 'woocommerce-mercadopago' ),
-            'curl' => __( 'Curl', 'woocommerce-mercadopago' ),
-            'description_ssl' => __( 'Implementation responsible for transmitting data to Mercado Pago in a secure and encrypted way.', 'woocommerce-mercadopago' ),
-            'description_gd_extensions' => __( 'These extensions are responsible for the implementation and operation of Pix in your store.', 'woocommerce-mercadopago' ),
-            'description_curl' => __( 'It is an extension responsible for making payments via requests from the plugin to Mercado Pago.', 'woocommerce-mercadopago' ),
-            'title_installments' => __( 'Collections and installments', 'woocommerce-mercadopago' ),
-            'descripition_installments' => __( 'Choose ', 'woocommerce-mercadopago' ),
-            'descripition_installments_one' => __( 'when you want to receive the money ', 'woocommerce-mercadopago' ),
-            'descripition_installments_two' => __( 'from your sales and if you want to offer ', 'woocommerce-mercadopago' ),
-            'descripition_installments_three' => __( 'interest-free installments ', 'woocommerce-mercadopago' ),
-            'descripition_installments_four' => __( 'to your clients.', 'woocommerce-mercadopago' ),
-            'button_installments' => __( 'Set deadlines and fees', 'woocommerce-mercadopago' ),
-            'title_questions' => __( 'Questions? ', 'woocommerce-mercadopago' ),
-            'descripition_questions_one' => __( 'Review the step-by-step of ', 'woocommerce-mercadopago' ),
-            'descripition_questions_two' => __( 'how to integrate the Mercado Pago Plugin ', 'woocommerce-mercadopago' ),
-            'descripition_questions_three' => __( 'on our webiste for developers.', 'woocommerce-mercadopago' ),
-            'button_questions' => __( 'Plugin manual', 'woocommerce-mercadopago' ),
+            'title_head_part_one' => __( 'Accept ', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'title_head_part_two' => __( 'payments on the spot ', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'title_head_part_three' => __( 'with', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'title_head_part_four' => __( 'the ', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'title_head_part_six' => __( 'security ', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'title_head_part_seven' => __( 'from Mercado Pago', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'title_requirements' => __( 'Technical requirements', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'ssl' => __( 'SSL', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'gd_extensions' => __( 'GD Extensions', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'curl' => __( 'Curl', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'description_ssl' => __( 'Implementation responsible for transmitting data to Mercado Pago in a secure and encrypted way.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'description_gd_extensions' => __( 'These extensions are responsible for the implementation and operation of Pix in your store.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'description_curl' => __( 'It is an extension responsible for making payments via requests from the plugin to Mercado Pago.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'title_installments' => __( 'Collections and installments', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'descripition_installments' => __( 'Choose ', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'descripition_installments_one' => __( 'when you want to receive the money ', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'descripition_installments_two' => __( 'from your sales and if you want to offer ', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'descripition_installments_three' => __( 'interest-free installments ', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'descripition_installments_four' => __( 'to your clients.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'button_installments' => __( 'Set deadlines and fees', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'title_questions' => __( 'Questions? ', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'descripition_questions_one' => __( 'Review the step-by-step of ', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'descripition_questions_two' => __( 'how to integrate the Mercado Pago Plugin ', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'descripition_questions_three' => __( 'on our webiste for developers.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'button_questions' => __( 'Plugin manual', WC_MERCADOPAGO_TEXT_DOMAIN ),
         );
     }
 
@@ -225,19 +225,19 @@ class WC_WooMercadoPago_MercadoPago_Settings {
      */
     public function mp_translation_admin_credential() {
         return array(
-            'title_credentials' => __( '1. Integrate your store with Mercado Pago  ', 'woocommerce-mercadopago' ),
-            'subtitle_credentials_one' => __( 'To enable orders, you must create and activate production credentials in your Mercado Pago Account. ', 'woocommerce-mercadopago' ),
-            'subtitle_credentials_two' => __( 'Copy and paste the credentials below.', 'woocommerce-mercadopago' ),
-            'button_link_credentials' => __( 'Check credentials', 'woocommerce-mercadopago' ),
-            'title_credential_test' => __( 'Test credentials ', 'woocommerce-mercadopago' ),
-            'subtitle_credential_test' => __( 'Enable Mercado Pago checkouts for test purchases in the store.', 'woocommerce-mercadopago' ),
-            'public_key' => __( 'Public key', 'woocommerce-mercadopago' ),
-            'access_token' => __( 'Access Token', 'woocommerce-mercadopago' ),
-            'title_credential_prod' => __( 'Production credentials', 'woocommerce-mercadopago' ),
-            'subtitle_credential_prod' => __( 'Enable Mercado Pago checkouts to receive real payments in the store.', 'woocommerce-mercadopago' ),
-            'placeholder_public_key' => __( 'Paste your Public Key here', 'woocommerce-mercadopago' ),
-            'placeholder_access_token' => __( 'Paste your Access Token here', 'woocommerce-mercadopago' ),
-            'button_credentials' => __( 'Save and continue', 'woocommerce-mercadopago' ),
+            'title_credentials' => __( '1. Integrate your store with Mercado Pago  ', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'subtitle_credentials_one' => __( 'To enable orders, you must create and activate production credentials in your Mercado Pago Account. ', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'subtitle_credentials_two' => __( 'Copy and paste the credentials below.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'button_link_credentials' => __( 'Check credentials', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'title_credential_test' => __( 'Test credentials ', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'subtitle_credential_test' => __( 'Enable Mercado Pago checkouts for test purchases in the store.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'public_key' => __( 'Public key', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'access_token' => __( 'Access Token', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'title_credential_prod' => __( 'Production credentials', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'subtitle_credential_prod' => __( 'Enable Mercado Pago checkouts to receive real payments in the store.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'placeholder_public_key' => __( 'Paste your Public Key here', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'placeholder_access_token' => __( 'Paste your Access Token here', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'button_credentials' => __( 'Save and continue', WC_MERCADOPAGO_TEXT_DOMAIN ),
         );
     }
 
@@ -248,33 +248,33 @@ class WC_WooMercadoPago_MercadoPago_Settings {
      */
     public function mp_translation_admin_store() {
         return array(
-            'title_store' => __( '2. Customize your business', 'woocommerce-mercadopago' ),
-            'subtitle_store' => __( 'Fill out the following information to have a better experience and offer more information to your clients', 'woocommerce-mercadopago' ),
-            'title_info_store' => __( 'Your store information', 'woocommerce-mercadopago' ),
-            'subtitle_name_store' => __( "Name of your store in your client's invoice", 'woocommerce-mercadopago' ),
-            'placeholder_name_store' => __( "Eg: Mary's store", 'woocommerce-mercadopago' ),
-            'helper_name_store' => __( 'If this field is empty, the purchase will be identified as Mercado Pago.', 'woocommerce-mercadopago' ),
-            'subtitle_activities_store' => __( 'Identification in Activities of Mercad Pago', 'woocommerce-mercadopago' ),
-            'placeholder_activities_store' => __( 'Eg: Marystore', 'woocommerce-mercadopago' ),
-            'helper_activities_store' => __( 'In Activities, you will view this term before the order number', 'woocommerce-mercadopago' ),
-            'subtitle_category_store' => __( 'Store category', 'woocommerce-mercadopago' ),
-            'placeholder_category_store' => __( 'Select', 'woocommerce-mercadopago' ),
-            'helper_category_store' => __( 'Select ”Other” if you do not find the appropriate category.', 'woocommerce-mercadopago' ),
-            'title_advanced_store' => __( 'Advanced integration options (optional)', 'woocommerce-mercadopago' ),
-            'subtitle_advanced_store' => __( 'For further integration of your store with Mercado Pago (IPN, Certified Partners, Debug Mode)', 'woocommerce-mercadopago' ),
-            'accordion_advanced_store' => __( 'View advanced options', 'woocommerce-mercadopago' ),
-            'subtitle_url' => __( 'URL for IPN ', 'woocommerce-mercadopago' ),
-            'placeholder_url' => __( 'Eg: https://examples.com/my-custom-ipn-url', 'woocommerce-mercadopago' ),
-            'helper_url' => __( 'Add the URL to receive payments notifications. Find out more information in the ', 'woocommerce-mercadopago' ),
-            'helper_url_link' => __( 'guides.', 'woocommerce-mercadopago' ),
-            'options_url' => __( 'Add plugin default params', 'woocommerce-mercadopago' ),
-            'subtitle_integrator' => __( 'integrator_id', 'woocommerce-mercadopago' ),
-            'placeholder_integrator' => __( 'Eg: 14987126498', 'woocommerce-mercadopago' ),
-            'helper_integrator' => __( 'If you are a Mercado Pago Certified Partner, make sure to add your integrator_id. If you do not have the code, please ', 'woocommerce-mercadopago' ),
-            'helper_integrator_link' => __( 'request it now. ', 'woocommerce-mercadopago' ),
-            'title_debug' => __( 'Debug and Log Mode', 'woocommerce-mercadopago' ),
-            'subtitle_debug' => __( "We record your store's actions in order to provide a better assistance.", 'woocommerce-mercadopago' ),
-            'button_store' => __( 'Save and continue', 'woocommerce-mercadopago' ),
+            'title_store' => __( '2. Customize your business', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'subtitle_store' => __( 'Fill out the following information to have a better experience and offer more information to your clients', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'title_info_store' => __( 'Your store information', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'subtitle_name_store' => __( "Name of your store in your client's invoice", WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'placeholder_name_store' => __( "Eg: Mary's store", WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'helper_name_store' => __( 'If this field is empty, the purchase will be identified as Mercado Pago.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'subtitle_activities_store' => __( 'Identification in Activities of Mercad Pago', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'placeholder_activities_store' => __( 'Eg: Marystore', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'helper_activities_store' => __( 'In Activities, you will view this term before the order number', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'subtitle_category_store' => __( 'Store category', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'placeholder_category_store' => __( 'Select', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'helper_category_store' => __( 'Select ”Other” if you do not find the appropriate category.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'title_advanced_store' => __( 'Advanced integration options (optional)', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'subtitle_advanced_store' => __( 'For further integration of your store with Mercado Pago (IPN, Certified Partners, Debug Mode)', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'accordion_advanced_store' => __( 'View advanced options', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'subtitle_url' => __( 'URL for IPN ', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'placeholder_url' => __( 'Eg: https://examples.com/my-custom-ipn-url', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'helper_url' => __( 'Add the URL to receive payments notifications. Find out more information in the ', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'helper_url_link' => __( 'guides.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'options_url' => __( 'Add plugin default params', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'subtitle_integrator' => __( 'integrator_id', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'placeholder_integrator' => __( 'Eg: 14987126498', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'helper_integrator' => __( 'If you are a Mercado Pago Certified Partner, make sure to add your integrator_id. If you do not have the code, please ', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'helper_integrator_link' => __( 'request it now. ', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'title_debug' => __( 'Debug and Log Mode', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'subtitle_debug' => __( "We record your store's actions in order to provide a better assistance.", WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'button_store' => __( 'Save and continue', WC_MERCADOPAGO_TEXT_DOMAIN ),
         );
     }
 
@@ -285,10 +285,10 @@ class WC_WooMercadoPago_MercadoPago_Settings {
      */
     public function mp_translation_admin_payment() {
         return array(
-            'title_payments' => __( '3. Set payment methods', 'woocommerce-mercadopago' ),
-            'subtitle_payments' => __( 'To view more options, please select a payment method below', 'woocommerce-mercadopago' ),
-            'settings_payment' => __( 'Settings', 'woocommerce-mercadopago' ),
-            'button_payment' => __( 'Continue', 'woocommerce-mercadopago' ),
+            'title_payments' => __( '3. Set payment methods', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'subtitle_payments' => __( 'To view more options, please select a payment method below', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'settings_payment' => __( 'Settings', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'button_payment' => __( 'Continue', WC_MERCADOPAGO_TEXT_DOMAIN ),
         );
     }
 
@@ -299,31 +299,31 @@ class WC_WooMercadoPago_MercadoPago_Settings {
      */
     public function mp_translation_admin_test_mode() {
         return array(
-            'title_test_mode' => __( '4. Test your store before you sell', 'woocommerce-mercadopago' ),
-            'subtitle_test_mode' => __( 'Test the experience in Test Mode and then enable the Sale Mode (Production) to sell.', 'woocommerce-mercadopago' ),
-            'title_mode' => __( 'Choose how you want to operate your store:', 'woocommerce-mercadopago' ),
-            'title_test' => __( 'Test Mode', 'woocommerce-mercadopago' ),
-            'subtitle_test' => __( 'Mercado Pago Checkouts disabled for real collections. ', 'woocommerce-mercadopago' ),
-            'subtitle_test_link' => __( 'Test Mode rules.', 'woocommerce-mercadopago' ),
-            'title_prod' => __( 'Sale Mode (Production)', 'woocommerce-mercadopago' ),
-            'subtitle_prod' => __( 'Mercado Pago Checkouts enabled for real collections.', 'woocommerce-mercadopago' ),
-            'title_message_prod' => __( 'Mercado Pago payment methods in Production Mode', 'woocommerce-mercadopago' ),
-            'subtitle_message_prod' => __( 'The clients can make real purchases in your store.', 'woocommerce-mercadopago' ),
-            'title_message_test' => __( 'Mercado Pago payment methods in Test Mode', 'woocommerce-mercadopago' ),
-            'subtitle_test1' => __( 'Create your ', 'woocommerce-mercadopago' ),
-            'subtitle_link_test1' => __( 'test user ', 'woocommerce-mercadopago' ),
-            'subtitle_message_test1' => __( '(Optional. Can be used in Production Mode and Test Mode, to test payments).', 'woocommerce-mercadopago' ),
-            'subtitle_link_test2' => __( 'Use our test cards, ', 'woocommerce-mercadopago' ),
-            'subtitle_test2' => __( 'never use real cards. ', 'woocommerce-mercadopago' ),
-            'subtitle_link_test3' => __( 'Visit your store ', 'woocommerce-mercadopago' ),
-            'subtitle_test3' => __( 'to test purchases', 'woocommerce-mercadopago' ),
-            'button_mode' => __( 'Save changes', 'woocommerce-mercadopago' ),
-            'badge_test' => __( 'Store under test', 'woocommerce-mercadopago' ),
-            'badge_mode' => __( 'Store in sale mode (Production)', 'woocommerce-mercadopago' ),
-            'title_alert_test' => __( 'Enter test credentials', 'woocommerce-mercadopago' ),
-            'subtitle_alert_test' => __( 'To enable test mode, ', 'woocommerce-mercadopago' ),
-            'title_alert_test_link' => __( 'copy your test credentials ', 'woocommerce-mercadopago' ),
-            'title_alert_tes_one' => __( 'and paste them above in section 1 of this page.', 'woocommerce-mercadopago' )
+            'title_test_mode' => __( '4. Test your store before you sell', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'subtitle_test_mode' => __( 'Test the experience in Test Mode and then enable the Sale Mode (Production) to sell.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'title_mode' => __( 'Choose how you want to operate your store:', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'title_test' => __( 'Test Mode', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'subtitle_test' => __( 'Mercado Pago Checkouts disabled for real collections. ', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'subtitle_test_link' => __( 'Test Mode rules.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'title_prod' => __( 'Sale Mode (Production)', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'subtitle_prod' => __( 'Mercado Pago Checkouts enabled for real collections.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'title_message_prod' => __( 'Mercado Pago payment methods in Production Mode', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'subtitle_message_prod' => __( 'The clients can make real purchases in your store.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'title_message_test' => __( 'Mercado Pago payment methods in Test Mode', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'subtitle_test1' => __( 'Create your ', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'subtitle_link_test1' => __( 'test user ', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'subtitle_message_test1' => __( '(Optional. Can be used in Production Mode and Test Mode, to test payments).', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'subtitle_link_test2' => __( 'Use our test cards, ', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'subtitle_test2' => __( 'never use real cards. ', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'subtitle_link_test3' => __( 'Visit your store ', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'subtitle_test3' => __( 'to test purchases', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'button_mode' => __( 'Save changes', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'badge_test' => __( 'Store under test', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'badge_mode' => __( 'Store in sale mode (Production)', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'title_alert_test' => __( 'Enter test credentials', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'subtitle_alert_test' => __( 'To enable test mode, ', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'title_alert_test_link' => __( 'copy your test credentials ', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'title_alert_tes_one' => __( 'and paste them above in section 1 of this page.', WC_MERCADOPAGO_TEXT_DOMAIN )
         );
     }
 
@@ -360,20 +360,20 @@ class WC_WooMercadoPago_MercadoPago_Settings {
             if ( $access_token ) {
                 $validate_access_token = $mp->get_credentials_wrapper( $access_token, null );
                 if ( ! $validate_access_token || $validate_access_token['is_test'] !== $is_test ) {
-                    wp_send_json_error( __( 'Invalid Access Token', 'woocommerce-mercadopago' ) );
+                    wp_send_json_error( __( 'Invalid Access Token', WC_MERCADOPAGO_TEXT_DOMAIN ) );
                 }
-                wp_send_json_success( __( 'Valid Access Token', 'woocommerce-mercadopago' ) );
+                wp_send_json_success( __( 'Valid Access Token', WC_MERCADOPAGO_TEXT_DOMAIN ) );
             }
 
             if ( $public_key ) {
                 $validate_public_key = $mp->get_credentials_wrapper( null, $public_key );
                 if ( ! $validate_public_key || $validate_public_key['is_test'] !== $is_test ) {
-                    wp_send_json_error( __( 'Invalid Public Key', 'woocommerce-mercadopago' ) );
+                    wp_send_json_error( __( 'Invalid Public Key', WC_MERCADOPAGO_TEXT_DOMAIN ) );
                 }
-                wp_send_json_success( __( 'Valid Public Key', 'woocommerce-mercadopago' ) );
+                wp_send_json_success( __( 'Valid Public Key', WC_MERCADOPAGO_TEXT_DOMAIN ) );
             }
 
-            throw new Exception( __( 'Credentials must be valid', 'woocommerce-mercadopago' ) );
+            throw new Exception( __( 'Credentials must be valid', WC_MERCADOPAGO_TEXT_DOMAIN ) );
         } catch ( Exception $e ) {
             $response = array(
                 'message' => $e->getMessage()
@@ -415,23 +415,23 @@ class WC_WooMercadoPago_MercadoPago_Settings {
                     WC_WooMercadoPago_Credentials::mercadopago_payment_update();
                     if ( empty( $public_key_test ) && empty( $access_token_test ) && ( 'yes' === get_option( 'checkbox_checkout_test_mode', '' ) ) ) {
                         $response = array(
-                            'message' => __( 'Your store has exited Test Mode and is making real sales in Production Mode.', 'woocommerce-mercadopago' ),
-                            'subtitle' => __( 'To test the store, re-enter both test credentials.', 'woocommerce-mercadopago' ),
+                            'message' => __( 'Your store has exited Test Mode and is making real sales in Production Mode.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                            'subtitle' => __( 'To test the store, re-enter both test credentials.', WC_MERCADOPAGO_TEXT_DOMAIN ),
                             'type' => 'alert',
                             'test_mode' => 'no'
                         );
                         update_option( 'checkbox_checkout_test_mode', 'no' );
                         throw new Exception();
                     } else {
-                        wp_send_json_success( __( 'Credentials were updated', 'woocommerce-mercadopago' ) );
+                        wp_send_json_success( __( 'Credentials were updated', WC_MERCADOPAGO_TEXT_DOMAIN ) );
                     }
                 }
             }
             $links = WC_WooMercadoPago_Helper_Links::woomercadopago_settings_links();
             $response = array(
-                'message' => __( 'Invalid credentials', 'woocommerce-mercadopago' ),
-                'subtitle' => __( 'See our manual to learn ', 'woocommerce-mercadopago' ),
-                'subtitle_one' => __( 'how to enter the credentials the right way.', 'woocommerce-mercadopago' ),
+                'message' => __( 'Invalid credentials', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'subtitle' => __( 'See our manual to learn ', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'subtitle_one' => __( 'how to enter the credentials the right way.', WC_MERCADOPAGO_TEXT_DOMAIN ),
                 'subtitle_one_link' => $links['link_credentials'],
                 'type' => 'error',
                 'test_mode' => get_option( 'checkbox_checkout_test_mode' )
@@ -491,7 +491,7 @@ class WC_WooMercadoPago_MercadoPago_Settings {
                 update_option( $key, $value, true );
             }
 
-            wp_send_json_success( __( 'Store information is valid', 'woocommerce-mercadopago' ) );
+            wp_send_json_success( __( 'Store information is valid', WC_MERCADOPAGO_TEXT_DOMAIN ) );
         } catch ( Exception $e ) {
             $response = array(
                 'message' => $e->getMessage()
@@ -514,14 +514,14 @@ class WC_WooMercadoPago_MercadoPago_Settings {
             $without_test_credentials = ( ( '' === get_option( WC_WooMercadoPago_Options::CREDENTIALS_PUBLIC_KEY_TEST, '' ) || '' === get_option( WC_WooMercadoPago_Options::CREDENTIALS_ACCESS_TOKEN_TEST, '' ) ) );
 
             if ( 'yes' === $verify_alert_test_mode || ( 'yes' === $checkout_test_mode && $without_test_credentials ) ) {
-                throw new Exception( __( 'Invalid credentials for test mode', 'woocommerce-mercadopago' ) );
+                throw new Exception( __( 'Invalid credentials for test mode', WC_MERCADOPAGO_TEXT_DOMAIN ) );
             } else {
                 $this->update_credential_production();
                 update_option( 'checkbox_checkout_test_mode', $checkout_test_mode, true );
 
                 $response = 'yes' === $checkout_test_mode ?
-                	__( 'Mercado Pago\'s Payment Methods in Test Mode', 'woocommerce-mercadopago' ) :
-                	__( 'Mercado Pago\'s Payment Methods in Production Mode', 'woocommerce-mercadopago' );
+                	__( 'Mercado Pago\'s Payment Methods in Test Mode', WC_MERCADOPAGO_TEXT_DOMAIN ) :
+                	__( 'Mercado Pago\'s Payment Methods in Production Mode', WC_MERCADOPAGO_TEXT_DOMAIN );
 
                 wp_send_json_success( $response );
             }
@@ -596,8 +596,8 @@ class WC_WooMercadoPago_MercadoPago_Settings {
                     'icon' => $additional_info[ $gateway->id ]['icon'],
                     'link' => admin_url( 'admin.php?page=wc-settings&tab=checkout&section=' ) . $gateway->id,
                     'badge_translator' => array(
-                        'yes' => __( 'Enabled', 'woocommerce-mercadopago' ),
-                        'no' => __( 'Disabled', 'woocommerce-mercadopago' )
+                        'yes' => __( 'Enabled', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                        'no' => __( 'Disabled', WC_MERCADOPAGO_TEXT_DOMAIN )
                     ),
                 );
             }
@@ -625,10 +625,10 @@ class WC_WooMercadoPago_MercadoPago_Settings {
             $access_token_prod = $this->options->get_access_token_prod();
 
             if ( ! ( $public_key_test xor $access_token_test ) && $public_key_prod && $access_token_prod ) {
-                wp_send_json_success( __( 'Valid Credentials', 'woocommerce-mercadopago' ) );
+                wp_send_json_success( __( 'Valid Credentials', WC_MERCADOPAGO_TEXT_DOMAIN ) );
             }
 
-            throw new Exception( __( 'Credentials couldn\'t be validated', 'woocommerce-mercadopago' ) );
+            throw new Exception( __( 'Credentials couldn\'t be validated', WC_MERCADOPAGO_TEXT_DOMAIN ) );
         } catch ( Exception $e ) {
             $response = array(
                 'message' => $e->getMessage()
@@ -650,10 +650,10 @@ class WC_WooMercadoPago_MercadoPago_Settings {
             $identificator = $this->options->get_store_id();
 
             if ( $statement_descriptor && $category_id && $identificator ) {
-                wp_send_json_success( __( 'Store business fields are valid', 'woocommerce-mercadopago' ) );
+                wp_send_json_success( __( 'Store business fields are valid', WC_MERCADOPAGO_TEXT_DOMAIN ) );
             }
 
-            throw new Exception( __( 'Store business fields couldn\'t be validated', 'woocommerce-mercadopago' ) );
+            throw new Exception( __( 'Store business fields couldn\'t be validated', WC_MERCADOPAGO_TEXT_DOMAIN ) );
         } catch ( Exception $e ) {
             $response = array(
                 'message' => $e->getMessage()
@@ -676,10 +676,10 @@ class WC_WooMercadoPago_MercadoPago_Settings {
                 $gateway = new $payment_gateway();
 
                 if ( 'yes' === $gateway->settings['enabled'] ) {
-                    wp_send_json_success( __( 'At least one paymet method is enabled', 'woocommerce-mercadopago' ) );
+                    wp_send_json_success( __( 'At least one paymet method is enabled', WC_MERCADOPAGO_TEXT_DOMAIN ) );
                 }
             }
-            throw new Exception( __( 'No payment method enabled', 'woocommerce-mercadopago' ) );
+            throw new Exception( __( 'No payment method enabled', WC_MERCADOPAGO_TEXT_DOMAIN ) );
         } catch ( Exception $e ) {
             $response = array(
                 'message' => $e->getMessage()

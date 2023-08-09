@@ -10,13 +10,15 @@
  * Domain Path: /i18n/languages/
  * WC requires at least: 5.9
  * WC tested up to: 8.0
- *
- * @package MercadoPago
  */
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
     exit;
+}
+
+if ( ! defined('WC_MERCADOPAGO_TEXT_DOMAIN')) {
+    define('WC_MERCADOPAGO_TEXT_DOMAIN', 'lkn-wc-mercadopago');
 }
 
 if ( ! defined( 'WC_MERCADOPAGO_BASENAME' ) ) {

@@ -73,18 +73,18 @@ class WC_WooMercadoPago_Hook_Basic extends WC_WooMercadoPago_Hook_Abstract {
 						(function() { $MPC.openCheckout({ url: "' . esc_url( $url ) . '", mode: "modal" }); })();
 					</script>';
             $html .= '<a id="submit-payment" href="' . esc_url( $url ) . '" name="MP-Checkout" class="button alt" mp-mode="modal">' .
-            	__( 'Pay with Mercado Pago', 'woocommerce-mercadopago' ) .
+            	__( 'Pay with Mercado Pago', WC_MERCADOPAGO_TEXT_DOMAIN ) .
             	'</a> <a class="button cancel" href="' . esc_url( $order->get_cancel_order_url() ) . '">' .
-            	__( 'Cancel &amp; Clear Cart', 'woocommerce-mercadopago' ) .
+            	__( 'Cancel &amp; Clear Cart', WC_MERCADOPAGO_TEXT_DOMAIN ) .
             	'</a>';
             return $html;
         } else {
             $this->payment->log->write_log( __FUNCTION__, 'unable to build Checkout Pro URL.' );
             $html = '<p>' .
-            	__( 'There was an error processing your payment. Please try again or contact us for Assistance.', 'woocommerce-mercadopago' ) .
+            	__( 'There was an error processing your payment. Please try again or contact us for Assistance.', WC_MERCADOPAGO_TEXT_DOMAIN ) .
             	'</p>' .
             	'<a class="button" href="' . esc_url( $order->get_checkout_payment_url() ) . '">' .
-            	__( 'Click to try again', 'woocommerce-mercadopago' ) .
+            	__( 'Click to try again', WC_MERCADOPAGO_TEXT_DOMAIN ) .
             	'</a>
 			';
             return $html;
