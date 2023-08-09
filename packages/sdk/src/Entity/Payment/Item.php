@@ -7,7 +7,7 @@ use MercadoPago\PP\Sdk\Common\AbstractEntity;
 /**
  * Class Item
  *
- * @property int $id
+ * @property string $id
  * @property string $title
  * @property string $description
  * @property string $picture_url
@@ -19,7 +19,7 @@ use MercadoPago\PP\Sdk\Common\AbstractEntity;
  */
 class Item extends AbstractEntity {
     /**
-     * @var int
+     * @var string
      */
     protected $id;
 

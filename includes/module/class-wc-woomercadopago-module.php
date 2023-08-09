@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Class WC_WooMercadoPago_Module
  */
-final class WC_WooMercadoPago_Module extends WC_WooMercadoPago_Configs {
+class WC_WooMercadoPago_Module extends WC_WooMercadoPago_Configs {
     /**
      * Categories variable
      *

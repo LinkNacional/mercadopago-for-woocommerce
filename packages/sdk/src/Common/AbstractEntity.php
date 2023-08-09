@@ -3,6 +3,7 @@
 namespace MercadoPago\PP\Sdk\Common;
 
 use MercadoPago\PP\Sdk\Interfaces\EntityInterface;
+use MercadoPago\PP\Sdk\Sdk;
 use JsonSerializable;
 use IteratorAggregate;
 use Exception;
@@ -158,7 +159,7 @@ abstract class AbstractEntity implements JsonSerializable, EntityInterface {
 
         $uri = $this->manager->getEntityUri($entity, $method, $params);
         $response = $this->manager->execute($entity, $uri, $method, $header);
-
+        $this->obfuscateAuthorizationHeader($header);
         return $this->manager->handleResponse($response, $method, $entity);
     }
 
@@ -176,7 +177,7 @@ abstract class AbstractEntity implements JsonSerializable, EntityInterface {
 
         $uri = $this->manager->getEntityUri($this, $method);
         $response = $this->manager->execute($this, $uri, $method, $header);
-
+        $this->obfuscateAuthorizationHeader($header);
         return $this->manager->handleResponse($response, $method);
     }
 
@@ -194,5 +195,26 @@ abstract class AbstractEntity implements JsonSerializable, EntityInterface {
      */
     public function setExcludedProperties(): void {
         $this->excluded_properties = array();
+    }
+
+    /**
+     * Obfuscate Authorization Header.
+     *
+     * @return void
+     */
+    public function obfuscateAuthorizationHeader(array $headers): void {
+        Sdk::$cache['last_headers'] = preg_replace('/(Authorization: Bearer) (.*)/i', '$1 xxx', $headers);
+    }
+
+    /**
+     * Get last Headers.
+     *
+     * @return array
+     */
+    public function getLastHeaders(): array {
+        if (isset(Sdk::$cache['last_headers'])) {
+            return Sdk::$cache['last_headers'];
+        }
+        return array();
     }
 }

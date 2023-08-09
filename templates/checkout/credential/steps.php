@@ -9,8 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <div>
     <h4 class="mp-title-checkout-body mp-pb-20">
-        <?php echo esc_html( $title ); ?>
-    </h4>
+        <?php echo esc_html( $title ); ?></h4>
     <ul class="mp-row-flex">
         <li class="mp-col-md-3 mp-pb-10">
             <p class="mp-number-checkout-body">1</p>

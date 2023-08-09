@@ -4,6 +4,7 @@ namespace MercadoPago\PP\Sdk\Common;
 use IteratorAggregate;
 use Countable;
 use JsonSerializable;
+use Traversable;
 use ArrayIterator;
 
 /**
@@ -61,7 +62,7 @@ abstract class AbstractCollection implements IteratorAggregate, Countable, JsonS
     /**
      * @inheritDoc
      */
-    public function getIterator() {
+    public function getIterator(): Traversable {
         return new ArrayIterator($this->collection);
     }
 

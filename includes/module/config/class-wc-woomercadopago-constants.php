@@ -16,7 +16,7 @@ class WC_WooMercadoPago_Constants {
 
     public const PLATAFORM_ID = 'bo2hnr2ic4p001kbgpt0';
 
-    public const VERSION = '6.9.2';
+    public const VERSION = '6.9.3';
 
     public const MIN_PHP = 7.0;
 

@@ -24,32 +24,28 @@ if ( ! defined( 'ABSPATH' ) ) {
                 <li class="mp-details-list">
                     <p class="mp-details-pix-number-p">1</p>
                     <p class="mp-details-list-description">
-                        <?php echo esc_html( $step_one ); ?>
-                    </p>
+                        <?php echo esc_html( $step_one ); ?></p>
                 </li>
                 <li class="mp-details-list">
                     <p class="mp-details-pix-number-p">
                         2
                     </p>
                     <p class="mp-details-list-description">
-                        <?php echo esc_html( $step_two ); ?>
-                    </p>
+                        <?php echo esc_html( $step_two ); ?></p>
                 </li>
                 <li class="mp-details-list">
                     <p class="mp-details-pix-number-p">
                         3
                     </p>
                     <p class="mp-details-list-description">
-                        <?php echo esc_html( $step_three ); ?>
-                    </p>
+                        <?php echo esc_html( $step_three ); ?></p>
                 </li>
                 <li class="mp-details-list">
                     <p class="mp-details-pix-number-p">
                         4
                     </p>
                     <p class="mp-details-list-description">
-                        <?php echo esc_html( $step_four ); ?>
-                    </p>
+                        <?php echo esc_html( $step_four ); ?></p>
                 </li>
             </ul>
 

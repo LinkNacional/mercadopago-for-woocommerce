@@ -1,22 +1,7 @@
 <?php
 
 /**
- * Part of Woo Mercado Pago Module
- * Author - Mercado Pago Developers
- * Copyright - Copyright(c) MercadoPago [https://www.mercadopago.com]
- * License - https://www.gnu.org/licenses/gpl.html GPL version 2 or higher
- *
- * @package MercadoPago
- *
- * @var string $img_src
- * @var string $alert_title
- * @var string $alert_description
- * @var string $link
- * @var string $link_description
- * @var string $border_left_color
- * @var string $sync_button_text
- *
- * @see WC_WooMercadoPago_Hook_Order_Details
+ * License - https://www.gnu.org/licenses/gpl-3.0.html GPLv3 or higher
  */
 if ( ! defined( 'ABSPATH' ) ) {
     exit;

@@ -15,8 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                 </th>
                 <td class="order_details">
                     <?php echo esc_html($currency); ?>
-                    <?php echo esc_html($total_diff_cost); ?>
-                </td>
+                    <?php echo esc_html($total_diff_cost); ?></td>
             </tr>
             <tr>
                 <th style="width: 56.50%;">
