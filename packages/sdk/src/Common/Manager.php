@@ -4,14 +4,14 @@ namespace MercadoPago\PP\Sdk\Common;
 
 use MercadoPago\PP\Sdk\HttpClient\HttpClientInterface;
 use MercadoPago\PP\Sdk\HttpClient\Response;
+use Exception;
 
 /**
  * Class Manager
  *
  * @package MercadoPago\PP\Sdk\Common
  */
-class Manager
-{
+class Manager {
     /**
      * @var HttpClientInterface
      */
@@ -28,8 +28,7 @@ class Manager
      * @param HttpClientInterface $client
      * @param Config $config
      */
-    public function __construct(HttpClientInterface $client, Config $config)
-    {
+    public function __construct(HttpClientInterface $client, Config $config) {
         $this->client = $client;
         $this->config = $config;
     }
@@ -44,9 +43,8 @@ class Manager
      *
      * @return mixed
      */
-    public function execute(AbstractEntity $entity, string $uri, string $method = 'get', array $headers = [])
-    {
-        if ($method == 'get') {
+    public function execute(AbstractEntity $entity, string $uri, string $method = 'get', array $headers = array()) {
+        if ('get' == $method) {
             return $this->client->{$method}($uri, $headers);
         }
 
@@ -62,13 +60,12 @@ class Manager
      * @param array $params
      *
      * @return mixed
-     * @throws \Exception
+     * @throws Exception
      */
-    public function getEntityUri(AbstractEntity $entity, string $method, array $params = [])
-    {
+    public function getEntityUri(AbstractEntity $entity, string $method, array $params = array()) {
         if (method_exists($entity, 'getUris')) {
             $uri = $entity->getUris()[$method];
-            $matches = [];
+            $matches = array();
             preg_match_all('/\\:\\w+/', $uri, $matches);
 
             foreach ($matches[0] as $match) {
@@ -76,7 +73,7 @@ class Manager
 
                 if (array_key_exists($key, $params)) {
                     $uri = str_replace($match, $params[$key], $uri);
-                } elseif (property_exists($entity, $key) && !is_null($entity->{$key})) {
+                } elseif (property_exists($entity, $key) && ! is_null($entity->{$key})) {
                     $uri = str_replace($match, $entity->{$key}, $uri);
                 } else {
                     $uri = str_replace($match, '', $uri);
@@ -85,7 +82,7 @@ class Manager
 
             return $uri;
         } else {
-            throw new \Exception('Method not available for ' . get_class($entity) . ' entity');
+            throw new Exception('Method not available for ' . get_class($entity) . ' entity');
         }
     }
 
@@ -94,14 +91,13 @@ class Manager
      *
      * @return array
      */
-    public function getDefaultHeader(): array
-    {
-          return [
+    public function getDefaultHeader(): array {
+        return array(
             'Authorization: Bearer ' . $this->config->__get('access_token'),
             'x-platform-id: ' . $this->config->__get('platform_id'),
             'x-product-id: ' . $this->config->__get('product_id'),
             'x-integrator-id: ' . $this->config->__get('integrator_id')
-          ];
+        );
     }
 
     /**
@@ -110,8 +106,7 @@ class Manager
      *
      * @return array
      */
-    public function getHeader(array $customHeaders = []): array
-    {
+    public function getHeader(array $customHeaders = array()): array {
         $defaultHeaders = $this->getDefaultHeader();
         return array_merge($defaultHeaders, $customHeaders);
     }
@@ -124,20 +119,20 @@ class Manager
      * @param AbstractEntity|null $entity
      *
      * @return mixed
-     * @throws \Exception
+     * @throws Exception
      */
-    public function handleResponse(Response $response, string $method, AbstractEntity $entity = null)
-    {
+    public function handleResponse(Response $response, string $method, AbstractEntity $entity = null) {
         if ($response->getStatus() == '200' || $response->getStatus() == '201') {
-            if ($entity && $method == 'get') {
+            if ($entity && 'get' == $method) {
                 $entity->setEntity($response->getData());
                 return $entity;
             }
             return $response->getData();
-        } elseif (intval($response->getStatus()) >= 400 && intval($response->getStatus()) < 500) {
-            throw new \Exception($response->getData()['message']);
+        }
+        if ((int) ($response->getStatus()) >= 400 && (int) ($response->getStatus()) < 500) {
+            throw new Exception($response->getData()['message']);
         } else {
-            throw new \Exception("Internal API Error");
+            throw new Exception("Internal API Error");
         }
     }
 }

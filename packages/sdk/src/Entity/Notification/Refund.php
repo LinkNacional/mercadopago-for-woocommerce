@@ -14,8 +14,7 @@ use MercadoPago\PP\Sdk\Common\AbstractEntity;
  *
  * @package MercadoPago\PP\Sdk\Entity\Notification
  */
-class Refund extends AbstractEntity
-{
+class Refund extends AbstractEntity {
     /**
      * @var float
      */

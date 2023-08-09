@@ -12,8 +12,7 @@ use MercadoPago\PP\Sdk\Common\Manager;
  *
  * @package MercadoPago\PP\Sdk\Entity\Payment
  */
-class Shipments extends AbstractEntity
-{
+class Shipments extends AbstractEntity {
     /**
      * @var ReceiverAddress
      */
@@ -24,8 +23,7 @@ class Shipments extends AbstractEntity
      *
      * @param Manager|null $manager
      */
-    public function __construct($manager)
-    {
+    public function __construct($manager) {
         parent::__construct($manager);
         $this->receiver_address = new ReceiverAddress();
     }

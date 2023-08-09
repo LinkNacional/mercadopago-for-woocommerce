@@ -18,8 +18,7 @@ use MercadoPago\PP\Sdk\HttpClient\Requester\RequesterInterface;
  *
  * @package MercadoPago\PP\Sdk
  */
-class Sdk
-{
+class Sdk {
     /**
      * @var Config
      */
@@ -56,9 +55,8 @@ class Sdk
      *
      * @return AbstractEntity
      */
-    public function getEntityInstance(string $entityName, string $baseUrl)
-    {
-        $client  = new HttpClient($baseUrl, $this->requester);
+    public function getEntityInstance(string $entityName, string $baseUrl) {
+        $client = new HttpClient($baseUrl, $this->requester);
         $manager = new Manager($client, $this->config);
         return new $entityName($manager);
     }
@@ -66,24 +64,21 @@ class Sdk
     /**
      * @return Preference
      */
-    public function getPreferenceInstance()
-    {
+    public function getPreferenceInstance() {
         return $this->getEntityInstance('MercadoPago\PP\Sdk\Entity\Preference\Preference', Constants::BASEURL_MP);
     }
 
     /**
      * @return Notification
      */
-    public function getNotificationInstance()
-    {
+    public function getNotificationInstance() {
         return $this->getEntityInstance('MercadoPago\PP\Sdk\Entity\Notification\Notification', Constants::BASEURL_MP);
     }
 
     /**
      * @return Payment
      */
-    public function getPaymentInstance()
-    {
+    public function getPaymentInstance() {
         return $this->getEntityInstance('MercadoPago\PP\Sdk\Entity\Payment\Payment', Constants::BASEURL_MP);
     }
 }

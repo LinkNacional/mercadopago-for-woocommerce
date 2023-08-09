@@ -18,8 +18,7 @@ use MercadoPago\PP\Sdk\Common\Manager;
  *
  * @package MercadoPago\PP\Sdk\Entity\Preference
  */
-class Payer extends AbstractEntity
-{
+class Payer extends AbstractEntity {
     /**
      * @var Address
      */
@@ -60,11 +59,10 @@ class Payer extends AbstractEntity
      *
      * @param Manager|null $manager
      */
-    public function __construct($manager)
-    {
+    public function __construct($manager) {
         parent::__construct($manager);
-        $this->address        = new Address($manager);
+        $this->address = new Address($manager);
         $this->identification = new PayerIdentification($manager);
-        $this->phone          = new Phone($manager);
+        $this->phone = new Phone($manager);
     }
 }

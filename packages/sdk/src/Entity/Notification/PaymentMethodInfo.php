@@ -9,8 +9,7 @@ use MercadoPago\PP\Sdk\Common\AbstractEntity;
  *
  * @package MercadoPago\PP\Sdk\Entity\Notification
  */
-class PaymentMethodInfo extends AbstractEntity
-{
+class PaymentMethodInfo extends AbstractEntity {
     /**
      * @var string
      */

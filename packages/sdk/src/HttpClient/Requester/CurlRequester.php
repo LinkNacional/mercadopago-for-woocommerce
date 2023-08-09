@@ -5,24 +5,22 @@ namespace MercadoPago\PP\Sdk\HttpClient\Requester;
 use MercadoPago\PP\Sdk\Common\AbstractCollection;
 use MercadoPago\PP\Sdk\Common\AbstractEntity;
 use MercadoPago\PP\Sdk\HttpClient\Response;
+use Exception;
 
 /**
  * Class CurlRequester
  *
  * @package MercadoPago\PP\Sdk\HttpClient\Requester
  */
-class CurlRequester implements RequesterInterface
-{
+class CurlRequester implements RequesterInterface {
     /**
      * CurlRequester constructor.
      *
-     * @throws \Exception
+     * @throws Exception
      */
-    public function __construct()
-    {
-        if (!extension_loaded('curl')) {
-            throw new \Exception('cURL extension not found.' .
-                'You need to enable cURL in your php.ini or another configuration you have.');
+    public function __construct() {
+        if ( ! extension_loaded('curl')) {
+            throw new Exception('cURL extension not found.' . 'You need to enable cURL in your php.ini or another configuration you have.');
         }
     }
 
@@ -33,20 +31,19 @@ class CurlRequester implements RequesterInterface
      * @param string|AbstractEntity|AbstractCollection|array|null $body
      *
      * @return resource
-     * @throws \Exception
+     * @throws Exception
      */
-    public function createRequest(string $method, string $uri, array $headers = [], $body = null)
-    {
-        $json_content         = true;
-        $form_content         = false;
+    public function createRequest(string $method, string $uri, array $headers = array(), $body = null) {
+        $json_content = true;
+        $form_content = false;
         $default_content_type = true;
 
         if (isset($headers) && is_array($headers)) {
             foreach ($headers as $h => $v) {
                 if ('content-type' === $h) {
                     $default_content_type = false;
-                    $json_content         = 'application/json' === $v;
-                    $form_content         = 'application/x-www-form-urlencoded' === $v;
+                    $json_content = 'application/json' === $v;
+                    $form_content = 'application/x-www-form-urlencoded' === $v;
                     break;
                 }
             }
@@ -56,16 +53,16 @@ class CurlRequester implements RequesterInterface
         }
 
         $connect = $this->curlInit();
-        $this->setOption($connect, CURLOPT_USERAGENT, 'platform:v1-whitelabel,type:mp_sdk');
-        $this->setOption($connect, CURLOPT_RETURNTRANSFER, true);
+        $this->setOption($connect, \CURLOPT_USERAGENT, 'platform:v1-whitelabel,type:mp_sdk');
+        $this->setOption($connect, \CURLOPT_RETURNTRANSFER, true);
 
         // @TODO define CAINFO when implementing SDK
         // $this->setOption($connect, CURLOPT_SSL_VERIFYPEER, true);
         // $this->setOption( $connect, CURLOPT_CAINFO, $GLOBALS['LIB_LOCATION'] . '/cacert.pem' );
 
-        $this->setOption($connect, CURLOPT_CUSTOMREQUEST, $method);
-        $this->setOption($connect, CURLOPT_HTTPHEADER, $headers);
-        $this->setOption($connect, CURLOPT_URL, $uri);
+        $this->setOption($connect, \CURLOPT_CUSTOMREQUEST, $method);
+        $this->setOption($connect, \CURLOPT_HTTPHEADER, $headers);
+        $this->setOption($connect, \CURLOPT_URL, $uri);
 
         if (isset($body)) {
             if ($json_content) {
@@ -76,14 +73,14 @@ class CurlRequester implements RequesterInterface
                 }
                 if (function_exists('json_last_error')) {
                     $json_error = json_last_error();
-                    if (JSON_ERROR_NONE !== $json_error) {
-                        throw new \Exception("JSON Error [{$json_error}] - Data: " . $body);
+                    if (\JSON_ERROR_NONE !== $json_error) {
+                        throw new Exception("JSON Error [{$json_error}] - Data: " . $body);
                     }
                 }
             } elseif ($form_content) {
                 $body = self::buildFormData($body);
             }
-            $this->setOption($connect, CURLOPT_POSTFIELDS, $body);
+            $this->setOption($connect, \CURLOPT_POSTFIELDS, $body);
         }
 
         return $connect;
@@ -92,18 +89,17 @@ class CurlRequester implements RequesterInterface
     /**
      * @param resource $request
      *
-     * @throws \Exception
+     * @throws Exception
      */
-    public function sendRequest($request): Response
-    {
+    public function sendRequest($request): Response {
         $response = new Response();
         $api_result = $this->curlExec($request);
 
         if ($this->curlErrno($request)) {
-            throw new \Exception($this->curlError($request));
+            throw new Exception($this->curlError($request));
         }
 
-        $info          = $this->curlGetInfo($request);
+        $info = $this->curlGetInfo($request);
         $api_http_code = $info['http_code'];
 
         // @TODO: call logging service when ready
@@ -125,12 +121,11 @@ class CurlRequester implements RequesterInterface
      *
      * @return string
      */
-    public static function buildFormData(array $params): string
-    {
+    public static function buildFormData(array $params): string {
         if (function_exists('http_build_query')) {
             return http_build_query($params, '', '&');
         } else {
-            $elements = [];
+            $elements = array();
 
             foreach ($params as $name => $value) {
                 $elements[] = "{$name}=" . rawurldecode($value);
@@ -145,56 +140,49 @@ class CurlRequester implements RequesterInterface
      *
      * @return resource
      */
-    protected function curlInit()
-    {
+    protected function curlInit() {
         return curl_init();
     }
 
     /**
      * @codeCoverageIgnore
      */
-    protected function curlClose($request)
-    {
+    protected function curlClose($request): void {
         curl_close($request);
     }
 
     /**
      * @codeCoverageIgnore
      */
-    protected function setOption($connect, $option, $value)
-    {
+    protected function setOption($connect, $option, $value): void {
         curl_setopt($connect, $option, $value);
     }
 
     /**
      * @codeCoverageIgnore
      */
-    protected function curlExec($request)
-    {
+    protected function curlExec($request) {
         return curl_exec($request);
     }
 
     /**
      * @codeCoverageIgnore
      */
-    protected function curlErrno($request): int
-    {
+    protected function curlErrno($request): int {
         return curl_errno($request);
     }
 
     /**
      * @codeCoverageIgnore
      */
-    protected function curlError($request): string
-    {
+    protected function curlError($request): string {
         return curl_error($request);
     }
 
     /**
      * @codeCoverageIgnore
      */
-    protected function curlGetInfo($request)
-    {
+    protected function curlGetInfo($request) {
         return curl_getinfo($request);
     }
 }

@@ -18,11 +18,10 @@ use MercadoPago\PP\Sdk\Common\Manager;
  * @property float $coupon_amount
  * @property float $shipping_cost
  * @property RefundList $refunds
-
+ *
  * @package MercadoPago\PP\Sdk\Entity\Notification
  */
-class PaymentDetails extends AbstractEntity
-{
+class PaymentDetails extends AbstractEntity {
     /**
      * @var float
      */
@@ -83,8 +82,7 @@ class PaymentDetails extends AbstractEntity
      *
      * @param Manager|null $manager
      */
-    public function __construct($manager)
-    {
+    public function __construct($manager) {
         parent::__construct($manager);
         $this->refunds = new RefundList($manager);
     }

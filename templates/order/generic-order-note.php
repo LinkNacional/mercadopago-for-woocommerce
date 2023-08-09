@@ -14,20 +14,19 @@
  *
  * @see WC_WooMercadoPago_Custom_Gateway
  */
-
 if ( ! defined( 'ABSPATH' ) ) {
-	exit;
+    exit;
 }
 
 ?>
 
 <tr>
-	<td class="label">
-		<?php echo wc_help_tip( $tip_text ); ?>
-		<?php echo esc_html( $title ); ?>
-	</td>
-	<td width="1%"></td>
-	<td class="total">
-		<?php echo wp_kses_post( $value ); ?>
-	</td>
+    <td class="label">
+        <?php echo wc_help_tip( $tip_text ); ?>
+        <?php echo esc_html( $title ); ?>
+    </td>
+    <td width="1%"></td>
+    <td class="total">
+        <?php echo wp_kses_post( $value ); ?>
+    </td>
 </tr>

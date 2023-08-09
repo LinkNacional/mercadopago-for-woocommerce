@@ -2,8 +2,7 @@
 
 namespace MercadoPago\PP\Sdk\Interfaces;
 
-interface EntityInterface
-{
+interface EntityInterface {
     /**
      * @param string $name
      *
@@ -60,5 +59,5 @@ interface EntityInterface
      *
      * @return void
      */
-    public function setExcludedProperties();
+    public function setExcludedProperties(): void;
 }

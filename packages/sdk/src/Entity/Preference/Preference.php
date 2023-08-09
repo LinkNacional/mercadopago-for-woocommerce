@@ -34,8 +34,7 @@ use MercadoPago\PP\Sdk\Interfaces\RequesterEntityInterface;
  *
  * @package MercadoPago\PP\Sdk\Entity\Preference
  */
-class Preference extends AbstractEntity implements RequesterEntityInterface
-{
+class Preference extends AbstractEntity implements RequesterEntityInterface {
     /**
      * @var string
      */
@@ -151,15 +150,14 @@ class Preference extends AbstractEntity implements RequesterEntityInterface
      *
      * @param Manager|null $manager
      */
-    public function __construct($manager)
-    {
+    public function __construct($manager) {
         parent::__construct($manager);
-        $this->back_urls            = new BackUrl($manager);
-        $this->items                = new ItemList($manager);
-        $this->payer                = new Payer($manager);
-        $this->payment_methods      = new PaymentMethod($manager);
-        $this->shipments            = new Shipment($manager);
-        $this->tracks               = new TrackList($manager);
+        $this->back_urls = new BackUrl($manager);
+        $this->items = new ItemList($manager);
+        $this->payer = new Payer($manager);
+        $this->payment_methods = new PaymentMethod($manager);
+        $this->shipments = new Shipment($manager);
+        $this->tracks = new TrackList($manager);
     }
 
     /**
@@ -167,9 +165,8 @@ class Preference extends AbstractEntity implements RequesterEntityInterface
      *
      * @return void
      */
-    public function setExcludedProperties()
-    {
-        $this->excluded_properties = [];
+    public function setExcludedProperties(): void {
+        $this->excluded_properties = array();
     }
 
     /**
@@ -177,12 +174,11 @@ class Preference extends AbstractEntity implements RequesterEntityInterface
      *
      * @return array
      */
-    public function getHeaders(): array
-    {
-        return [
-            'read' => [],
-            'save' => [],
-        ];
+    public function getHeaders(): array {
+        return array(
+            'read' => array(),
+            'save' => array(),
+        );
     }
 
     /**
@@ -190,8 +186,7 @@ class Preference extends AbstractEntity implements RequesterEntityInterface
      *
      * @return array
      */
-    public function getUris(): array
-    {
+    public function getUris(): array {
         return array(
             'post' => '/v1/asgard/preferences',
         );

@@ -7,8 +7,7 @@ namespace MercadoPago\PP\Sdk\Common;
  *
  * @package MercadoPago\PP\Sdk\Common
  */
-class Config
-{
+class Config {
     /**
      * @var string
      */
@@ -54,8 +53,7 @@ class Config
      *
      * @return mixed
      */
-    public function __get(string $name)
-    {
+    public function __get(string $name) {
         return $this->{$name};
     }
 
@@ -63,8 +61,7 @@ class Config
      * @param string $name
      * @param string $value
      */
-    public function __set(string $name, string $value)
-    {
+    public function __set(string $name, string $value): void {
         if (property_exists($this, $name)) {
             $this->{$name} = $value;
         }

@@ -33,8 +33,7 @@ use MercadoPago\PP\Sdk\Interfaces\RequesterEntityInterface;
  *
  * @package MercadoPago\PP\Sdk\Entity\Payment
  */
-class Payment extends AbstractEntity implements RequesterEntityInterface
-{
+class Payment extends AbstractEntity implements RequesterEntityInterface {
     /**
      * @var string
      */
@@ -145,8 +144,7 @@ class Payment extends AbstractEntity implements RequesterEntityInterface
      *
      * @param Manager|null $manager
      */
-    public function __construct($manager)
-    {
+    public function __construct($manager) {
         parent::__construct($manager);
         $this->payer = new Payer($manager);
         $this->additional_info = new AdditionalInfo($manager);
@@ -159,9 +157,8 @@ class Payment extends AbstractEntity implements RequesterEntityInterface
      *
      * @return void
      */
-    public function setExcludedProperties()
-    {
-        $this->excluded_properties = ['session_id'];
+    public function setExcludedProperties(): void {
+        $this->excluded_properties = array('session_id');
     }
 
     /**
@@ -169,12 +166,11 @@ class Payment extends AbstractEntity implements RequesterEntityInterface
      *
      * @return array
      */
-    public function getHeaders(): array
-    {
-        return [
-            'read' => [],
-            'save' => ['x-meli-session-id: ' . $this->session_id],
-        ];
+    public function getHeaders(): array {
+        return array(
+            'read' => array(),
+            'save' => array('x-meli-session-id: ' . $this->session_id),
+        );
     }
 
     /**
@@ -182,8 +178,7 @@ class Payment extends AbstractEntity implements RequesterEntityInterface
      *
      * @return array
      */
-    public function getUris(): array
-    {
+    public function getUris(): array {
         return array(
             'post' => '/v1/asgard/payments',
         );

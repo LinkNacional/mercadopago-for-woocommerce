@@ -13,8 +13,7 @@ use MercadoPago\PP\Sdk\Common\AbstractEntity;
  *
  * @package MercadoPago\PP\Sdk\Entity\Preference
  */
-class BackUrl extends AbstractEntity
-{
+class BackUrl extends AbstractEntity {
     /**
      * @var string
      */

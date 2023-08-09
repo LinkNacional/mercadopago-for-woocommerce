@@ -11,14 +11,13 @@ use MercadoPago\PP\Sdk\HttpClient\Response;
  *
  * @package MercadoPago\PP\Sdk\HttpClient\Requester
  */
-interface RequesterInterface
-{
+interface RequesterInterface {
     /**
      * @param string|AbstractEntity|AbstractCollection|null $body
      *
      * @return resource
      */
-    public function createRequest(string $method, string $uri, array $headers = [], $body = null);
+    public function createRequest(string $method, string $uri, array $headers = array(), $body = null);
 
     /**
      * @param resource $request

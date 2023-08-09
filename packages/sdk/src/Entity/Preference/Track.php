@@ -12,8 +12,7 @@ use MercadoPago\PP\Sdk\Common\AbstractEntity;
  *
  * @package MercadoPago\PP\Sdk\Entity\Preference
  */
-class Track extends AbstractEntity
-{
+class Track extends AbstractEntity {
     /**
      * @var string
      */

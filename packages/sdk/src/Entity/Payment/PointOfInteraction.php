@@ -11,8 +11,7 @@ use MercadoPago\PP\Sdk\Common\AbstractEntity;
  *
  * @package MercadoPago\PP\Sdk\Entity\Payment
  */
-class PointOfInteraction extends AbstractEntity
-{
+class PointOfInteraction extends AbstractEntity {
     /**
      * @var string
      */

@@ -15,8 +15,7 @@ use MercadoPago\PP\Sdk\Common\Manager;
  *
  * @package MercadoPago\PP\Sdk\Entity\Payment
  */
-class AdditionalInfo extends AbstractEntity
-{
+class AdditionalInfo extends AbstractEntity {
     /**
      * @var string
      */
@@ -42,11 +41,10 @@ class AdditionalInfo extends AbstractEntity
      *
      * @param Manager|null $manager
      */
-    public function __construct($manager)
-    {
+    public function __construct($manager) {
         parent::__construct($manager);
-        $this->items     = new ItemList($manager);
-        $this->payer     = new AdditionalInfoPayer($manager);
+        $this->items = new ItemList($manager);
+        $this->payer = new AdditionalInfoPayer($manager);
         $this->shipments = new Shipments($manager);
     }
 }

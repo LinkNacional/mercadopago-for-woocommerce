@@ -11,8 +11,7 @@ use MercadoPago\PP\Sdk\Common\AbstractEntity;
  *
  * @package MercadoPago\PP\Sdk\Entity\Preference
  */
-class DifferentialPricing extends AbstractEntity
-{
+class DifferentialPricing extends AbstractEntity {
     /**
      * @var int
      */
