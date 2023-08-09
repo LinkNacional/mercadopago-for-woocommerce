@@ -13,23 +13,23 @@ if ( ! defined( 'ABSPATH' ) ) {
         <?php if ( true === $test_mode ) : ?>
         <div class="mp-checkout-pix-test-mode">
             <test-mode
-                title="<?php echo esc_html_e('Pix in Test Mode', WC_MERCADOPAGO_TEXT_DOMAIN); ?>"
-                description="<?php echo esc_html_e('You can test the flow to generate a code, but you cannot finalize the payment.', WC_MERCADOPAGO_TEXT_DOMAIN); ?>">
+                title="<?php echo esc_html_e('Pix in Test Mode', LKN_WC_MERCADOPAGO_TEXT_DOMAIN); ?>"
+                description="<?php echo esc_html_e('You can test the flow to generate a code, but you cannot finalize the payment.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN); ?>">
             </test-mode>
         </div>
         <?php endif; ?>
 
         <pix-template
-            title="<?php echo esc_html_e('Pay instantly', WC_MERCADOPAGO_TEXT_DOMAIN); ?>"
-            subtitle="<?php echo esc_html_e('By confirming your purchase, we will show you a code to make the payment.', WC_MERCADOPAGO_TEXT_DOMAIN); ?>"
-            alt="<?php echo esc_html_e('Pix logo', WC_MERCADOPAGO_TEXT_DOMAIN); ?>"
+            title="<?php echo esc_html_e('Pay instantly', LKN_WC_MERCADOPAGO_TEXT_DOMAIN); ?>"
+            subtitle="<?php echo esc_html_e('By confirming your purchase, we will show you a code to make the payment.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN); ?>"
+            alt="<?php echo esc_html_e('Pix logo', LKN_WC_MERCADOPAGO_TEXT_DOMAIN); ?>"
             src="<?php echo esc_html($pix_image); ?>">
         </pix-template>
 
         <div class="mp-checkout-pix-terms-and-conditions">
             <terms-and-conditions
-                description="<?php echo esc_html_e('By continuing, you agree with our', WC_MERCADOPAGO_TEXT_DOMAIN); ?>"
-                link-text="<?php echo esc_html_e('Terms and conditions', WC_MERCADOPAGO_TEXT_DOMAIN); ?>"
+                description="<?php echo esc_html_e('By continuing, you agree with our', LKN_WC_MERCADOPAGO_TEXT_DOMAIN); ?>"
+                link-text="<?php echo esc_html_e('Terms and conditions', LKN_WC_MERCADOPAGO_TEXT_DOMAIN); ?>"
                 link-src="<?php echo esc_html($link_terms_and_conditions); ?>">
             </terms-and-conditions>
         </div>

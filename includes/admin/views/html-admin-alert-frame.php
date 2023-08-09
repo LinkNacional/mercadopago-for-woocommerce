@@ -31,7 +31,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     <button type="button" class="notice-dismiss">
         <span class="screen-reader-text">
             <?php
-esc_html_e( 'Discard', WC_MERCADOPAGO_TEXT_DOMAIN );
+esc_html_e( 'Discard', LKN_WC_MERCADOPAGO_TEXT_DOMAIN );
 ?>
         </span>
     </button>

@@ -119,7 +119,7 @@ abstract class WC_WooMercadoPago_Hook_Abstract {
                 $woocommerce->cart->add_fee(
                     sprintf(
                         /* translators: %s coupon  */
-                        __( 'Discount for coupon %s', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                        __( 'Discount for coupon %s', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
                         esc_attr( $checkout['campaign'] )
                     ),
                     ( $value * -1 ),
@@ -161,11 +161,11 @@ abstract class WC_WooMercadoPago_Hook_Abstract {
         $price_commission = $total * ( $this->payment->commission / 100 );
 
         if ( $this->payment->gateway_discount > 0 && $this->payment->commission > 0 ) {
-            $title .= ' (' . __( 'discount of', WC_MERCADOPAGO_TEXT_DOMAIN ) . ' ' . wp_strip_all_tags( wc_price( $price_discount ) ) . __( ' and fee of', WC_MERCADOPAGO_TEXT_DOMAIN ) . ' ' . wp_strip_all_tags( wc_price( $price_commission ) ) . ')';
+            $title .= ' (' . __( 'discount of', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ) . ' ' . wp_strip_all_tags( wc_price( $price_discount ) ) . __( ' and fee of', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ) . ' ' . wp_strip_all_tags( wc_price( $price_commission ) ) . ')';
         } elseif ( $this->payment->gateway_discount > 0 ) {
-            $title .= ' (' . __( 'discount of', WC_MERCADOPAGO_TEXT_DOMAIN ) . ' ' . wp_strip_all_tags( wc_price( $price_discount ) ) . ')';
+            $title .= ' (' . __( 'discount of', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ) . ' ' . wp_strip_all_tags( wc_price( $price_discount ) ) . ')';
         } elseif ( $this->payment->commission > 0 ) {
-            $title .= ' (' . __( 'fee of', WC_MERCADOPAGO_TEXT_DOMAIN ) . ' ' . wp_strip_all_tags( wc_price( $price_commission ) ) . ')';
+            $title .= ' (' . __( 'fee of', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ) . ' ' . wp_strip_all_tags( wc_price( $price_commission ) ) . ')';
         }
         return $title;
     }
@@ -534,7 +534,7 @@ abstract class WC_WooMercadoPago_Hook_Abstract {
      */
     public function notice_invalid_public_key_prod(): void {
         $type = 'error';
-        $message = __( '<b>Public Key</b> production credential is invalid. Review the field to receive real payments.', WC_MERCADOPAGO_TEXT_DOMAIN );
+        $message = __( '<b>Public Key</b> production credential is invalid. Review the field to receive real payments.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN );
         WC_WooMercadoPago_Notices::get_alert_frame( $message, $type );
     }
 
@@ -543,7 +543,7 @@ abstract class WC_WooMercadoPago_Hook_Abstract {
      */
     public function notice_invalid_public_key_test(): void {
         $type = 'error';
-        $message = __( '<b>Public Key</b> test credential is invalid. Review the field to perform tests in your store.', WC_MERCADOPAGO_TEXT_DOMAIN );
+        $message = __( '<b>Public Key</b> test credential is invalid. Review the field to perform tests in your store.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN );
         WC_WooMercadoPago_Notices::get_alert_frame( $message, $type );
     }
 
@@ -552,7 +552,7 @@ abstract class WC_WooMercadoPago_Hook_Abstract {
      */
     public function notice_invalid_prod_credentials(): void {
         $type = 'error';
-        $message = __( '<b>Access Token</b> production credential is invalid. Remember that it must be complete to receive real payments.', WC_MERCADOPAGO_TEXT_DOMAIN );
+        $message = __( '<b>Access Token</b> production credential is invalid. Remember that it must be complete to receive real payments.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN );
         WC_WooMercadoPago_Notices::get_alert_frame( $message, $type );
     }
 
@@ -561,7 +561,7 @@ abstract class WC_WooMercadoPago_Hook_Abstract {
      */
     public function notice_invalid_test_credentials(): void {
         $type = 'error';
-        $message = __( '<b>Access Token</b> test credential is invalid. Review the field to perform tests in your store.', WC_MERCADOPAGO_TEXT_DOMAIN );
+        $message = __( '<b>Access Token</b> test credential is invalid. Review the field to perform tests in your store.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN );
         WC_WooMercadoPago_Notices::get_alert_frame( $message, $type );
     }
 
@@ -570,7 +570,7 @@ abstract class WC_WooMercadoPago_Hook_Abstract {
      */
     public function enable_payment_notice(): void {
         $type = 'notice-warning';
-        $message = __( 'Fill in your credentials to enable payment methods.', WC_MERCADOPAGO_TEXT_DOMAIN );
+        $message = __( 'Fill in your credentials to enable payment methods.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN );
         WC_WooMercadoPago_Notices::get_alert_frame( $message, $type );
     }
 
@@ -579,7 +579,7 @@ abstract class WC_WooMercadoPago_Hook_Abstract {
      */
     public function notice_blank_public_key_test(): void {
         $type = 'error';
-        $message = __( '<b>Public Key</b> test credential is blank. Review the field to perform tests in your store.', WC_MERCADOPAGO_TEXT_DOMAIN );
+        $message = __( '<b>Public Key</b> test credential is blank. Review the field to perform tests in your store.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN );
         WC_WooMercadoPago_Notices::get_alert_frame( $message, $type );
     }
 
@@ -588,7 +588,7 @@ abstract class WC_WooMercadoPago_Hook_Abstract {
      */
     public function notice_blank_public_key_prod(): void {
         $type = 'error';
-        $message = __( '<b>Public Key</b> production credential is blank. Review the field to receive real payments.', WC_MERCADOPAGO_TEXT_DOMAIN );
+        $message = __( '<b>Public Key</b> production credential is blank. Review the field to receive real payments.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN );
         WC_WooMercadoPago_Notices::get_alert_frame( $message, $type );
     }
 
@@ -597,7 +597,7 @@ abstract class WC_WooMercadoPago_Hook_Abstract {
      */
     public function notice_blank_test_credentials(): void {
         $type = 'error';
-        $message = __( '<b>Access Token</b> test credential is blank. Review the field to perform tests in your store.', WC_MERCADOPAGO_TEXT_DOMAIN );
+        $message = __( '<b>Access Token</b> test credential is blank. Review the field to perform tests in your store.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN );
         WC_WooMercadoPago_Notices::get_alert_frame( $message, $type );
     }
 
@@ -606,7 +606,7 @@ abstract class WC_WooMercadoPago_Hook_Abstract {
      */
     public function notice_blank_prod_credentials(): void {
         $type = 'error';
-        $message = __( '<b>Access Token</b> production credential is blank. Remember that it must be complete to receive real payments.', WC_MERCADOPAGO_TEXT_DOMAIN );
+        $message = __( '<b>Access Token</b> production credential is blank. Remember that it must be complete to receive real payments.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN );
         WC_WooMercadoPago_Notices::get_alert_frame( $message, $type );
     }
 }

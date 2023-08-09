@@ -98,7 +98,7 @@ class WC_WooMercadoPago_Notification_Core extends WC_WooMercadoPago_Notification
             $this->update_meta( $order, '_used_gateway', get_class( $this->payment ) );
 
             if ( ! empty( $data['payer']['email'] ) ) {
-                $this->update_meta( $order, __( 'Buyer email', WC_MERCADOPAGO_TEXT_DOMAIN ), $data['payer']['email'] );
+                $this->update_meta( $order, __( 'Buyer email', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ), $data['payer']['email'] );
             }
 
             if ( ! empty( $data['payments_details'] ) ) {

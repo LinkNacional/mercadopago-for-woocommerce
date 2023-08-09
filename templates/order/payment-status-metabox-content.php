@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <div id="mp-payment-status-container">
     <p style="font-family: 'Lato', sans-serif; font-size: 14px;">
-        <?php echo esc_html__('This is the payment status of your Mercado Pago Activities. To check the order status, please refer to Order details.', WC_MERCADOPAGO_TEXT_DOMAIN); ?>
+        <?php echo esc_html__('This is the payment status of your Mercado Pago Activities. To check the order status, please refer to Order details.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN); ?>
     </p>
 
     <div id="mp-payment-status-content" class="mp-alert-checkout-test-mode"

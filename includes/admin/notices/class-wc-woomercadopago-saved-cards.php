@@ -140,10 +140,10 @@ class WC_WooMercadoPago_Saved_Cards {
 						</div>
 						<div class="mp-left-saved-cards-text">
 							<p class="mp-saved-cards-title">' .
-        						__( 'Enable payments via Mercado Pago account', WC_MERCADOPAGO_TEXT_DOMAIN ) .
+        						__( 'Enable payments via Mercado Pago account', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ) .
         					'</p>
 							<p class="mp-saved-cards-subtitle">' .
-        						__( 'When you enable this function, your customers pay faster using their Mercado Pago accounts.</br>The approval rate of these payments in your store can be 25% higher compared to other payment methods.', WC_MERCADOPAGO_TEXT_DOMAIN ) .
+        						__( 'When you enable this function, your customers pay faster using their Mercado Pago accounts.</br>The approval rate of these payments in your store can be 25% higher compared to other payment methods.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ) .
         					'</p>
 						</div>
 					</div>
@@ -152,7 +152,7 @@ class WC_WooMercadoPago_Saved_Cards {
 							class="mp-saved-cards-link"
 							href="' . $checkout_custom_url . '"
 						>'
-        					. __( 'Activate', WC_MERCADOPAGO_TEXT_DOMAIN ) .
+        					. __( 'Activate', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ) .
         				'</a>
 					</div>
                 </div>';

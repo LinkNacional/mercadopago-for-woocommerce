@@ -705,7 +705,7 @@ class WC_WooMercadoPago_Payment_Abstract extends WC_Payment_Gateway {
     public function update_option( $key, $value = '' ) {
         if ( 'enabled' === $key && 'yes' === $value ) {
             if ( empty( $this->mp->get_access_token() ) ) {
-                $message = __( 'Configure your credentials to enable Mercado Pago payment methods.', WC_MERCADOPAGO_TEXT_DOMAIN );
+                $message = __( 'Configure your credentials to enable Mercado Pago payment methods.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN );
                 $this->log->write_log( __FUNCTION__, $message );
                 echo wp_json_encode(
                     array(
@@ -774,11 +774,11 @@ class WC_WooMercadoPago_Payment_Abstract extends WC_Payment_Gateway {
      */
     public function field_title() {
         $field_title = array(
-            'title' => __( 'Title in the store Checkout', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'title' => __( 'Title in the store Checkout', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             'type' => 'text',
-            'description' => __('Change the display text in Checkout, maximum characters: 85', WC_MERCADOPAGO_TEXT_DOMAIN),
+            'description' => __('Change the display text in Checkout, maximum characters: 85', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
             'maxlength' => 100,
-            'desc_tip' => __( 'The text inserted here will not be translated to other languages', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'desc_tip' => __( 'The text inserted here will not be translated to other languages', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             'class' => 'limit-title-max-length',
             'default' => $this->title,
         );
@@ -792,7 +792,7 @@ class WC_WooMercadoPago_Payment_Abstract extends WC_Payment_Gateway {
      */
     public function field_description() {
         $field_description = array(
-            'title' => __( 'Description', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'title' => __( 'Description', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             'type' => 'text',
             'class' => 'hidden-field-mp-desc',
             'description' => '',
@@ -828,9 +828,9 @@ class WC_WooMercadoPago_Payment_Abstract extends WC_Payment_Gateway {
      */
     public function field_checkout_card_validate() {
         $value = array(
-            'title' => __('Important! To sell you must enter your credentials.', WC_MERCADOPAGO_TEXT_DOMAIN),
-            'subtitle' => __('You must enter&nbsp;<b>production credentials</b>.', WC_MERCADOPAGO_TEXT_DOMAIN),
-            'button_text' => __('Enter credentials', WC_MERCADOPAGO_TEXT_DOMAIN),
+            'title' => __('Important! To sell you must enter your credentials.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
+            'subtitle' => __('You must enter&nbsp;<b>production credentials</b>.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
+            'button_text' => __('Enter credentials', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
             'button_url' => admin_url( 'admin.php?page=mercadopago-settings' ),
             'icon' => 'mp-icon-badge-warning',
             'color_card' => 'mp-alert-color-error',
@@ -840,9 +840,9 @@ class WC_WooMercadoPago_Payment_Abstract extends WC_Payment_Gateway {
 
         if ( ! empty( $this->checkout_country ) && ! empty( $this->get_access_token() ) && ! empty( $this->get_public_key() ) ) {
             $value = array(
-                'title' => __('Mercado Pago Plugin general settings', WC_MERCADOPAGO_TEXT_DOMAIN), __('Important! To sell you must enter your credentials.', WC_MERCADOPAGO_TEXT_DOMAIN),
-                'subtitle' => __('Set the deadlines and fees, test your store or access the Plugin manual.', WC_MERCADOPAGO_TEXT_DOMAIN),
-                'button_text' => __('Go to Settings', WC_MERCADOPAGO_TEXT_DOMAIN),
+                'title' => __('Mercado Pago Plugin general settings', LKN_WC_MERCADOPAGO_TEXT_DOMAIN), __('Important! To sell you must enter your credentials.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
+                'subtitle' => __('Set the deadlines and fees, test your store or access the Plugin manual.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
+                'button_text' => __('Go to Settings', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
                 'button_url' => admin_url( 'admin.php?page=mercadopago-settings' ),
                 'icon' => 'mp-icon-badge-info',
                 'color_card' => 'mp-alert-color-sucess',
@@ -866,9 +866,9 @@ class WC_WooMercadoPago_Payment_Abstract extends WC_Payment_Gateway {
         $country_link = strtolower($this->checkout_country);
         $application_id = $this->application_id;
         $value = array(
-            'title' => __( 'Activate your credentials to be able to sell', WC_MERCADOPAGO_TEXT_DOMAIN ),
-            'subtitle' => __( 'Credentials are codes that you must enter to enable sales. Go below on Activate Credentials. On the next screen, use again the Activate Credentials button and fill in the fields with the requested information.', WC_MERCADOPAGO_TEXT_DOMAIN ),
-            'button_text' => __( 'Activate credentials', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'title' => __( 'Activate your credentials to be able to sell', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'subtitle' => __( 'Credentials are codes that you must enter to enable sales. Go below on Activate Credentials. On the next screen, use again the Activate Credentials button and fill in the fields with the requested information.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'button_text' => __( 'Activate credentials', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             'button_url' => 'https://www.mercadopago.com/' . $country_link . '/account/credentials/appliance?application_id=' . $application_id,
             'icon' => 'mp-icon-badge-warning',
             'color_card' => 'mp-alert-color-alert',
@@ -914,13 +914,13 @@ class WC_WooMercadoPago_Payment_Abstract extends WC_Payment_Gateway {
      */
     public function field_enabled() {
         return array(
-            'title' => __( 'Enable the checkout', WC_MERCADOPAGO_TEXT_DOMAIN ),
-            'subtitle' => __( 'By disabling it, you will disable all payment methods of this checkout.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'title' => __( 'Enable the checkout', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'subtitle' => __( 'By disabling it, you will disable all payment methods of this checkout.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             'type' => 'mp_toggle_switch',
             'default' => 'no',
             'descriptions' => array(
-                'enabled' => __( 'The checkout is <b>enabled</b>.', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'disabled' => __( 'The checkout is <b>disabled</b>.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'enabled' => __( 'The checkout is <b>enabled</b>.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'disabled' => __( 'The checkout is <b>disabled</b>.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
         );
     }
@@ -975,7 +975,7 @@ class WC_WooMercadoPago_Payment_Abstract extends WC_Payment_Gateway {
      */
     public function field_checkout_payments_subtitle() {
         return array(
-            'title' => __( 'Basic Configuration', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'title' => __( 'Basic Configuration', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             'type' => 'title',
             'class' => 'mp_subtitle mp-mt-5 mp-mb-0',
         );
@@ -988,13 +988,13 @@ class WC_WooMercadoPago_Payment_Abstract extends WC_Payment_Gateway {
      */
     public function field_coupon_mode() {
         return array(
-            'title' => __( 'Discount coupons', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'title' => __( 'Discount coupons', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             'type' => 'mp_toggle_switch',
             'default' => 'no',
-            'subtitle' => __( 'Will you offer discount coupons to customers who buy with Mercado Pago?', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'subtitle' => __( 'Will you offer discount coupons to customers who buy with Mercado Pago?', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             'descriptions' => array(
-                'enabled' => __( 'Discount coupons is <b>active</b>.', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'disabled' => __( 'Discount coupons is <b>disabled</b>.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'enabled' => __( 'Discount coupons is <b>active</b>.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'disabled' => __( 'Discount coupons is <b>disabled</b>.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
         );
     }
@@ -1006,13 +1006,13 @@ class WC_WooMercadoPago_Payment_Abstract extends WC_Payment_Gateway {
      */
     public function field_binary_mode() {
         return array(
-            'title' => __( 'Automatic decline of payments without instant approval', WC_MERCADOPAGO_TEXT_DOMAIN ),
-            'subtitle' => __( 'Enable it if you want to automatically decline payments that are not instantly approved by banks or other institutions. ', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'title' => __( 'Automatic decline of payments without instant approval', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'subtitle' => __( 'Enable it if you want to automatically decline payments that are not instantly approved by banks or other institutions. ', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             'type' => 'mp_toggle_switch',
             'default' => 'no',
             'descriptions' => array(
-                'enabled' => __( 'Pending payments <b>will be automatically declined</b>.', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'disabled' => __( 'Pending payments <b>will not be automatically declined</b>.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'enabled' => __( 'Pending payments <b>will be automatically declined</b>.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'disabled' => __( 'Pending payments <b>will not be automatically declined</b>.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
         );
     }
@@ -1024,11 +1024,11 @@ class WC_WooMercadoPago_Payment_Abstract extends WC_Payment_Gateway {
      */
     public function field_gateway_discount() {
         return array(
-            'title' => __( 'Discount in Mercado Pago Checkouts', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'title' => __( 'Discount in Mercado Pago Checkouts', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             'type' => 'mp_activable_input',
             'input_type' => 'number',
-            'description' => __( 'Choose a percentage value that you want to discount your customers for paying with Mercado Pago.', WC_MERCADOPAGO_TEXT_DOMAIN ),
-            'checkbox_label' => __( 'Activate and show this information on Mercado Pago Checkout', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'description' => __( 'Choose a percentage value that you want to discount your customers for paying with Mercado Pago.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'checkbox_label' => __( 'Activate and show this information on Mercado Pago Checkout', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             'default' => '0',
             'custom_attributes' => array(
                 'step' => '0.01',
@@ -1045,11 +1045,11 @@ class WC_WooMercadoPago_Payment_Abstract extends WC_Payment_Gateway {
      */
     public function field_commission() {
         return array(
-            'title' => __( 'Commission in Mercado Pago Checkouts', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'title' => __( 'Commission in Mercado Pago Checkouts', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             'type' => 'mp_activable_input',
             'input_type' => 'number',
-            'description' => __( 'Choose an additional percentage value that you want to charge as commission to your customers for paying with Mercado Pago.', WC_MERCADOPAGO_TEXT_DOMAIN ),
-            'checkbox_label' => __( 'Activate and show this information on Mercado Pago Checkout', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'description' => __( 'Choose an additional percentage value that you want to charge as commission to your customers for paying with Mercado Pago.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'checkbox_label' => __( 'Activate and show this information on Mercado Pago Checkout', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             'default' => '0',
             'custom_attributes' => array(
                 'step' => '0.01',
@@ -1069,13 +1069,13 @@ class WC_WooMercadoPago_Payment_Abstract extends WC_Payment_Gateway {
         $description = WC_WooMercadoPago_Helpers_CurrencyConverter::get_instance()->get_description( $method );
 
         return array(
-            'title' => __( 'Convert Currency', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'title' => __( 'Convert Currency', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             'subtitle' => $description,
             'type' => 'mp_toggle_switch',
             'default' => 'no',
             'descriptions' => array(
-                'enabled' => __( 'Currency convertion is <b>enabled</b>.', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'disabled' => __( 'Currency convertion is <b>disabled</b>.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'enabled' => __( 'Currency convertion is <b>enabled</b>.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'disabled' => __( 'Currency convertion is <b>disabled</b>.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
         );
     }
@@ -1192,7 +1192,7 @@ class WC_WooMercadoPago_Payment_Abstract extends WC_Payment_Gateway {
      */
     public function field_checkout_payments_advanced_description() {
         return array(
-            'title' => __( 'Edit these advanced fields only when you want to modify the preset values.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'title' => __( 'Edit these advanced fields only when you want to modify the preset values.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             'type' => 'title',
             'class' => 'mp_small_text mp-mt--12 mp-mb-18',
         );

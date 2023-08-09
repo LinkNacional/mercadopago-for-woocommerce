@@ -171,7 +171,7 @@ class MP {
             $this->debug_mode_log(
                 'mercadopago_requests',
                 __FUNCTION__,
-                __( 'Response from cache', WC_MERCADOPAGO_TEXT_DOMAIN )
+                __( 'Response from cache', LKN_WC_MERCADOPAGO_TEXT_DOMAIN )
             );
 
             return $cache;
@@ -606,7 +606,7 @@ class MP {
             $this->debug_mode_log(
                 'mercadopago_requests',
                 __FUNCTION__,
-                __( 'Response from cache', WC_MERCADOPAGO_TEXT_DOMAIN )
+                __( 'Response from cache', LKN_WC_MERCADOPAGO_TEXT_DOMAIN )
             );
 
             return $cache;
@@ -654,7 +654,7 @@ class MP {
             $this->debug_mode_log(
                 'mercadopago_requests',
                 __FUNCTION__,
-                __( 'Response from cache', WC_MERCADOPAGO_TEXT_DOMAIN )
+                __( 'Response from cache', LKN_WC_MERCADOPAGO_TEXT_DOMAIN )
             );
 
             return $cache;
@@ -698,7 +698,7 @@ class MP {
             $this->debug_mode_log(
                 'mercadopago_requests',
                 __FUNCTION__,
-                __( 'Response from cache', WC_MERCADOPAGO_TEXT_DOMAIN )
+                __( 'Response from cache', LKN_WC_MERCADOPAGO_TEXT_DOMAIN )
             );
 
             return $cache;
@@ -950,7 +950,7 @@ class MP {
             $this->debug_mode_log(
                 'get_payment_response_by_sites',
                 __FUNCTION__,
-                __( 'Response from cache', WC_MERCADOPAGO_TEXT_DOMAIN )
+                __( 'Response from cache', LKN_WC_MERCADOPAGO_TEXT_DOMAIN )
             );
 
             return $cache;
@@ -964,7 +964,7 @@ class MP {
                 $this->debug_mode_log(
                     'get_payment_response_by_sites',
                     __FUNCTION__,
-                    __( 'Response from API', WC_MERCADOPAGO_TEXT_DOMAIN )
+                    __( 'Response from API', LKN_WC_MERCADOPAGO_TEXT_DOMAIN )
                 );
 
                 return $payments['response'];

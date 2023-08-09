@@ -31,9 +31,9 @@ class WC_WooMercadoPago_Basic_Gateway extends WC_WooMercadoPago_Payment_Abstract
      */
     public function __construct() {
         $this->id = self::ID;
-        $this->title = __('Checkout Pro', WC_MERCADOPAGO_TEXT_DOMAIN);
-        $this->title_gateway = __('Checkout Pro', WC_MERCADOPAGO_TEXT_DOMAIN);
-        $this->description = __('Debit, Credit and invoice in Mercado Pago environment', WC_MERCADOPAGO_TEXT_DOMAIN);
+        $this->title = __('Checkout Pro', LKN_WC_MERCADOPAGO_TEXT_DOMAIN);
+        $this->title_gateway = __('Checkout Pro', LKN_WC_MERCADOPAGO_TEXT_DOMAIN);
+        $this->description = __('Debit, Credit and invoice in Mercado Pago environment', LKN_WC_MERCADOPAGO_TEXT_DOMAIN);
         $this->mp_options = $this->get_mp_options();
 
         if ( ! $this->validate_section() ) {
@@ -41,9 +41,9 @@ class WC_WooMercadoPago_Basic_Gateway extends WC_WooMercadoPago_Payment_Abstract
         }
 
         $this->form_fields = array();
-        $this->method_title = __( 'Mercado Pago - Checkout Pro', WC_MERCADOPAGO_TEXT_DOMAIN );
+        $this->method_title = __( 'Mercado Pago - Checkout Pro', LKN_WC_MERCADOPAGO_TEXT_DOMAIN );
         $this->method = $this->get_option_mp( 'method', 'redirect' );
-        $this->title = $this->get_option_mp( 'title', __( 'Your saved cards or money in Mercado Pago', WC_MERCADOPAGO_TEXT_DOMAIN ) );
+        $this->title = $this->get_option_mp( 'title', __( 'Your saved cards or money in Mercado Pago', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ) );
         $this->method_description = $this->description;
         $this->auto_return = $this->get_option('auto_return', 'yes');
         $this->success_url = $this->get_option('success_url', '');
@@ -154,22 +154,22 @@ class WC_WooMercadoPago_Basic_Gateway extends WC_WooMercadoPago_Payment_Abstract
      */
     public function field_installments() {
         return array(
-            'title' => __('Maximum number of installments', WC_MERCADOPAGO_TEXT_DOMAIN),
+            'title' => __('Maximum number of installments', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
             'type' => 'select',
-            'description' => __('What is the maximum quota with which a customer can buy?', WC_MERCADOPAGO_TEXT_DOMAIN),
+            'description' => __('What is the maximum quota with which a customer can buy?', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
             'default' => '24',
             'options' => array(
-                '1' => __('1 installment', WC_MERCADOPAGO_TEXT_DOMAIN),
-                '2' => __('2 installments', WC_MERCADOPAGO_TEXT_DOMAIN),
-                '3' => __('3 installments', WC_MERCADOPAGO_TEXT_DOMAIN),
-                '4' => __('4 installments', WC_MERCADOPAGO_TEXT_DOMAIN),
-                '5' => __('5 installments', WC_MERCADOPAGO_TEXT_DOMAIN),
-                '6' => __('6 installments', WC_MERCADOPAGO_TEXT_DOMAIN),
-                '10' => __('10 installments', WC_MERCADOPAGO_TEXT_DOMAIN),
-                '12' => __('12 installments', WC_MERCADOPAGO_TEXT_DOMAIN),
-                '15' => __('15 installments', WC_MERCADOPAGO_TEXT_DOMAIN),
-                '18' => __('18 installments', WC_MERCADOPAGO_TEXT_DOMAIN),
-                '24' => __('24 installments', WC_MERCADOPAGO_TEXT_DOMAIN),
+                '1' => __('1 installment', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
+                '2' => __('2 installments', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
+                '3' => __('3 installments', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
+                '4' => __('4 installments', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
+                '5' => __('5 installments', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
+                '6' => __('6 installments', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
+                '10' => __('10 installments', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
+                '12' => __('12 installments', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
+                '15' => __('15 installments', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
+                '18' => __('18 installments', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
+                '24' => __('24 installments', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
             ),
         );
     }
@@ -246,13 +246,13 @@ class WC_WooMercadoPago_Basic_Gateway extends WC_WooMercadoPago_Payment_Abstract
      */
     public function field_enabled() {
         return array(
-            'title' => __('Enable the checkout', WC_MERCADOPAGO_TEXT_DOMAIN),
-            'subtitle' => __('By disabling it, you will disable all payments from Mercado Pago Checkout at Mercado Pago website by redirect.', WC_MERCADOPAGO_TEXT_DOMAIN),
+            'title' => __('Enable the checkout', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
+            'subtitle' => __('By disabling it, you will disable all payments from Mercado Pago Checkout at Mercado Pago website by redirect.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
             'type' => 'mp_toggle_switch',
             'default' => 'no',
             'descriptions' => array(
-                'enabled' => __('The checkout is <b>enabled</b>.', WC_MERCADOPAGO_TEXT_DOMAIN),
-                'disabled' => __('The checkout is <b>disabled</b>.', WC_MERCADOPAGO_TEXT_DOMAIN),
+                'enabled' => __('The checkout is <b>enabled</b>.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
+                'disabled' => __('The checkout is <b>disabled</b>.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
             ),
         );
     }
@@ -267,11 +267,11 @@ class WC_WooMercadoPago_Basic_Gateway extends WC_WooMercadoPago_Payment_Abstract
             'title' => sprintf(
                 '<div class="row">
 								<div class="mp-col-md-12 mp_subtitle_header">
-								' . __('Checkout Pro', WC_MERCADOPAGO_TEXT_DOMAIN) . '
+								' . __('Checkout Pro', LKN_WC_MERCADOPAGO_TEXT_DOMAIN) . '
 								 </div>
 							<div class="mp-col-md-12">
 								<p class="mp-text-checkout-body mp-mb-0">
-									' . __('With Checkout Pro you sell with all the safety inside Mercado Pago environment.', WC_MERCADOPAGO_TEXT_DOMAIN) . '
+									' . __('With Checkout Pro you sell with all the safety inside Mercado Pago environment.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN) . '
 								</p>
 							</div>
 						</div>'
@@ -288,7 +288,7 @@ class WC_WooMercadoPago_Basic_Gateway extends WC_WooMercadoPago_Payment_Abstract
      */
     public function field_checkout_payments_advanced_title() {
         return array(
-            'title' => __('Advanced settings', WC_MERCADOPAGO_TEXT_DOMAIN),
+            'title' => __('Advanced settings', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
             'type' => 'title',
             'class' => 'mp_subtitle_bd',
         );
@@ -301,13 +301,13 @@ class WC_WooMercadoPago_Basic_Gateway extends WC_WooMercadoPago_Payment_Abstract
      */
     public function field_method() {
         return array(
-            'title' => __('Payment experience', WC_MERCADOPAGO_TEXT_DOMAIN),
+            'title' => __('Payment experience', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
             'type' => 'select',
-            'description' => __('Define what payment experience your customers will have, whether inside or outside your store.', WC_MERCADOPAGO_TEXT_DOMAIN),
+            'description' => __('Define what payment experience your customers will have, whether inside or outside your store.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
             'default' => ( 'iframe' === $this->method ) ? 'redirect' : $this->method,
             'options' => array(
-                'redirect' => __('Redirect', WC_MERCADOPAGO_TEXT_DOMAIN),
-                'modal' => __('Modal', WC_MERCADOPAGO_TEXT_DOMAIN),
+                'redirect' => __('Redirect', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
+                'modal' => __('Modal', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
             ),
         );
     }
@@ -321,12 +321,12 @@ class WC_WooMercadoPago_Basic_Gateway extends WC_WooMercadoPago_Payment_Abstract
         // Validate back URL.
         if ( ! empty($this->success_url) && filter_var($this->success_url, \FILTER_VALIDATE_URL) === false ) {
             $success_back_url_message = '<img width="14" height="14" src="' . plugins_url('assets/images/warning.png', plugin_dir_path(__FILE__)) . '"> ' .
-            	__('This seems to be an invalid URL.', WC_MERCADOPAGO_TEXT_DOMAIN) . ' ';
+            	__('This seems to be an invalid URL.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN) . ' ';
         } else {
-            $success_back_url_message = __('Choose the URL that we will show your customers when they finish their purchase.', WC_MERCADOPAGO_TEXT_DOMAIN);
+            $success_back_url_message = __('Choose the URL that we will show your customers when they finish their purchase.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN);
         }
         return array(
-            'title' => __('Success URL', WC_MERCADOPAGO_TEXT_DOMAIN),
+            'title' => __('Success URL', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
             'type' => 'text',
             'description' => $success_back_url_message,
             'default' => '',
@@ -341,12 +341,12 @@ class WC_WooMercadoPago_Basic_Gateway extends WC_WooMercadoPago_Payment_Abstract
     public function field_failure_url() {
         if ( ! empty($this->failure_url) && filter_var($this->failure_url, \FILTER_VALIDATE_URL) === false ) {
             $fail_back_url_message = '<img width="14" height="14" src="' . plugins_url('assets/images/warning.png', plugin_dir_path(__FILE__)) . '"> ' .
-            	__('This seems to be an invalid URL.', WC_MERCADOPAGO_TEXT_DOMAIN) . ' ';
+            	__('This seems to be an invalid URL.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN) . ' ';
         } else {
-            $fail_back_url_message = __('Choose the URL that we will show to your customers when we refuse their purchase. Make sure it includes a message appropriate to the situation and give them useful information so they can solve it.', WC_MERCADOPAGO_TEXT_DOMAIN);
+            $fail_back_url_message = __('Choose the URL that we will show to your customers when we refuse their purchase. Make sure it includes a message appropriate to the situation and give them useful information so they can solve it.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN);
         }
         return array(
-            'title' => __('Payment URL rejected', WC_MERCADOPAGO_TEXT_DOMAIN),
+            'title' => __('Payment URL rejected', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
             'type' => 'text',
             'description' => $fail_back_url_message,
             'default' => '',
@@ -362,12 +362,12 @@ class WC_WooMercadoPago_Basic_Gateway extends WC_WooMercadoPago_Payment_Abstract
         // Validate back URL.
         if ( ! empty($this->pending_url) && filter_var($this->pending_url, \FILTER_VALIDATE_URL) === false ) {
             $pending_back_url_message = '<img width="14" height="14" src="' . plugins_url('assets/images/warning.png', plugin_dir_path(__FILE__)) . '"> ' .
-            	__('This seems to be an invalid URL.', WC_MERCADOPAGO_TEXT_DOMAIN) . ' ';
+            	__('This seems to be an invalid URL.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN) . ' ';
         } else {
-            $pending_back_url_message = __('Choose the URL that we will show to your customers when they have a payment pending approval.', WC_MERCADOPAGO_TEXT_DOMAIN);
+            $pending_back_url_message = __('Choose the URL that we will show to your customers when they have a payment pending approval.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN);
         }
         return array(
-            'title' => __('Payment URL pending', WC_MERCADOPAGO_TEXT_DOMAIN),
+            'title' => __('Payment URL pending', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
             'type' => 'text',
             'description' => $pending_back_url_message,
             'default' => '',
@@ -381,20 +381,20 @@ class WC_WooMercadoPago_Basic_Gateway extends WC_WooMercadoPago_Payment_Abstract
      */
     public function field_ex_payments() {
         $payment_list = array(
-            'description' => __('Enable the payment methods available to your clients.', WC_MERCADOPAGO_TEXT_DOMAIN),
-            'title' => __('Choose the payment methods you accept in your store', WC_MERCADOPAGO_TEXT_DOMAIN),
+            'description' => __('Enable the payment methods available to your clients.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
+            'title' => __('Choose the payment methods you accept in your store', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
             'type' => 'mp_checkbox_list',
             'payment_method_types' => array(
                 'credit_card' => array(
-                    'label' => __('Credit Cards', WC_MERCADOPAGO_TEXT_DOMAIN),
+                    'label' => __('Credit Cards', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
                     'list' => array(),
                 ),
                 'debit_card' => array(
-                    'label' => __('Debit Cards', WC_MERCADOPAGO_TEXT_DOMAIN),
+                    'label' => __('Debit Cards', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
                     'list' => array(),
                 ),
                 'other' => array(
-                    'label' => __('Other Payment Methods', WC_MERCADOPAGO_TEXT_DOMAIN),
+                    'label' => __('Other Payment Methods', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
                     'list' => array(),
                 ),
             ),
@@ -444,13 +444,13 @@ class WC_WooMercadoPago_Basic_Gateway extends WC_WooMercadoPago_Payment_Abstract
      */
     public function field_auto_return() {
         return array(
-            'title' => __('Return to the store', WC_MERCADOPAGO_TEXT_DOMAIN),
-            'subtitle' => __('Do you want your customer to automatically return to the store after payment?', WC_MERCADOPAGO_TEXT_DOMAIN),
+            'title' => __('Return to the store', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
+            'subtitle' => __('Do you want your customer to automatically return to the store after payment?', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
             'type' => 'mp_toggle_switch',
             'default' => 'yes',
             'descriptions' => array(
-                'enabled' => __('The buyer <b>will be automatically redirected to the store</b>.', WC_MERCADOPAGO_TEXT_DOMAIN),
-                'disabled' => __('The buyer <b>will not be automatically redirected to the store</b>.', WC_MERCADOPAGO_TEXT_DOMAIN),
+                'enabled' => __('The buyer <b>will be automatically redirected to the store</b>.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
+                'disabled' => __('The buyer <b>will not be automatically redirected to the store</b>.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
             ),
         );
     }
@@ -475,7 +475,7 @@ class WC_WooMercadoPago_Basic_Gateway extends WC_WooMercadoPago_Payment_Abstract
         $site = strtoupper( $this->mp_options->get_site_id() );
 
         $payment_methods = $this->get_payment_methods();
-        $payment_methods_title = count($payment_methods) !== 0 ? __('Available payment methods', WC_MERCADOPAGO_TEXT_DOMAIN) : '';
+        $payment_methods_title = count($payment_methods) !== 0 ? __('Available payment methods', LKN_WC_MERCADOPAGO_TEXT_DOMAIN) : '';
 
         $checkout_benefits_items = $this->get_benefits( $site );
 
@@ -510,13 +510,13 @@ class WC_WooMercadoPago_Basic_Gateway extends WC_WooMercadoPago_Payment_Abstract
 
         if ( ! empty($this->gateway_discount) ) {
             $discount = ( $amount - $shipping_taxes ) * $this->gateway_discount / 100;
-            $order->update_meta_data('Mercado Pago: discount', __('discount of', WC_MERCADOPAGO_TEXT_DOMAIN) . ' ' . $this->gateway_discount . '% / ' . __('discount of', WC_MERCADOPAGO_TEXT_DOMAIN) . ' = ' . $discount);
+            $order->update_meta_data('Mercado Pago: discount', __('discount of', LKN_WC_MERCADOPAGO_TEXT_DOMAIN) . ' ' . $this->gateway_discount . '% / ' . __('discount of', LKN_WC_MERCADOPAGO_TEXT_DOMAIN) . ' = ' . $discount);
             $order->set_total($amount - $discount);
         }
 
         if ( ! empty($this->commission) ) {
             $comission = $amount * ( $this->commission / 100 );
-            $order->update_meta_data('Mercado Pago: comission', __('fee of', WC_MERCADOPAGO_TEXT_DOMAIN) . ' ' . $this->commission . '% / ' . __('fee of', WC_MERCADOPAGO_TEXT_DOMAIN) . ' = ' . $comission);
+            $order->update_meta_data('Mercado Pago: comission', __('fee of', LKN_WC_MERCADOPAGO_TEXT_DOMAIN) . ' ' . $this->commission . '% / ' . __('fee of', LKN_WC_MERCADOPAGO_TEXT_DOMAIN) . ' = ' . $comission);
         }
         $order->save();
 
@@ -617,24 +617,24 @@ class WC_WooMercadoPago_Basic_Gateway extends WC_WooMercadoPago_Payment_Abstract
         $benefits = array(
             'MLB' => array(
                 array(
-                    'title' => __('Easy login', WC_MERCADOPAGO_TEXT_DOMAIN),
-                    'subtitle' => __('Log in with the same email and password you use in Mercado Libre.', WC_MERCADOPAGO_TEXT_DOMAIN),
+                    'title' => __('Easy login', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
+                    'subtitle' => __('Log in with the same email and password you use in Mercado Libre.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
                     'image' => array(
                         'src' => plugins_url( '../assets/images/blue-phone.png', plugin_dir_path(__FILE__) ),
                         'alt' => 'Blue phone image'
                     )
                 ),
                 array(
-                    'title' => __('Quick payments', WC_MERCADOPAGO_TEXT_DOMAIN),
-                    'subtitle' => __('Use your saved cards, Pix or available balance.', WC_MERCADOPAGO_TEXT_DOMAIN),
+                    'title' => __('Quick payments', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
+                    'subtitle' => __('Use your saved cards, Pix or available balance.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
                     'image' => array(
                         'src' => plugins_url( '../assets/images/blue-wallet.png', plugin_dir_path(__FILE__) ),
                         'alt' => 'Blue wallet image'
                     )
                 ),
                 array(
-                    'title' => __('Protected purchases', WC_MERCADOPAGO_TEXT_DOMAIN),
-                    'subtitle' => __('Get your money back in case you don\'t receive your product.', WC_MERCADOPAGO_TEXT_DOMAIN),
+                    'title' => __('Protected purchases', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
+                    'subtitle' => __('Get your money back in case you don\'t receive your product.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
                     'image' => array(
                         'src' => plugins_url( '../assets/images/blue-protection.png', plugin_dir_path(__FILE__) ),
                         'alt' => 'Blue protection image'
@@ -643,24 +643,24 @@ class WC_WooMercadoPago_Basic_Gateway extends WC_WooMercadoPago_Payment_Abstract
             ),
             'MLM' => array(
                 array(
-                    'title' => __('Easy login', WC_MERCADOPAGO_TEXT_DOMAIN),
-                    'subtitle' => __('Log in with the same email and password you use in Mercado Libre.', WC_MERCADOPAGO_TEXT_DOMAIN),
+                    'title' => __('Easy login', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
+                    'subtitle' => __('Log in with the same email and password you use in Mercado Libre.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
                     'image' => array(
                         'src' => plugins_url( '../assets/images/blue-phone.png', plugin_dir_path(__FILE__) ),
                         'alt' => 'Blue phone image'
                     )
                 ),
                 array(
-                    'title' => __('Quick payments', WC_MERCADOPAGO_TEXT_DOMAIN),
-                    'subtitle' => __('Use your available Mercado Pago Wallet balance or saved cards.', WC_MERCADOPAGO_TEXT_DOMAIN),
+                    'title' => __('Quick payments', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
+                    'subtitle' => __('Use your available Mercado Pago Wallet balance or saved cards.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
                     'image' => array(
                         'src' => plugins_url( '../assets/images/blue-wallet.png', plugin_dir_path(__FILE__) ),
                         'alt' => 'Blue wallet image'
                     )
                 ),
                 array(
-                    'title' => __('Protected purchases', WC_MERCADOPAGO_TEXT_DOMAIN),
-                    'subtitle' => __('Get your money back in case you don\'t receive your product.', WC_MERCADOPAGO_TEXT_DOMAIN),
+                    'title' => __('Protected purchases', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
+                    'subtitle' => __('Get your money back in case you don\'t receive your product.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
                     'image' => array(
                         'src' => plugins_url( '../assets/images/blue-protection.png', plugin_dir_path(__FILE__) ),
                         'alt' => 'Blue protection image'
@@ -669,24 +669,24 @@ class WC_WooMercadoPago_Basic_Gateway extends WC_WooMercadoPago_Payment_Abstract
             ),
             'MLA' => array(
                 array(
-                    'title' => __('Quick payments', WC_MERCADOPAGO_TEXT_DOMAIN),
-                    'subtitle' => __('Use your available money or saved cards.', WC_MERCADOPAGO_TEXT_DOMAIN),
+                    'title' => __('Quick payments', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
+                    'subtitle' => __('Use your available money or saved cards.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
                     'image' => array(
                         'src' => plugins_url( '../assets/images/blue-wallet.png', plugin_dir_path(__FILE__) ),
                         'alt' => 'Blue wallet image'
                     )
                 ),
                 array(
-                    'title' => __('Installments option', WC_MERCADOPAGO_TEXT_DOMAIN),
-                    'subtitle' => __('Pay with or without a credit card.', WC_MERCADOPAGO_TEXT_DOMAIN),
+                    'title' => __('Installments option', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
+                    'subtitle' => __('Pay with or without a credit card.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
                     'image' => array(
                         'src' => plugins_url( '../assets/images/blue-phone-installments.png', plugin_dir_path(__FILE__) ),
                         'alt' => 'Blue phone installments image'
                     )
                 ),
                 array(
-                    'title' => __('Reliable purchases', WC_MERCADOPAGO_TEXT_DOMAIN),
-                    'subtitle' => __('Get help if you have a problem with your purchase.', WC_MERCADOPAGO_TEXT_DOMAIN),
+                    'title' => __('Reliable purchases', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
+                    'subtitle' => __('Get help if you have a problem with your purchase.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
                     'image' => array(
                         'src' => plugins_url( '../assets/images/blue-protection.png', plugin_dir_path(__FILE__) ),
                         'alt' => 'Blue protection image'
@@ -695,24 +695,24 @@ class WC_WooMercadoPago_Basic_Gateway extends WC_WooMercadoPago_Payment_Abstract
             ),
             'ROLA' => array(
                 array(
-                    'title' => __('Easy login', WC_MERCADOPAGO_TEXT_DOMAIN),
-                    'subtitle' => __('Log in with the same email and password you use in Mercado Libre.', WC_MERCADOPAGO_TEXT_DOMAIN),
+                    'title' => __('Easy login', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
+                    'subtitle' => __('Log in with the same email and password you use in Mercado Libre.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
                     'image' => array(
                         'src' => plugins_url( '../assets/images/blue-phone.png', plugin_dir_path(__FILE__) ),
                         'alt' => 'Blue phone image'
                     )
                 ),
                 array(
-                    'title' => __('Quick payments', WC_MERCADOPAGO_TEXT_DOMAIN),
-                    'subtitle' => __('Use your available money or saved cards.', WC_MERCADOPAGO_TEXT_DOMAIN),
+                    'title' => __('Quick payments', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
+                    'subtitle' => __('Use your available money or saved cards.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
                     'image' => array(
                         'src' => plugins_url( '../assets/images/blue-wallet.png', plugin_dir_path(__FILE__) ),
                         'alt' => 'Blue wallet image'
                     )
                 ),
                 array(
-                    'title' => __('Installments option', WC_MERCADOPAGO_TEXT_DOMAIN),
-                    'subtitle' => __('Interest-free installments with selected banks.', WC_MERCADOPAGO_TEXT_DOMAIN),
+                    'title' => __('Installments option', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
+                    'subtitle' => __('Interest-free installments with selected banks.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
                     'image' => array(
                         'src' => plugins_url( '../assets/images/blue-phone-installments.png', plugin_dir_path(__FILE__) ),
                         'alt' => 'Blue phone installments image'

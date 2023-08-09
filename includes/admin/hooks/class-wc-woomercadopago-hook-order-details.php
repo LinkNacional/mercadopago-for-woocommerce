@@ -104,224 +104,224 @@ class WC_WooMercadoPago_Hook_Order_Details {
     public function get_alert_description( $payment_status_detail, $is_credit_card ) {
         $all_status_detail = array(
             'accredited' => array(
-                'alert_title' => __( 'Payment made', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'description' => __( 'Payment made by the buyer and already credited in the account.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'alert_title' => __( 'Payment made', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'description' => __( 'Payment made by the buyer and already credited in the account.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
             'settled' => array(
-                'alert_title' => __( 'Call resolved', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'description' => __( 'Please contact Mercado Pago for further details.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'alert_title' => __( 'Call resolved', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'description' => __( 'Please contact Mercado Pago for further details.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
             'reimbursed' => array(
-                'alert_title' => __( 'Payment refunded', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'description' => __( 'Your refund request has been made. Please contact Mercado Pago for further details.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'alert_title' => __( 'Payment refunded', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'description' => __( 'Your refund request has been made. Please contact Mercado Pago for further details.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
             'refunded' => array(
-                'alert_title' => __( 'Payment returned', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'description' => __( 'The payment has been returned to the client.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'alert_title' => __( 'Payment returned', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'description' => __( 'The payment has been returned to the client.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
             'partially_refunded' => array(
-                'alert_title' => __( 'Payment returned', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'description' => __( 'The payment has been partially returned to the client.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'alert_title' => __( 'Payment returned', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'description' => __( 'The payment has been partially returned to the client.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
             'by_collector' => array(
-                'alert_title' => __( 'Payment canceled', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'description' => __( 'The payment has been successfully canceled.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'alert_title' => __( 'Payment canceled', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'description' => __( 'The payment has been successfully canceled.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
             'by_payer' => array(
-                'alert_title' => __( 'Purchase canceled', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'description' => __( 'The payment has been canceled by the customer.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'alert_title' => __( 'Purchase canceled', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'description' => __( 'The payment has been canceled by the customer.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
             'pending' => array(
-                'alert_title' => __( 'Pending payment', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'description' => __( 'Awaiting payment from the buyer.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'alert_title' => __( 'Pending payment', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'description' => __( 'Awaiting payment from the buyer.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
             'pending_waiting_payment' => array(
-                'alert_title' => __( 'Pending payment', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'description' => __( 'Awaiting payment from the buyer.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'alert_title' => __( 'Pending payment', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'description' => __( 'Awaiting payment from the buyer.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
             'pending_waiting_for_remedy' => array(
-                'alert_title' => __( 'Pending payment', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'description' => __( 'Awaiting payment from the buyer.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'alert_title' => __( 'Pending payment', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'description' => __( 'Awaiting payment from the buyer.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
             'pending_waiting_transfer' => array(
-                'alert_title' => __( 'Pending payment', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'description' => __( 'Awaiting payment from the buyer.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'alert_title' => __( 'Pending payment', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'description' => __( 'Awaiting payment from the buyer.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
             'pending_review_manual' => array(
-                'alert_title' => __( 'Pending payment', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'description' => __( 'We are veryfing the payment. We will notify you by email in up to 6 hours if everything is fine so that you can deliver the product or provide the service.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'alert_title' => __( 'Pending payment', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'description' => __( 'We are veryfing the payment. We will notify you by email in up to 6 hours if everything is fine so that you can deliver the product or provide the service.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
             'waiting_bank_confirmation' => array(
-                'alert_title' => __( 'Declined payment', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'description' => __( 'The card-issuing bank declined the payment. Please ask your client to use another card or to get in touch with the bank.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'alert_title' => __( 'Declined payment', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'description' => __( 'The card-issuing bank declined the payment. Please ask your client to use another card or to get in touch with the bank.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
             'pending_capture' => array(
-                'alert_title' => __( 'Payment authorized. Awaiting capture.', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'description' => __( "The payment has been authorized on the client's card. Please capture the payment.", WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'alert_title' => __( 'Payment authorized. Awaiting capture.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'description' => __( "The payment has been authorized on the client's card. Please capture the payment.", LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
             'in_process' => array(
-                'alert_title' => __( 'Payment in process', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'description' => __( 'Please wait or contact Mercado Pago for further details', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'alert_title' => __( 'Payment in process', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'description' => __( 'Please wait or contact Mercado Pago for further details', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
             'pending_contingency' => array(
-                'alert_title' => __( 'Pending payment', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'description' => __( 'The bank is reviewing the payment. As soon as we have their confirmation, we will notify you via email so that you can deliver the product or provide the service.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'alert_title' => __( 'Pending payment', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'description' => __( 'The bank is reviewing the payment. As soon as we have their confirmation, we will notify you via email so that you can deliver the product or provide the service.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
             'pending_card_validation' => array(
-                'alert_title' => __( 'Pending payment', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'description' => __( 'Awaiting payment information validation.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'alert_title' => __( 'Pending payment', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'description' => __( 'Awaiting payment information validation.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
             'pending_online_validation' => array(
-                'alert_title' => __( 'Pending payment', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'description' => __( 'Awaiting payment information validation.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'alert_title' => __( 'Pending payment', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'description' => __( 'Awaiting payment information validation.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
             'pending_additional_info' => array(
-                'alert_title' => __( 'Pending payment', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'description' => __( 'Awaiting payment information validation.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'alert_title' => __( 'Pending payment', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'description' => __( 'Awaiting payment information validation.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
             'offline_process' => array(
-                'alert_title' => __( 'Pending payment', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'description' => __( 'Please wait or contact Mercado Pago for further details', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'alert_title' => __( 'Pending payment', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'description' => __( 'Please wait or contact Mercado Pago for further details', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
             'pending_challenge' => array(
-                'alert_title' => __( 'Pending payment', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'description' => __( 'Waiting for the buyer.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'alert_title' => __( 'Pending payment', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'description' => __( 'Waiting for the buyer.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
             'pending_provider_response' => array(
-                'alert_title' => __( 'Pending payment', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'description' => __( 'Waiting for the card issuer.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'alert_title' => __( 'Pending payment', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'description' => __( 'Waiting for the card issuer.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
             'bank_rejected' => array(
-                'alert_title' => __( 'Declined payment', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'description' => __( 'The payment could not be processed. Please ask your client to use another card or to get in touch with the bank.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'alert_title' => __( 'Declined payment', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'description' => __( 'The payment could not be processed. Please ask your client to use another card or to get in touch with the bank.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
             'rejected_by_bank' => array(
-                'alert_title' => __( 'Declined payment', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'description' => __( 'The card-issuing bank declined the payment. Please ask your client to use another card or to get in touch with the bank.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'alert_title' => __( 'Declined payment', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'description' => __( 'The card-issuing bank declined the payment. Please ask your client to use another card or to get in touch with the bank.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
             'rejected_insufficient_data' => array(
-                'alert_title' => __( 'Declined payment', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'description' => __( 'The card-issuing bank declined the payment. Please ask your client to use another card or to get in touch with the bank.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'alert_title' => __( 'Declined payment', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'description' => __( 'The card-issuing bank declined the payment. Please ask your client to use another card or to get in touch with the bank.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
             'bank_error' => array(
-                'alert_title' => __( 'Declined payment', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'description' => __( 'The card-issuing bank declined the payment. Please ask your client to use another card or to get in touch with the bank.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'alert_title' => __( 'Declined payment', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'description' => __( 'The card-issuing bank declined the payment. Please ask your client to use another card or to get in touch with the bank.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
             'by_admin' => array(
-                'alert_title' => __( 'Mercado Pago did not process the payment', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'description' => __( 'Please contact Mercado Pago for further details.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'alert_title' => __( 'Mercado Pago did not process the payment', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'description' => __( 'Please contact Mercado Pago for further details.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
             'expired' => array(
-                'alert_title' => __( 'Expired payment deadline', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'description' => __( 'The client did not pay within the time limit.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'alert_title' => __( 'Expired payment deadline', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'description' => __( 'The client did not pay within the time limit.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
             'cc_rejected_bad_filled_card_number' => array(
-                'alert_title' => __( 'Declined payment', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'description' => __( 'The card-issuing bank declined the payment. Please ask your client to use another card or to get in touch with the bank.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'alert_title' => __( 'Declined payment', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'description' => __( 'The card-issuing bank declined the payment. Please ask your client to use another card or to get in touch with the bank.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
             'cc_rejected_bad_filled_security_code' => array(
-                'alert_title' => __( 'Declined payment', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'description' => __( 'The CVV is invalid. Please ask your client to review the details or use another card.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'alert_title' => __( 'Declined payment', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'description' => __( 'The CVV is invalid. Please ask your client to review the details or use another card.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
             'cc_rejected_bad_filled_date' => array(
-                'alert_title' => __( 'Declined payment', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'description' => __( 'The card is expired. Please ask your client to use another card or to contact the bank.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'alert_title' => __( 'Declined payment', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'description' => __( 'The card is expired. Please ask your client to use another card or to contact the bank.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
             'cc_rejected_high_risk' => array(
-                'alert_title' => __( 'Declined payment', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'description' => __( 'This payment was declined because it did not pass Mercado Pago security controls. Please ask your client to use another card.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'alert_title' => __( 'Declined payment', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'description' => __( 'This payment was declined because it did not pass Mercado Pago security controls. Please ask your client to use another card.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
             'cc_rejected_fraud' => array(
-                'alert_title' => __( 'Declined payment', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'description' => __( 'The buyer is suspended in our platform. Your client must contact us to check what happened.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'alert_title' => __( 'Declined payment', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'description' => __( 'The buyer is suspended in our platform. Your client must contact us to check what happened.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
             'cc_rejected_blacklist' => array(
-                'alert_title' => __( 'Declined payment', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'description' => __( 'The card-issuing bank declined the payment. Please ask your client to use another card or to get in touch with the bank.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'alert_title' => __( 'Declined payment', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'description' => __( 'The card-issuing bank declined the payment. Please ask your client to use another card or to get in touch with the bank.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
             'cc_rejected_insufficient_amount' => array(
-                'alert_title' => __( 'Declined payment', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'alert_title' => __( 'Declined payment', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
                 'description' => $is_credit_card
-                	? __( 'The card does not have enough limit. Please ask your client to use another card or to get in touch with the bank.', WC_MERCADOPAGO_TEXT_DOMAIN )
-                	: __( 'The card does not have sufficient balance. Please ask your client to use another card or to get in touch with the bank.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                	? __( 'The card does not have enough limit. Please ask your client to use another card or to get in touch with the bank.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN )
+                	: __( 'The card does not have sufficient balance. Please ask your client to use another card or to get in touch with the bank.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
             'cc_rejected_other_reason' => array(
-                'alert_title' => __( 'Declined payment', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'description' => __( 'The card-issuing bank declined the payment. Please ask your client to use another card or to get in touch with the bank.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'alert_title' => __( 'Declined payment', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'description' => __( 'The card-issuing bank declined the payment. Please ask your client to use another card or to get in touch with the bank.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
             'cc_rejected_max_attempts' => array(
-                'alert_title' => __( 'Declined payment', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'description' => __( 'The CVV was entered incorrectly several times. Please ask your client to use another card or to get in touch with the bank.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'alert_title' => __( 'Declined payment', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'description' => __( 'The CVV was entered incorrectly several times. Please ask your client to use another card or to get in touch with the bank.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
             'cc_rejected_invalid_installments' => array(
-                'alert_title' => __( 'Declined payment', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'description' => __( 'The card does not allow the number of installments entered. Please ask your client to choose another installment plan or to use another card.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'alert_title' => __( 'Declined payment', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'description' => __( 'The card does not allow the number of installments entered. Please ask your client to choose another installment plan or to use another card.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
             'cc_rejected_call_for_authorize' => array(
-                'alert_title' => __( 'Declined payment', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'description' => __( 'The card-issuing bank declined the payment. Please instruct your client to ask the bank to authotize it or to use another card.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'alert_title' => __( 'Declined payment', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'description' => __( 'The card-issuing bank declined the payment. Please instruct your client to ask the bank to authotize it or to use another card.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
             'cc_rejected_duplicated_payment' => array(
-                'alert_title' => __( 'Declined payment', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'description' => __( 'From Mercado Pago we have detected that this payment has already been made before. If that is not the case, your client may try to pay again.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'alert_title' => __( 'Declined payment', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'description' => __( 'From Mercado Pago we have detected that this payment has already been made before. If that is not the case, your client may try to pay again.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
             'cc_rejected_card_disabled' => array(
-                'alert_title' => __( 'Declined payment', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'description' => __( 'The card is not active yet. Please ask your client to use another card or to get in touch with the bank to activate it.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'alert_title' => __( 'Declined payment', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'description' => __( 'The card is not active yet. Please ask your client to use another card or to get in touch with the bank to activate it.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
             'payer_unavailable' => array(
-                'alert_title' => __( 'Declined payment', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'description' => __( 'The buyer is suspended in our platform. Your client must contact us to check what happened.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'alert_title' => __( 'Declined payment', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'description' => __( 'The buyer is suspended in our platform. Your client must contact us to check what happened.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
             'rejected_high_risk' => array(
-                'alert_title' => __( 'Declined payment', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'description' => __( 'This payment was declined because it did not pass Mercado Pago security controls. Please ask your client to use another card.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'alert_title' => __( 'Declined payment', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'description' => __( 'This payment was declined because it did not pass Mercado Pago security controls. Please ask your client to use another card.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
             'rejected_by_regulations' => array(
-                'alert_title' => __( 'Declined payment', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'description' => __( 'This payment was declined because it did not pass Mercado Pago security controls. Please ask your client to use another card.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'alert_title' => __( 'Declined payment', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'description' => __( 'This payment was declined because it did not pass Mercado Pago security controls. Please ask your client to use another card.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
             'rejected_cap_exceeded' => array(
-                'alert_title' => __( 'Declined payment', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'description' => __( 'The amount exceeded the card limit. Please ask your client to use another card or to get in touch with the bank.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'alert_title' => __( 'Declined payment', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'description' => __( 'The amount exceeded the card limit. Please ask your client to use another card or to get in touch with the bank.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
             'cc_rejected_3ds_challenge' => array(
-                'alert_title' => __( 'Declined payment', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'description' => __( 'Please ask your client to use another card or to get in touch with the card issuer.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'alert_title' => __( 'Declined payment', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'description' => __( 'Please ask your client to use another card or to get in touch with the card issuer.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
             'rejected_other_reason' => array(
-                'alert_title' => __( 'Declined payment', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'description' => __( 'Please ask your client to use another card or to get in touch with the card issuer.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'alert_title' => __( 'Declined payment', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'description' => __( 'Please ask your client to use another card or to get in touch with the card issuer.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
             'authorization_revoked' => array(
-                'alert_title' => __( 'Declined payment', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'description' => __( 'Please ask your client to use another card or to get in touch with the card issuer.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'alert_title' => __( 'Declined payment', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'description' => __( 'Please ask your client to use another card or to get in touch with the card issuer.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
             'cc_amount_rate_limit_exceeded' => array(
-                'alert_title' => __( 'Pending payment', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'description' => __( "The amount exceeded the card's limit. Please ask your client to use another card or to get in touch with the bank.", WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'alert_title' => __( 'Pending payment', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'description' => __( "The amount exceeded the card's limit. Please ask your client to use another card or to get in touch with the bank.", LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
             'cc_rejected_expired_operation' => array(
-                'alert_title' => __( 'Expired payment deadline', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'description' => __( 'The client did not pay within the time limit.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'alert_title' => __( 'Expired payment deadline', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'description' => __( 'The client did not pay within the time limit.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
             'cc_rejected_bad_filled_other' => array(
-                'alert_title' => __( 'Declined payment', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'alert_title' => __( 'Declined payment', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
                 'description' => $is_credit_card
-                	? __( 'The credit function is not enabled for the card. Please tell your client that it is possible to pay with debit or to use another one.', WC_MERCADOPAGO_TEXT_DOMAIN )
-                	: __( 'The debit function is not enabled for the card. Please tell your client that it is possible to pay with credit or to use another one.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                	? __( 'The credit function is not enabled for the card. Please tell your client that it is possible to pay with debit or to use another one.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN )
+                	: __( 'The debit function is not enabled for the card. Please tell your client that it is possible to pay with credit or to use another one.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
             'rejected_call_for_authorize' => array(
-                'alert_title' => __( 'Declined payment', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'description' => __( 'The card-issuing bank declined the payment. Please instruct your client to ask the bank to authorize it.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'alert_title' => __( 'Declined payment', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'description' => __( 'The card-issuing bank declined the payment. Please instruct your client to ask the bank to authorize it.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
             'am_insufficient_amount' => array(
-                'alert_title' => __( 'Declined payment', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'description' => __( 'The buyer does not have enough balance to make the purchase. Please ask your client to deposit money to the Mercado Pago Account or to use a different payment method.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'alert_title' => __( 'Declined payment', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'description' => __( 'The buyer does not have enough balance to make the purchase. Please ask your client to deposit money to the Mercado Pago Account or to use a different payment method.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
             'generic' => array(
-                'alert_title' => __( 'There was an error', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'description' => __( 'The transaction could not be completed.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'alert_title' => __( 'There was an error', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'description' => __( 'The transaction could not be completed.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
         );
 
@@ -404,7 +404,7 @@ class WC_WooMercadoPago_Hook_Order_Details {
 
         add_meta_box(
             'mp-payment-status-metabox',
-            __( 'Payment status on Mercado Pago', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            __( 'Payment status on Mercado Pago', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             array($this, 'payment_status_metabox_content')
         );
     }
@@ -464,8 +464,8 @@ class WC_WooMercadoPago_Hook_Order_Details {
                 'alert_description' => $alert['description'],
                 'link' => $this->get_mp_home_link($country),
                 'border_left_color' => '#00A650',
-                'link_description' => __( 'View purchase details at Mercado Pago', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'sync_button_text' => __( 'Sync order status', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'link_description' => __( 'View purchase details at Mercado Pago', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'sync_button_text' => __( 'Sync order status', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             );
         }
 
@@ -476,8 +476,8 @@ class WC_WooMercadoPago_Hook_Order_Details {
                 'alert_description' => $alert['description'],
                 'link' => $this->get_mp_home_link($country),
                 'border_left_color' => '#f73',
-                'link_description' => __( 'View purchase details at Mercado Pago', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'sync_button_text' => __( 'Sync order status', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'link_description' => __( 'View purchase details at Mercado Pago', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'sync_button_text' => __( 'Sync order status', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             );
         }
 
@@ -488,8 +488,8 @@ class WC_WooMercadoPago_Hook_Order_Details {
                 'alert_description' => $alert['description'],
                 'link' => $this->get_mp_devsite_link($country),
                 'border_left_color' => '#F23D4F',
-                'link_description' => __( 'Check the reasons why the purchase was declined.', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'sync_button_text' => __( 'Sync order status', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'link_description' => __( 'Check the reasons why the purchase was declined.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'sync_button_text' => __( 'Sync order status', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             );
         }
     }
@@ -594,11 +594,11 @@ class WC_WooMercadoPago_Hook_Order_Details {
             ( new WC_WooMercadoPago_Order() )->process_status($status, $payment, $order, $used_gateway);
 
             wp_send_json_success(
-                __( 'Order update successfully. This page will be reloaded...', WC_MERCADOPAGO_TEXT_DOMAIN )
+                __( 'Order update successfully. This page will be reloaded...', LKN_WC_MERCADOPAGO_TEXT_DOMAIN )
             );
         } catch ( Exception $e ) {
             wp_send_json_error(
-                __( 'Unable to update order: ', WC_MERCADOPAGO_TEXT_DOMAIN ) . $e->getMessage(),
+                __( 'Unable to update order: ', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ) . $e->getMessage(),
                 500
             );
         }

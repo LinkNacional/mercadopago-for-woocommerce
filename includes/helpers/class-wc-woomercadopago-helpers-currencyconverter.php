@@ -82,7 +82,7 @@ class WC_WooMercadoPago_Helpers_CurrencyConverter {
      * Private constructor to make class singleton
      */
     private function __construct() {
-        $this->msg_description = __( 'Activate this option so that the value of the currency set in WooCommerce is compatible with the value of the currency you use in Mercado Pago.', WC_MERCADOPAGO_TEXT_DOMAIN );
+        $this->msg_description = __( 'Activate this option so that the value of the currency set in WooCommerce is compatible with the value of the currency you use in Mercado Pago.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN );
         $this->log = new WC_WooMercadoPago_Log();
 
         return $this;
@@ -466,7 +466,7 @@ class WC_WooMercadoPago_Helpers_CurrencyConverter {
         $type = 'notice-error';
         $message = sprintf(
             /* translators: 1: local currency 2: currency */
-            __( 'Now we convert your currency from %1$s to %2$s.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            __( 'Now we convert your currency from %1$s to %2$s.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             $local_currency,
             $currency
         );
@@ -486,7 +486,7 @@ class WC_WooMercadoPago_Helpers_CurrencyConverter {
         $type = 'notice-error';
         $message = sprintf(
             /* translators: 1: local currency 2: currency */
-            __( 'We no longer convert your currency from %1$s to %2$s.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            __( 'We no longer convert your currency from %1$s to %2$s.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             $local_currency,
             $currency
         );
@@ -507,7 +507,7 @@ class WC_WooMercadoPago_Helpers_CurrencyConverter {
             $this->is_showing_alert = true;
 
             $type = 'notice-error';
-            $message = __( '<b>Attention:</b> The currency settings you have in WooCommerce are not compatible with the currency you use in your Mercado Pago account. Please activate the currency conversion.', WC_MERCADOPAGO_TEXT_DOMAIN );
+            $message = __( '<b>Attention:</b> The currency settings you have in WooCommerce are not compatible with the currency you use in your Mercado Pago account. Please activate the currency conversion.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN );
 
             WC_WooMercadoPago_Notices::get_alert_frame( $message, $type );
         }

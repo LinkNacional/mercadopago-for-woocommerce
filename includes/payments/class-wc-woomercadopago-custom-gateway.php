@@ -31,9 +31,9 @@ class WC_WooMercadoPago_Custom_Gateway extends WC_WooMercadoPago_Payment_Abstrac
      */
     public function __construct() {
         $this->id = self::ID;
-        $this->title = __( 'Debit and Credit', WC_MERCADOPAGO_TEXT_DOMAIN );
-        $this->title_gateway = __( 'Debit and Credit', WC_MERCADOPAGO_TEXT_DOMAIN );
-        $this->description = __( 'Transparent Checkout in your store environment', WC_MERCADOPAGO_TEXT_DOMAIN );
+        $this->title = __( 'Debit and Credit', LKN_WC_MERCADOPAGO_TEXT_DOMAIN );
+        $this->title_gateway = __( 'Debit and Credit', LKN_WC_MERCADOPAGO_TEXT_DOMAIN );
+        $this->description = __( 'Transparent Checkout in your store environment', LKN_WC_MERCADOPAGO_TEXT_DOMAIN );
         $this->mp_options = $this->get_mp_options();
 
         if ( ! $this->validate_section() ) {
@@ -41,8 +41,8 @@ class WC_WooMercadoPago_Custom_Gateway extends WC_WooMercadoPago_Payment_Abstrac
         }
 
         $this->form_fields = array();
-        $this->method_title = __( 'Mercado pago - Customized Checkout', WC_MERCADOPAGO_TEXT_DOMAIN );
-        $this->title = $this->get_option( 'title', __( 'Debit and Credit', WC_MERCADOPAGO_TEXT_DOMAIN ) );
+        $this->method_title = __( 'Mercado pago - Customized Checkout', LKN_WC_MERCADOPAGO_TEXT_DOMAIN );
+        $this->title = $this->get_option( 'title', __( 'Debit and Credit', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ) );
         $this->method_description = $this->description;
         $this->coupon_mode = $this->get_option( 'coupon_mode', 'no' );
         $this->wallet_button = $this->get_option( 'wallet_button', 'yes' );
@@ -143,13 +143,13 @@ class WC_WooMercadoPago_Custom_Gateway extends WC_WooMercadoPago_Payment_Abstrac
      */
     public function field_enabled() {
         return array(
-            'title' => __( 'Enable the checkout', WC_MERCADOPAGO_TEXT_DOMAIN ),
-            'subtitle' => __( 'By disabling it, you will disable all credit cards payments from Mercado Pago Transparent Checkout.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'title' => __( 'Enable the checkout', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'subtitle' => __( 'By disabling it, you will disable all credit cards payments from Mercado Pago Transparent Checkout.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             'type' => 'mp_toggle_switch',
             'default' => 'no',
             'descriptions' => array(
-                'enabled' => __( 'Transparent Checkout for credit cards is <b>enabled</b>.', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'disabled' => __( 'Transparent checkout for credit cards is <b>disabled</b>.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'enabled' => __( 'Transparent Checkout for credit cards is <b>enabled</b>.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'disabled' => __( 'Transparent checkout for credit cards is <b>disabled</b>.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
         );
     }
@@ -174,9 +174,9 @@ class WC_WooMercadoPago_Custom_Gateway extends WC_WooMercadoPago_Payment_Abstrac
     public function field_checkout_custom_card_info_fees() {
         $links = WC_WooMercadoPago_Helper_Links::woomercadopago_settings_links();
         $value = array(
-            'title' => __('Installments Fees', WC_MERCADOPAGO_TEXT_DOMAIN),
-            'subtitle' => __('Set installment fees and whether they will be charged from the store or from the buyer.', WC_MERCADOPAGO_TEXT_DOMAIN),
-            'button_text' => __('Set fees', WC_MERCADOPAGO_TEXT_DOMAIN),
+            'title' => __('Installments Fees', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
+            'subtitle' => __('Set installment fees and whether they will be charged from the store or from the buyer.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
+            'button_text' => __('Set fees', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
             'button_url' => $links['link_costs'],
             'icon' => 'mp-icon-badge-info',
             'color_card' => 'mp-alert-color-sucess',
@@ -201,11 +201,11 @@ class WC_WooMercadoPago_Custom_Gateway extends WC_WooMercadoPago_Payment_Abstrac
                 /* translators: %s card */
                 '<div class="mp-row">
                 <div class="mp-col-md-12 mp_subtitle_header">
-                ' . __( 'Transparent Checkout | Credit card ', WC_MERCADOPAGO_TEXT_DOMAIN ) . '
+                ' . __( 'Transparent Checkout | Credit card ', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ) . '
                  </div>
               <div class="mp-col-md-12">
                 <p class="mp-text-checkout-body mp-mb-0">
-                  ' . __( 'With the Transparent Checkout, you can sell inside your store environment, without redirection and with the security from Mercado Pago.', WC_MERCADOPAGO_TEXT_DOMAIN ) . '
+                  ' . __( 'With the Transparent Checkout, you can sell inside your store environment, without redirection and with the security from Mercado Pago.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ) . '
                 </p>
               </div>
             </div>'
@@ -223,7 +223,7 @@ class WC_WooMercadoPago_Custom_Gateway extends WC_WooMercadoPago_Payment_Abstrac
      */
     public function field_checkout_custom_payments_advanced_title() {
         $checkout_custom_payments_advanced_title = array(
-            'title' => __( 'Advanced configuration of the personalized payment experience', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'title' => __( 'Advanced configuration of the personalized payment experience', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             'type' => 'title',
             'class' => 'mp_subtitle_bd',
         );
@@ -237,13 +237,13 @@ class WC_WooMercadoPago_Custom_Gateway extends WC_WooMercadoPago_Payment_Abstrac
      */
     public function field_checkout_custom_wallet_button_title() {
         return array(
-            'title' => __( 'Payments via Mercado Pago account', WC_MERCADOPAGO_TEXT_DOMAIN ),
-            'subtitle' => __( 'Your customers pay faster with saved cards, money balance or other available methods in their Mercado Pago accounts.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'title' => __( 'Payments via Mercado Pago account', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'subtitle' => __( 'Your customers pay faster with saved cards, money balance or other available methods in their Mercado Pago accounts.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             'type' => 'mp_toggle_switch',
             'default' => 'yes',
             'descriptions' => array(
-                'enabled' => __( 'Payments via Mercado Pago accounts are <b>active</b>.', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'disabled' => __( 'Payments via Mercado Pago accounts are <b>inactive</b>.', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'enabled' => __( 'Payments via Mercado Pago accounts are <b>active</b>.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'disabled' => __( 'Payments via Mercado Pago accounts are <b>inactive</b>.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
             'after_toggle' => $this->wallet_button_preview(),
         );
@@ -262,7 +262,7 @@ class WC_WooMercadoPago_Custom_Gateway extends WC_WooMercadoPago_Payment_Abstrac
             'components/wallet-button.php',
             array (
                 'img_wallet_button_uri' => $this->get_wallet_button_example_uri(),
-                'img_wallet_button_description' => __( 'Check an example of how it will appear in your store:', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'img_wallet_button_description' => __( 'Check an example of how it will appear in your store:', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             ),
             '',
             WC_WooMercadoPago_Module::get_templates_path()
@@ -293,38 +293,38 @@ class WC_WooMercadoPago_Custom_Gateway extends WC_WooMercadoPago_Payment_Abstrac
     public function get_order_status( $status_detail ) {
         switch ( $status_detail ) {
             case 'accredited':
-                return __( 'That’s it, payment accepted!', WC_MERCADOPAGO_TEXT_DOMAIN );
+                return __( 'That’s it, payment accepted!', LKN_WC_MERCADOPAGO_TEXT_DOMAIN );
             case 'pending_contingency':
-                return __( 'We are processing your payment. In less than an hour we will send you the result by email.', WC_MERCADOPAGO_TEXT_DOMAIN );
+                return __( 'We are processing your payment. In less than an hour we will send you the result by email.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN );
             case 'pending_review_manual':
-                return __( 'We are processing your payment. In less than 2 days we will send you by email if the payment has been approved or if additional information is needed.', WC_MERCADOPAGO_TEXT_DOMAIN );
+                return __( 'We are processing your payment. In less than 2 days we will send you by email if the payment has been approved or if additional information is needed.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN );
             case 'cc_rejected_bad_filled_card_number':
-                return __( 'Check the card number.', WC_MERCADOPAGO_TEXT_DOMAIN );
+                return __( 'Check the card number.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN );
             case 'cc_rejected_bad_filled_date':
-                return __( 'Check the expiration date.', WC_MERCADOPAGO_TEXT_DOMAIN );
+                return __( 'Check the expiration date.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN );
             case 'cc_rejected_bad_filled_other':
-                return __( 'Check the information provided.', WC_MERCADOPAGO_TEXT_DOMAIN );
+                return __( 'Check the information provided.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN );
             case 'cc_rejected_bad_filled_security_code':
-                return __( 'Check the informed security code.', WC_MERCADOPAGO_TEXT_DOMAIN );
+                return __( 'Check the informed security code.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN );
             case 'cc_rejected_card_error':
             case 'cc_rejected_blacklist':
-                return __( 'Your payment cannot be processed.', WC_MERCADOPAGO_TEXT_DOMAIN );
+                return __( 'Your payment cannot be processed.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN );
             case 'cc_rejected_call_for_authorize':
-                return __( 'You must authorize payments for your orders.', WC_MERCADOPAGO_TEXT_DOMAIN );
+                return __( 'You must authorize payments for your orders.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN );
             case 'cc_rejected_card_disabled':
-                return __( 'Contact your card issuer to activate it. The phone is on the back of your card.', WC_MERCADOPAGO_TEXT_DOMAIN );
+                return __( 'Contact your card issuer to activate it. The phone is on the back of your card.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN );
             case 'cc_rejected_duplicated_payment':
-                return __( 'You have already made a payment of this amount. If you have to pay again, use another card or other method of payment.', WC_MERCADOPAGO_TEXT_DOMAIN );
+                return __( 'You have already made a payment of this amount. If you have to pay again, use another card or other method of payment.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN );
             case 'cc_rejected_high_risk':
-                return __( 'Your payment was declined. Please select another payment method. It is recommended in cash.', WC_MERCADOPAGO_TEXT_DOMAIN );
+                return __( 'Your payment was declined. Please select another payment method. It is recommended in cash.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN );
             case 'cc_rejected_insufficient_amount':
-                return __( 'Your payment does not have sufficient funds.', WC_MERCADOPAGO_TEXT_DOMAIN );
+                return __( 'Your payment does not have sufficient funds.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN );
             case 'cc_rejected_invalid_installments':
-                return __( 'Payment cannot process the selected fee.', WC_MERCADOPAGO_TEXT_DOMAIN );
+                return __( 'Payment cannot process the selected fee.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN );
             case 'cc_rejected_max_attempts':
-                return __( 'You have reached the limit of allowed attempts. Choose another card or other payment method.', WC_MERCADOPAGO_TEXT_DOMAIN );
+                return __( 'You have reached the limit of allowed attempts. Choose another card or other payment method.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN );
             default:
-                return __( 'This payment method cannot process your payment.', WC_MERCADOPAGO_TEXT_DOMAIN );
+                return __( 'This payment method cannot process your payment.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN );
         }
     }
 
@@ -379,15 +379,15 @@ class WC_WooMercadoPago_Custom_Gateway extends WC_WooMercadoPago_Payment_Abstrac
 
         if ( 0 !== count( $credit_card ) ) {
             $payment_methods[] = array(
-                'title' => __( 'Credit cards', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                'label' => __( 'Up to ', WC_MERCADOPAGO_TEXT_DOMAIN ) . 12 . __( ' installments', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'title' => __( 'Credit cards', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'label' => __( 'Up to ', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ) . 12 . __( ' installments', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
                 'payment_methods' => $credit_card,
             );
         }
 
         if ( 0 !== count( $debit_card ) ) {
             $payment_methods[] = array(
-                'title' => __( 'Debit cards', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                'title' => __( 'Debit cards', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
                 'payment_methods' => $debit_card,
             );
         }
@@ -430,8 +430,8 @@ class WC_WooMercadoPago_Custom_Gateway extends WC_WooMercadoPago_Payment_Abstrac
         if ( ! isset( $_POST['mercadopago_custom']) ) {
             return $this->process_result_fail(
                 __FUNCTION__,
-                __( 'A problem was occurred when processing your payment. Please, try again.', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                __( 'A problem was occurred when processing your payment. Please, try again.', WC_MERCADOPAGO_TEXT_DOMAIN )
+                __( 'A problem was occurred when processing your payment. Please, try again.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                __( 'A problem was occurred when processing your payment. Please, try again.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN )
             );
         }
 
@@ -463,8 +463,8 @@ class WC_WooMercadoPago_Custom_Gateway extends WC_WooMercadoPago_Payment_Abstrac
 
         return $this->process_result_fail(
             __FUNCTION__,
-            __( 'A problem was occurred when processing your payment. Please, try again.', WC_MERCADOPAGO_TEXT_DOMAIN ),
-            __( 'A problem was occurred when processing your payment. Please, try again.', WC_MERCADOPAGO_TEXT_DOMAIN )
+            __( 'A problem was occurred when processing your payment. Please, try again.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+            __( 'A problem was occurred when processing your payment. Please, try again.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN )
         );
     }
 
@@ -560,7 +560,7 @@ class WC_WooMercadoPago_Custom_Gateway extends WC_WooMercadoPago_Payment_Abstrac
                         wc_add_notice(
                             '<p>' . $this->get_order_status( $response['status_detail'] ) . '</p>' .
                             '<p><a id="mp_pending_payment_button" class="button" href="' . esc_url( $order->get_checkout_order_received_url() ) . '" data-mp-checkout-type="woo-mercado-pago-' . $custom_checkout['checkout_type'] . '">' .
-                            __( 'See your order form', WC_MERCADOPAGO_TEXT_DOMAIN ) .
+                            __( 'See your order form', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ) .
                             '</a></p>',
                             'notice'
                         );
@@ -573,12 +573,12 @@ class WC_WooMercadoPago_Custom_Gateway extends WC_WooMercadoPago_Payment_Abstrac
                         wc_add_notice(
                             '<p>' . __(
                                 'Your payment was declined. You can try again.',
-                                WC_MERCADOPAGO_TEXT_DOMAIN
+                                LKN_WC_MERCADOPAGO_TEXT_DOMAIN
                             ) . '<br>' .
                             $this->get_order_status( $response['status_detail'] ) .
                             '</p>' .
                             '<p><a id="mp_failed_payment_button" class="button" href="' . esc_url( $order->get_checkout_payment_url() ) . '" data-mp-checkout-type="woo-mercado-pago-' . $custom_checkout['checkout_type'] . '">' .
-                            __( 'Click to try again', WC_MERCADOPAGO_TEXT_DOMAIN ) .
+                            __( 'Click to try again', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ) .
                             '</a></p>',
                             'error'
                         );
@@ -600,8 +600,8 @@ class WC_WooMercadoPago_Custom_Gateway extends WC_WooMercadoPago_Payment_Abstrac
             // Process when fields are incomplete.
             return $this->process_result_fail(
                 __FUNCTION__,
-                __( 'A problem was occurred when processing your payment. Are you sure you have correctly filled all information in the checkout form?', WC_MERCADOPAGO_TEXT_DOMAIN ),
-                __( 'A problem was occurred when processing your payment. Are you sure you have correctly filled all information in the checkout form?', WC_MERCADOPAGO_TEXT_DOMAIN ) . ' MERCADO PAGO: ' .
+                __( 'A problem was occurred when processing your payment. Are you sure you have correctly filled all information in the checkout form?', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
+                __( 'A problem was occurred when processing your payment. Are you sure you have correctly filled all information in the checkout form?', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ) . ' MERCADO PAGO: ' .
                 WC_WooMercadoPago_Module::get_common_error_messages( $response )
             );
         }
@@ -625,14 +625,14 @@ class WC_WooMercadoPago_Custom_Gateway extends WC_WooMercadoPago_Payment_Abstrac
 
             if ( $installment_fee_amount > 0 ) {
                 $this->display_order_note( array(
-                    'tip_text' => __('Represents the installment fee charged by Mercado Pago.', WC_MERCADOPAGO_TEXT_DOMAIN),
-                    'title' => __('Mercado Pago Installment Fee:', WC_MERCADOPAGO_TEXT_DOMAIN),
+                    'tip_text' => __('Represents the installment fee charged by Mercado Pago.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
+                    'title' => __('Mercado Pago Installment Fee:', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
                     'value' => wc_price($installment_fee_amount, array()),
                 ) );
 
                 $this->display_order_note( array(
-                    'tip_text' => __('Represents the total purchase plus the installment fee charged by Mercado Pago.', WC_MERCADOPAGO_TEXT_DOMAIN),
-                    'title' => __('Mercado Pago Total:', WC_MERCADOPAGO_TEXT_DOMAIN),
+                    'tip_text' => __('Represents the total purchase plus the installment fee charged by Mercado Pago.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
+                    'title' => __('Mercado Pago Total:', LKN_WC_MERCADOPAGO_TEXT_DOMAIN),
                     'value' => wc_price($total_with_fees, array()),
                 ) );
             }
@@ -673,7 +673,7 @@ class WC_WooMercadoPago_Custom_Gateway extends WC_WooMercadoPago_Payment_Abstrac
 
         if ( ! empty( $this->commission ) ) {
             $comission = $amount * ( $this->commission / 100 );
-            $order->update_meta_data( 'Mercado Pago: commission', __( 'fee of', WC_MERCADOPAGO_TEXT_DOMAIN ) . ' ' . $this->commission . '% / ' . __( 'fee of', WC_MERCADOPAGO_TEXT_DOMAIN ) . ' = ' . $comission );
+            $order->update_meta_data( 'Mercado Pago: commission', __( 'fee of', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ) . ' ' . $this->commission . '% / ' . __( 'fee of', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ) . ' = ' . $comission );
         }
         $order->save();
     }

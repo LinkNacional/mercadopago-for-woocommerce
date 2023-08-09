@@ -14,9 +14,9 @@ if ( ! defined( 'ABSPATH' ) ) {
             <?php if ( true === $test_mode ) : ?>
             <div class="mp-checkout-ticket-test-mode">
                 <test-mode
-                    title="<?php echo esc_html_e('Offline Methods in Test Mode', WC_MERCADOPAGO_TEXT_DOMAIN); ?>"
-                    description="<?php echo esc_html_e('You can test the flow to generate an invoice, but you cannot finalize the payment. ', WC_MERCADOPAGO_TEXT_DOMAIN); ?>"
-                    link-text="<?php echo esc_html_e('See the rules for the test mode.', WC_MERCADOPAGO_TEXT_DOMAIN); ?>"
+                    title="<?php echo esc_html_e('Offline Methods in Test Mode', LKN_WC_MERCADOPAGO_TEXT_DOMAIN); ?>"
+                    description="<?php echo esc_html_e('You can test the flow to generate an invoice, but you cannot finalize the payment. ', LKN_WC_MERCADOPAGO_TEXT_DOMAIN); ?>"
+                    link-text="<?php echo esc_html_e('See the rules for the test mode.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN); ?>"
                     link-src="<?php echo esc_html($test_mode_link); ?>">
                 </test-mode>
             </div>
@@ -25,8 +25,8 @@ if ( ! defined( 'ABSPATH' ) ) {
             <?php if ( 'mlu' === $site_id ) : ?>
             <div class="mp-checkout-ticket-input-document">
                 <input-document
-                    label-message="<?php echo esc_html_e('Holder document', WC_MERCADOPAGO_TEXT_DOMAIN); ?>"
-                    helper-message="<?php echo esc_html_e('Invalid document', WC_MERCADOPAGO_TEXT_DOMAIN); ?>"
+                    label-message="<?php echo esc_html_e('Holder document', LKN_WC_MERCADOPAGO_TEXT_DOMAIN); ?>"
+                    helper-message="<?php echo esc_html_e('Invalid document', LKN_WC_MERCADOPAGO_TEXT_DOMAIN); ?>"
                     input-name='mercadopago_ticket[docNumber]' hidden-id="docNumberValue"
                     select-id='mercadopago_ticket[docType]' select-name='mercadopago_ticket[docType]'
                     flag-error='mercadopago_ticket[docNumberError]' documents='["CI","OTRO"]' validate=true>
@@ -37,8 +37,8 @@ if ( ! defined( 'ABSPATH' ) ) {
             <?php if ( 'mlb' === $site_id ) : ?>
             <div class="mp-checkout-ticket-input-document">
                 <input-document
-                    label-message="<?php echo esc_html_e('Holder document', WC_MERCADOPAGO_TEXT_DOMAIN); ?>"
-                    helper-message="<?php echo esc_html_e('Invalid document', WC_MERCADOPAGO_TEXT_DOMAIN); ?>"
+                    label-message="<?php echo esc_html_e('Holder document', LKN_WC_MERCADOPAGO_TEXT_DOMAIN); ?>"
+                    helper-message="<?php echo esc_html_e('Invalid document', LKN_WC_MERCADOPAGO_TEXT_DOMAIN); ?>"
                     input-name='mercadopago_ticket[docNumber]' hidden-id="docNumberValue"
                     select-id='mercadopago_ticket[docType]' select-name='mercadopago_ticket[docType]'
                     flag-error='mercadopago_ticket[docNumberError]' documents='["CPF","CNPJ"]' validate=true>
@@ -47,17 +47,17 @@ if ( ! defined( 'ABSPATH' ) ) {
             <?php endif; ?>
 
             <p class="mp-checkout-ticket-text" data-cy="checkout-ticket-text">
-                <?php echo esc_html_e('Select where you want to pay', WC_MERCADOPAGO_TEXT_DOMAIN); ?>
+                <?php echo esc_html_e('Select where you want to pay', LKN_WC_MERCADOPAGO_TEXT_DOMAIN); ?>
             </p>
 
             <input-table name="mercadopago_ticket[paymentMethodId]"
-                button-name=<?php echo esc_html_e('more options', WC_MERCADOPAGO_TEXT_DOMAIN); ?>
+                button-name=<?php echo esc_html_e('more options', LKN_WC_MERCADOPAGO_TEXT_DOMAIN); ?>
                 columns='<?php echo esc_attr(wp_json_encode($payment_methods)); ?>'
                 >
             </input-table>
 
             <input-helper isVisible=false
-                message="<?php echo esc_html_e('Select a payment method', WC_MERCADOPAGO_TEXT_DOMAIN); ?>"
+                message="<?php echo esc_html_e('Select a payment method', LKN_WC_MERCADOPAGO_TEXT_DOMAIN); ?>"
                 input-id="mp-payment-method-helper" id="payment-method-helper"></input-helper>
 
             <!-- NOT DELETE LOADING-->
@@ -82,8 +82,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
         <div class="mp-checkout-ticket-terms-and-conditions">
             <terms-and-conditions
-                description="<?php echo esc_html_e('By continuing, you agree with our', WC_MERCADOPAGO_TEXT_DOMAIN); ?>"
-                link-text="<?php echo esc_html_e('Terms and conditions', WC_MERCADOPAGO_TEXT_DOMAIN); ?>"
+                description="<?php echo esc_html_e('By continuing, you agree with our', LKN_WC_MERCADOPAGO_TEXT_DOMAIN); ?>"
+                link-text="<?php echo esc_html_e('Terms and conditions', LKN_WC_MERCADOPAGO_TEXT_DOMAIN); ?>"
                 link-src="<?php echo esc_html($link_terms_and_conditions); ?>">
             </terms-and-conditions>
         </div>

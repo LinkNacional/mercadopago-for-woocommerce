@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				width: 168px;
 				height: 168px;
 				margin: 0 0 10px;"
-            src="<?php esc_html_e( $qr_code_image, WC_MERCADOPAGO_TEXT_DOMAIN ); ?>"
+            src="<?php esc_html_e( $qr_code_image, LKN_WC_MERCADOPAGO_TEXT_DOMAIN ); ?>"
             alt="pix">
     </div>
 
@@ -35,7 +35,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				text-transform: capitalize;
 				vertical-align: middle;
 				max-width: 100%;">
-        <small><?php esc_html_e( $text_expiration_date, WC_MERCADOPAGO_TEXT_DOMAIN ) . esc_html_e( $expiration_date, WC_MERCADOPAGO_TEXT_DOMAIN ); ?></small>
+        <small><?php esc_html_e( $text_expiration_date, LKN_WC_MERCADOPAGO_TEXT_DOMAIN ) . esc_html_e( $expiration_date, LKN_WC_MERCADOPAGO_TEXT_DOMAIN ); ?></small>
     </div>
 
     <div style="margin-left: auto;
@@ -44,7 +44,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			word-break: break-word;
 			font-size: 10px;">
         <p>
-            <?php esc_html_e( $qr_code, WC_MERCADOPAGO_TEXT_DOMAIN ); ?>
+            <?php esc_html_e( $qr_code, LKN_WC_MERCADOPAGO_TEXT_DOMAIN ); ?>
         </p>
     </div>
 </div>

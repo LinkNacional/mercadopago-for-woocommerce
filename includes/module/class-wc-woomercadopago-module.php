@@ -97,7 +97,7 @@ class WC_WooMercadoPago_Module extends WC_WooMercadoPago_Configs {
             add_action( 'wp_enqueue_scripts', array($this, 'load_global_css') );
 
             add_filter( 'woocommerce_available_payment_gateways', array($this, 'filter_payment_method_by_shipping') );
-            add_filter( 'plugin_action_links_' . WC_MERCADOPAGO_BASENAME, array($this, 'woomercadopago_settings_link') );
+            add_filter( 'plugin_action_links_' . LKN_WC_MERCADOPAGO_BASENAME, array($this, 'woomercadopago_settings_link') );
             add_action( 'mercadopago_plugin_updated', array('WC_WooMercadoPago_Credentials', 'mercadopago_payment_update') );
             add_action( 'mercadopago_test_mode_update', array($this, 'update_credential_production') );
 
@@ -340,9 +340,9 @@ class WC_WooMercadoPago_Module extends WC_WooMercadoPago_Configs {
         $link_prefix_mp = 'https://www.mercadopago.';
 
         return array(
-            'text_prefix' => __( 'By continuing, you agree to our ', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'text_prefix' => __( 'By continuing, you agree to our ', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
             'link_terms_and_conditions' => $link_prefix_mp . $links_mp['sufix_url'] . $links_mp['help'] . $links_mp['term_conditition'],
-            'text_suffix' => __( 'Terms and Conditions', WC_MERCADOPAGO_TEXT_DOMAIN ),
+            'text_suffix' => __( 'Terms and Conditions', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
         );
     }
 
@@ -355,16 +355,16 @@ class WC_WooMercadoPago_Module extends WC_WooMercadoPago_Configs {
      */
     public static function get_common_error_messages( $key ) {
         if ( 'Invalid payment_method_id' === $key ) {
-            return __( 'The payment method is not valid or not available.', WC_MERCADOPAGO_TEXT_DOMAIN );
+            return __( 'The payment method is not valid or not available.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN );
         }
         if ( 'Invalid transaction_amount' === $key ) {
-            return __( 'The transaction amount cannot be processed by Mercado Pago.', WC_MERCADOPAGO_TEXT_DOMAIN ) . ' ' . __( 'Possible causes: Currency not supported; Amounts below the minimum or above the maximum allowed.', WC_MERCADOPAGO_TEXT_DOMAIN );
+            return __( 'The transaction amount cannot be processed by Mercado Pago.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ) . ' ' . __( 'Possible causes: Currency not supported; Amounts below the minimum or above the maximum allowed.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN );
         }
         if ( 'Invalid users involved' === $key ) {
-            return __( 'The users are not valid.', WC_MERCADOPAGO_TEXT_DOMAIN ) . ' ' . __( 'Possible causes: Buyer and seller have the same account in Mercado Pago; The transaction involving production and test users.', WC_MERCADOPAGO_TEXT_DOMAIN );
+            return __( 'The users are not valid.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ) . ' ' . __( 'Possible causes: Buyer and seller have the same account in Mercado Pago; The transaction involving production and test users.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN );
         }
         if ( 'Unauthorized use of live credentials' === $key ) {
-            return __( 'Unauthorized use of production credentials.', WC_MERCADOPAGO_TEXT_DOMAIN ) . ' ' . __( 'Possible causes: Use permission in use for the credential of the seller.', WC_MERCADOPAGO_TEXT_DOMAIN );
+            return __( 'Unauthorized use of production credentials.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ) . ' ' . __( 'Possible causes: Use permission in use for the credential of the seller.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN );
         }
 
         return $key;
@@ -490,21 +490,21 @@ class WC_WooMercadoPago_Module extends WC_WooMercadoPago_Configs {
     public static function get_country_name( $site_id ) {
         switch ( $site_id ) {
             case 'mco':
-                return __( 'Colombia', WC_MERCADOPAGO_TEXT_DOMAIN );
+                return __( 'Colombia', LKN_WC_MERCADOPAGO_TEXT_DOMAIN );
             case 'mla':
-                return __( 'Argentina', WC_MERCADOPAGO_TEXT_DOMAIN );
+                return __( 'Argentina', LKN_WC_MERCADOPAGO_TEXT_DOMAIN );
             case 'mlb':
-                return __( 'Brazil', WC_MERCADOPAGO_TEXT_DOMAIN );
+                return __( 'Brazil', LKN_WC_MERCADOPAGO_TEXT_DOMAIN );
             case 'mlc':
-                return __( 'Chile', WC_MERCADOPAGO_TEXT_DOMAIN );
+                return __( 'Chile', LKN_WC_MERCADOPAGO_TEXT_DOMAIN );
             case 'mlm':
-                return __( 'Mexico', WC_MERCADOPAGO_TEXT_DOMAIN );
+                return __( 'Mexico', LKN_WC_MERCADOPAGO_TEXT_DOMAIN );
             case 'mlu':
-                return __( 'Uruguay', WC_MERCADOPAGO_TEXT_DOMAIN );
+                return __( 'Uruguay', LKN_WC_MERCADOPAGO_TEXT_DOMAIN );
             case 'mlv':
-                return __( 'Venezuela', WC_MERCADOPAGO_TEXT_DOMAIN );
+                return __( 'Venezuela', LKN_WC_MERCADOPAGO_TEXT_DOMAIN );
             case 'mpe':
-                return __( 'Peru', WC_MERCADOPAGO_TEXT_DOMAIN );
+                return __( 'Peru', LKN_WC_MERCADOPAGO_TEXT_DOMAIN );
         }
 
         return '';
@@ -538,7 +538,7 @@ class WC_WooMercadoPago_Module extends WC_WooMercadoPago_Configs {
                 '<option value="%s"%s>%s %s</option>',
                 $slug,
                 selected( $selection, $slug, false ),
-                __( 'Update the WooCommerce order to ', WC_MERCADOPAGO_TEXT_DOMAIN ),
+                __( 'Update the WooCommerce order to ', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ),
                 $status
             );
         }
@@ -808,7 +808,7 @@ class WC_WooMercadoPago_Module extends WC_WooMercadoPago_Configs {
      */
     public function enable_payment_notice(): void {
         $type = 'notice-warning';
-        $message = __( 'Fill in your credentials to enable payment methods.', WC_MERCADOPAGO_TEXT_DOMAIN );
+        $message = __( 'Fill in your credentials to enable payment methods.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN );
         echo wp_kses_post( WC_WooMercadoPago_Notices::get_alert_frame( $message, $type ));
     }
 
@@ -824,9 +824,9 @@ class WC_WooMercadoPago_Module extends WC_WooMercadoPago_Configs {
     public function woomercadopago_settings_link( $links ) {
         $links_mp = self::define_link_country();
         $plugin_links = array();
-        $plugin_links[] = '<a href="' . admin_url( 'admin.php?page=mercadopago-settings' ) . '">' . __( 'Set plugin', WC_MERCADOPAGO_TEXT_DOMAIN ) . '</a>';
-        $plugin_links[] = '<a target="_blank" href="' . admin_url( 'admin.php?page=wc-settings&tab=checkout' ) . '">' . __( 'Payment methods', WC_MERCADOPAGO_TEXT_DOMAIN ) . '</a>';
-        $plugin_links[] = '<br><a target="_blank" href="https://www.mercadopago.' . $links_mp['sufix_url'] . 'developers/' . $links_mp['translate'] . '/guides/plugins/woocommerce/introduction/">' . __( 'Plugin manual', WC_MERCADOPAGO_TEXT_DOMAIN ) . '</a>';
+        $plugin_links[] = '<a href="' . admin_url( 'admin.php?page=mercadopago-settings' ) . '">' . __( 'Set plugin', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ) . '</a>';
+        $plugin_links[] = '<a target="_blank" href="' . admin_url( 'admin.php?page=wc-settings&tab=checkout' ) . '">' . __( 'Payment methods', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ) . '</a>';
+        $plugin_links[] = '<br><a target="_blank" href="https://www.mercadopago.' . $links_mp['sufix_url'] . 'developers/' . $links_mp['translate'] . '/guides/plugins/woocommerce/introduction/">' . __( 'Plugin manual', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ) . '</a>';
 
         return array_merge( $plugin_links, $links );
     }

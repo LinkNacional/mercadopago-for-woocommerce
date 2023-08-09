@@ -14,9 +14,9 @@ if ( ! defined( 'ABSPATH' ) ) {
             <?php if ( true === $test_mode ) : ?>
             <div class="mp-checkout-pro-test-mode">
                 <test-mode
-                    title="<?php echo esc_html_e('Checkout Pro in Test Mode', WC_MERCADOPAGO_TEXT_DOMAIN); ?>"
-                    description="<?php echo esc_html_e('Use Mercado Pago\'s payment methods without real charges. ', WC_MERCADOPAGO_TEXT_DOMAIN); ?>"
-                    link-text="<?php echo esc_html_e('See the rules for the test mode.', WC_MERCADOPAGO_TEXT_DOMAIN); ?>"
+                    title="<?php echo esc_html_e('Checkout Pro in Test Mode', LKN_WC_MERCADOPAGO_TEXT_DOMAIN); ?>"
+                    description="<?php echo esc_html_e('Use Mercado Pago\'s payment methods without real charges. ', LKN_WC_MERCADOPAGO_TEXT_DOMAIN); ?>"
+                    link-text="<?php echo esc_html_e('See the rules for the test mode.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN); ?>"
                     link-src="<?php echo esc_html($test_mode_link); ?>">
                 </test-mode>
             </div>
@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
             <div class="mp-checkout-pro-checkout-benefits">
                 <checkout-benefits
-                    title="<?php echo esc_html_e('Log in to Mercado Pago and earn benefits', WC_MERCADOPAGO_TEXT_DOMAIN); ?>"
+                    title="<?php echo esc_html_e('Log in to Mercado Pago and earn benefits', LKN_WC_MERCADOPAGO_TEXT_DOMAIN); ?>"
                     title-align="center"
                     items="<?php echo esc_html($checkout_benefits_items); ?>"
                     list-mode="image">
@@ -41,9 +41,9 @@ if ( ! defined( 'ABSPATH' ) ) {
             <?php if ( 'redirect' === $method ) : ?>
             <div class="mp-checkout-pro-redirect">
                 <checkout-redirect-v2
-                    text="<?php echo esc_html_e('By continuing, you will be taken to Mercado Pago to safely complete your purchase.', WC_MERCADOPAGO_TEXT_DOMAIN); ?>"
+                    text="<?php echo esc_html_e('By continuing, you will be taken to Mercado Pago to safely complete your purchase.', LKN_WC_MERCADOPAGO_TEXT_DOMAIN); ?>"
                     src="<?php echo esc_html($checkout_redirect_src); ?>"
-                    alt="<?php echo esc_html_e('Checkout Pro redirect info image', WC_MERCADOPAGO_TEXT_DOMAIN); ?>">
+                    alt="<?php echo esc_html_e('Checkout Pro redirect info image', LKN_WC_MERCADOPAGO_TEXT_DOMAIN); ?>">
                 </checkout-redirect-v2>
             </div>
             <?php endif; ?>
@@ -52,8 +52,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
     <div class="mp-checkout-pro-terms-and-conditions">
         <terms-and-conditions
-            description="<?php echo esc_html_e('By continuing, you agree with our', WC_MERCADOPAGO_TEXT_DOMAIN); ?>"
-            link-text="<?php echo esc_html_e('Terms and conditions', WC_MERCADOPAGO_TEXT_DOMAIN); ?>"
+            description="<?php echo esc_html_e('By continuing, you agree with our', LKN_WC_MERCADOPAGO_TEXT_DOMAIN); ?>"
+            link-text="<?php echo esc_html_e('Terms and conditions', LKN_WC_MERCADOPAGO_TEXT_DOMAIN); ?>"
             link-src="<?php echo esc_html($link_terms_and_conditions); ?>">
         </terms-and-conditions>
     </div>

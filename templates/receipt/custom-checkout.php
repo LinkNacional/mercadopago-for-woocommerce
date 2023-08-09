@@ -32,9 +32,9 @@ wp_enqueue_script(
 </script>
 
 <a id="submit-payment" href="#" onclick="checkout.open()" class="button alt">
-    <?php echo esc_html_e( 'Pay with Mercado Pago', WC_MERCADOPAGO_TEXT_DOMAIN ); ?>
+    <?php echo esc_html_e( 'Pay with Mercado Pago', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ); ?>
 </a>
 <a class="button cancel"
     href="<?php echo esc_url( $cancel_url ); ?>">
-    <?php echo esc_html_e( 'Cancel &amp; Clear Cart', WC_MERCADOPAGO_TEXT_DOMAIN ); ?>
+    <?php echo esc_html_e( 'Cancel &amp; Clear Cart', LKN_WC_MERCADOPAGO_TEXT_DOMAIN ); ?>
 </a>

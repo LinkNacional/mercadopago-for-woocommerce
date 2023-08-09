@@ -15,12 +15,16 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-if ( ! defined('WC_MERCADOPAGO_TEXT_DOMAIN')) {
-    define('WC_MERCADOPAGO_TEXT_DOMAIN', 'lkn-wc-mercadopago');
+if ( ! defined('LKN_WC_MERCADOPAGO_TEXT_DOMAIN')) {
+    define('LKN_WC_MERCADOPAGO_TEXT_DOMAIN', 'lkn-wc-mercadopago');
 }
 
-if ( ! defined( 'WC_MERCADOPAGO_BASENAME' ) ) {
-    define( 'WC_MERCADOPAGO_BASENAME', plugin_basename( __FILE__ ) );
+if ( ! defined( 'LKN_WC_MERCADOPAGO_BASENAME' ) ) {
+    define( 'LKN_WC_MERCADOPAGO_BASENAME', plugin_basename( __FILE__ ) );
+}
+
+if ( ! defined( 'LKN_WC_MERCADOPAGO_FILE' ) ) {
+    define( 'LKN_WC_MERCADOPAGO_FILE', __FILE__ );
 }
 
 if ( ! function_exists( 'is_plugin_active' ) ) {
