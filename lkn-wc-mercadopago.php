@@ -8,8 +8,6 @@
  * Author URI: https://www.linknacional.com.br/wordpress/plugins/
  * Text Domain: lkn-wc-mercadopago
  * Domain Path: /i18n/languages/
- * WC requires at least: 5.9
- * WC tested up to: 8.0
  */
 
 // Exit if accessed directly.
