@@ -18,7 +18,7 @@ jobs:
 
     # Add plugin files to a root directory
     - name: Make plugin root directory
-      run: "mkdir $PLUGIN_NAME && mv -t ./$PLUGIN_NAME ./languages ./admin ./includes ./public *.txt *.php && ls -lah"
+      run: "mkdir $PLUGIN_NAME && mv -t ./$PLUGIN_NAME ./assets ./i18n ./includes ./packages ./templates *.php && ls -lah"
 
     # Compact plugin as .zip
     - name: Archive Release
@@ -36,6 +36,7 @@ jobs:
       uses: mathieudutour/github-tag-action@v6.0
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
+        custom_tag: "6.9.3"
 
     # Generate new release
     - name: Generate new Release
