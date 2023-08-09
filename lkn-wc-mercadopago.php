@@ -3,7 +3,7 @@
  * Plugin Name: Link Nacional Mercado Pago payments for WooCommerce
  * Plugin URI: https://www.linknacional.com.br/wordpress/plugins/
  * Description: Configure the payment options and accept payments with cards, ticket and money of Mercado Pago account.
- * Version: 6.9.2
+ * Version: 6.9.3
  * Author: Link Nacional
  * Author URI: https://www.linknacional.com.br/wordpress/plugins/
  * Text Domain: lkn-wc-mercadopago
