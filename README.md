@@ -1,13 +1,9 @@
-<p align="center"><a href="https://www.mercadopago.com/">    <img src="https://http2.mlstatic.com/frontend-assets/ui-navigation/5.18.3/mercadopago/logo__large@2x.png" height="80" width="auto" alt="MercadoPago">
+<p align="center"><a href="https://www.linknacional.com/"><img src="https://api.linknacional.com.br/assets/banner-1544x500.png" height="250" width="auto" alt="Link Nacional">
 </a></p>
 
-<p align="center">
-<img src="https://img.shields.io/wordpress/plugin/v/woocommerce-mercadopago" alt="version">
-<img src="https://img.shields.io/wordpress/plugin/dt/woocommerce-mercadopago" alt="download">
-<img src="https://img.shields.io/github/license/mercadopago/cart-woocommerce" alt="license">
-</p>
+# This is a unnoficial plugin mantained by Link Nacional
 
-The Mercado Pago payments for WooCommerce plugin allows you to expand the functionalities of your online store and offer a unique payment experience for your customers.
+The Link Nacional Mercado Pago payments for WooCommerce plugin allows you to expand the functionalities of your online store and offer a unique payment experience for your customers.
 
 <br/>
 
