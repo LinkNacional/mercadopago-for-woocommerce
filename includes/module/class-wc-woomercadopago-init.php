@@ -192,9 +192,9 @@ class WC_WooMercadoPago_Init {
      */
     public static function updater_init() {
         return new Lkn_Puc_Plugin_UpdateChecker(
-            'https://api.linknacional.com.br/v2/u/?slug=lkn-wc-mercadopago',
+            'https://api.linknacional.com.br/v2/u/?slug=lkn-mercadopago-woocommerce',
             LKN_WC_MERCADOPAGO_FILE,
-            'lkn-wc-mercadopago'
+            'lkn-mercadopago-woocommerce'
         );
     }
 
