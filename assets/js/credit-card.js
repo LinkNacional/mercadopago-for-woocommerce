@@ -12,7 +12,7 @@
 
     // Set mercadopago public_key
     $.getScript(
-      "https://secure.mlstatic.com/sdk/javascript/v1/mercadopago.js"
+        "https://secure.mlstatic.com/sdk/javascript/v1/mercadopago.js"
     ).done(function () {
       // Set Public_key
       Mercadopago.setPublishableKey(seller.public_key);

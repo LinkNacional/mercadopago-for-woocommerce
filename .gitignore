@@ -1,7 +1,8 @@
 node_modules
 .DS_Store
-.vscode
+.vscode/settings.json
 .idea
 .idea/
 /vendor/
 woocommerce-mercadopago.zip
+.devcontainer/devcontainer.json

@@ -7,8 +7,8 @@ namespace MercadoPago\PP\Sdk\Common;
  *
  * @package MercadoPago\PP\Sdk\Common
  */
-class Constants
-{
-    const BASEURL_MP = 'https://api.mercadopago.com';
-    const BASEURL_ML = 'https://api.mercadolibre.com';
+class Constants {
+    public const BASEURL_MP = 'https://api.mercadopago.com';
+
+    public const BASEURL_ML = 'https://api.mercadolibre.com';
 }

@@ -11,8 +11,7 @@ use MercadoPago\PP\Sdk\Common\AbstractEntity;
  *
  * @package MercadoPago\PP\Sdk\Entity\Preference
  */
-class ExcludedPaymentType extends AbstractEntity
-{
+class ExcludedPaymentType extends AbstractEntity {
     /**
      * @var string
      */

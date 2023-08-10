@@ -23,7 +23,7 @@ function minifyFiles(extension) {
 function generatePotFiles() {
     wpPot({
         destFile: './i18n/languages/woocommerce-mercadopago.pot',
-        domain: 'woocommerce-mercadopago',
+        domain: 'lkn-wc-mercadopago',
         lastTranslator: 'MPB Desenvolvimento <mpb_desenvolvimento@mercadopago.com.br>',
         src: ['includes/**/*.php', 'templates/**/*.php']
       });

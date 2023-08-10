@@ -5,14 +5,14 @@ namespace MercadoPago\PP\Sdk\HttpClient;
 use MercadoPago\PP\Sdk\Common\AbstractEntity;
 use MercadoPago\PP\Sdk\Common\AbstractCollection;
 use MercadoPago\PP\Sdk\HttpClient\Requester\RequesterInterface;
+use Exception;
 
 /**
  * Class HttpClient
  *
  * @package MercadoPago\PP\Sdk\HttpClient
  */
-class HttpClient implements HttpClientInterface
-{
+class HttpClient implements HttpClientInterface {
     /**
      * Base Url
      *
@@ -33,41 +33,28 @@ class HttpClient implements HttpClientInterface
      * @param string $baseUrl
      * @param RequesterInterface $requester
      */
-    public function __construct(string $baseUrl, RequesterInterface $requester)
-    {
+    public function __construct(string $baseUrl, RequesterInterface $requester) {
         $this->baseUrl = $baseUrl;
         $this->requester = $requester;
     }
 
-    public function get(string $uri, array $headers = []): Response
-    {
+    public function get(string $uri, array $headers = array()): Response {
         return $this->send('GET', $uri, $headers, null);
     }
 
-    public function put(string $uri, array $headers = [], $body = null): Response
-    {
+    public function put(string $uri, array $headers = array(), $body = null): Response {
         return $this->send('PUT', $uri, $headers, $body);
     }
 
-    public function post(string $uri, array $headers = [], $body = null): Response
-    {
+    public function post(string $uri, array $headers = array(), $body = null): Response {
         return $this->send('POST', $uri, $headers, $body);
     }
 
-    public function send(string $method, string $uri, array $headers = [], $body = null): Response
-    {
-        if (null !== $body && !is_string($body) &&
-            !is_subclass_of($body, AbstractEntity::class) && !is_subclass_of($body, AbstractCollection::class)
+    public function send(string $method, string $uri, array $headers = array(), $body = null): Response {
+        if (null !== $body && ! is_string($body) &&
+            ! is_subclass_of($body, 'MercadoPago\PP\Sdk\Common\AbstractEntity') && ! is_subclass_of($body, 'MercadoPago\PP\Sdk\Common\AbstractCollection')
         ) {
-            throw new \Exception(
-                sprintf(
-                    '%s::send(): Argument #4 ($body) must be of type string|%s|%snull, %s given',
-                    self::class,
-                    AbstractEntity::class,
-                    AbstractCollection::class,
-                    gettype($body)
-                )
-            );
+            throw new Exception(sprintf('%s::send(): Argument #4 ($body) must be of type string|%s|%snull, %s given', self::class, 'MercadoPago\PP\Sdk\Common\AbstractEntity', 'MercadoPago\PP\Sdk\Common\AbstractCollection', gettype($body)));
         }
 
         return $this->sendRequest(
@@ -80,8 +67,7 @@ class HttpClient implements HttpClientInterface
      *
      * @return resource
      */
-    private function createRequest(string $method, string $uri, array $headers = [], $body = null)
-    {
+    private function createRequest(string $method, string $uri, array $headers = array(), $body = null) {
         $url = $this->baseUrl . $uri;
         return $this->requester->createRequest($method, $url, $headers, $body);
     }
@@ -89,8 +75,7 @@ class HttpClient implements HttpClientInterface
     /**
      * @param resource $request
      */
-    public function sendRequest($request): Response
-    {
+    public function sendRequest($request): Response {
         return $this->requester->sendRequest($request);
     }
 }

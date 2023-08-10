@@ -8,45 +8,40 @@ use MercadoPago\PP\Sdk\Common\Manager;
 /**
  * Class PaymentDetails
  *
- * @property float $id
- * @property string $status
- * @property string $status_detail
- * @property string $payment_type_id
+ * @property int $id
  * @property string $payment_method_id
+ * @property PaymentMethodInfo $payment_method_info
+ * @property string $payment_type_id
  * @property float $total_amount
  * @property float $paid_amount
- * @property float $coupon_amount
  * @property float $shipping_cost
+ * @property float $coupon_amount
+ * @property string $status
+ * @property string $status_detail
  * @property RefundList $refunds
-
+ *
  * @package MercadoPago\PP\Sdk\Entity\Notification
  */
-class PaymentDetails extends AbstractEntity
-{
+class PaymentDetails extends AbstractEntity {
     /**
-     * @var float
+     * @var int
      */
     protected $id;
 
     /**
      * @var string
      */
-    protected $status;
+    protected $payment_method_id;
 
     /**
-     * @var string
+     * @var PaymentMethodInfo
      */
-    protected $status_detail;
+    protected $payment_method_info;
 
     /**
      * @var string
      */
     protected $payment_type_id;
-
-    /**
-     * @var string
-     */
-    protected $payment_method_id;
 
     /**
      * @var float
@@ -61,17 +56,22 @@ class PaymentDetails extends AbstractEntity
     /**
      * @var float
      */
-    protected $coupon_amount;
+    protected $shipping_cost;
 
     /**
      * @var float
      */
-    protected $shipping_cost;
+    protected $coupon_amount;
 
     /**
-     * @var PaymentMethodInfo
+     * @var string
      */
-    protected $payment_method_info;
+    protected $status;
+
+    /**
+     * @var string
+     */
+    protected $status_detail;
 
     /**
      * @var RefundList
@@ -83,8 +83,7 @@ class PaymentDetails extends AbstractEntity
      *
      * @param Manager|null $manager
      */
-    public function __construct($manager)
-    {
+    public function __construct($manager) {
         parent::__construct($manager);
         $this->refunds = new RefundList($manager);
     }

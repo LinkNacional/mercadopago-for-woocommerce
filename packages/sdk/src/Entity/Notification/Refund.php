@@ -7,17 +7,16 @@ use MercadoPago\PP\Sdk\Common\AbstractEntity;
 /**
  * Class Refund
  *
- * @property float $id
+ * @property int $id
  * @property string $status
  * @property bool $notifying
- * @property object $metadata
+ * @property array $metadata
  *
  * @package MercadoPago\PP\Sdk\Entity\Notification
  */
-class Refund extends AbstractEntity
-{
+class Refund extends AbstractEntity {
     /**
-     * @var float
+     * @var int
      */
     protected $id;
 
@@ -32,7 +31,7 @@ class Refund extends AbstractEntity
     protected $notifying;
 
     /**
-     * @var object
+     * @var array
      */
     protected $metadata;
 }
