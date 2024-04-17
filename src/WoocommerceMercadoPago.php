@@ -160,7 +160,7 @@ class WoocommerceMercadoPago
      */
     public function loadPluginTextDomain(): void
     {
-        $textDomain           = 'woocommerce-mercadopago';
+        $textDomain           = 'lkn-woocommerce-mercadopago';
         $locale               = apply_filters('plugin_locale', get_locale(), $textDomain);
         $originalLanguageFile = dirname(__FILE__) . '/../i18n/languages/woocommerce-mercadopago-' . $locale . '.mo';
 
@@ -460,11 +460,11 @@ class WoocommerceMercadoPago
 
                 $minilogo     = sprintf('%s%s', plugin_dir_url(__FILE__), '../assets/images/minilogo.png');
                 $translations = [
-                    'activate_woocommerce' => __('Activate WooCommerce', 'woocommerce-mercadopago'),
-                    'install_woocommerce'  => __('Install WooCommerce', 'woocommerce-mercadopago'),
-                    'see_woocommerce'      => __('See WooCommerce', 'woocommerce-mercadopago'),
+                    'activate_woocommerce' => __('Activate WooCommerce', 'lkn-woocommerce-mercadopago'),
+                    'install_woocommerce'  => __('Install WooCommerce', 'lkn-woocommerce-mercadopago'),
+                    'see_woocommerce'      => __('See WooCommerce', 'lkn-woocommerce-mercadopago'),
                     'miss_woocommerce'     => sprintf(
-                        __('The Mercado Pago module needs an active version of %s in order to work!', 'woocommerce-mercadopago'),
+                        __('The Mercado Pago module needs an active version of %s in order to work!', 'lkn-woocommerce-mercadopago'),
                         '<a target="_blank" href="https://wordpress.org/extend/plugins/woocommerce/">WooCommerce</a>'
                     ),
                 ];

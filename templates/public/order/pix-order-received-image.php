@@ -22,7 +22,7 @@ if (!defined('ABSPATH')) {
 
     <div class="mp-pix-image-date-expiration">
         <small>
-            <?php esc_html_e($expiration_date_text) . esc_html_e($expiration_date, 'woocommerce-mercadopago'); ?>
+            <?php esc_html_e($expiration_date_text) . esc_html_e($expiration_date, 'lkn-woocommerce-mercadopago'); ?>
         </small>
     </div>
 

@@ -83,7 +83,7 @@ if (!defined('ABSPATH')) {
             </p>
             <img data-cy="qrcode-pix" class="mp-details-pix-qr-img" src="data:image/jpeg;base64,<?= esc_html($qr_base64); ?>" alt="Qr code"/>
             <p class="mp-details-pix-qr-subtitle">
-                <?= esc_html($text_time_qr_one); ?><?php esc_html_e($qr_date_expiration, 'woocommerce-mercadopago'); ?>
+                <?= esc_html($text_time_qr_one); ?><?php esc_html_e($qr_date_expiration, 'lkn-woocommerce-mercadopago'); ?>
             </p>
             <div class="mp-details-pix-container">
                 <p class="mp-details-pix-qr-description">
