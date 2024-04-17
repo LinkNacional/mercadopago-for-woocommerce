@@ -8,7 +8,12 @@ use MercadoPago\PP\Sdk\Interfaces\RequesterEntityInterface;
 use MercadoPago\PP\Sdk\Entity\Payment\AdditionalInfo;
 
 /**
- * Class Preference
+ * Handles integration with the Asgard Transaction service.
+ *
+ * The Asgard Transaction acts as a middleware for creating various transaction-related entities
+ * such as Payments, Preferences, Point, and Transaction Intent. It orchestrates all actions
+ * taken during a payment transaction. Its main responsibility is to ensure a secure intermediation
+ * between P&P and MercadoPago during payment creation.
  *
  * @property AdditionalInfo $additional_info
  * @property string $auto_return
@@ -35,7 +40,8 @@ use MercadoPago\PP\Sdk\Entity\Payment\AdditionalInfo;
  *
  * @package MercadoPago\PP\Sdk\Entity\Preference
  */
-class Preference extends AbstractEntity implements RequesterEntityInterface {
+class Preference extends AbstractEntity implements RequesterEntityInterface
+{
     /**
      * @var AdditionalInfo
      */
@@ -151,15 +157,16 @@ class Preference extends AbstractEntity implements RequesterEntityInterface {
      *
      * @param Manager|null $manager
      */
-    public function __construct($manager) {
+    public function __construct($manager)
+    {
         parent::__construct($manager);
-        $this->additional_info = new AdditionalInfo($manager);
-        $this->back_urls = new BackUrl($manager);
-        $this->items = new ItemList($manager);
-        $this->payer = new Payer($manager);
-        $this->payment_methods = new PaymentMethod($manager);
-        $this->shipments = new Shipment($manager);
-        $this->tracks = new TrackList($manager);
+        $this->additional_info      = new AdditionalInfo($manager);
+        $this->back_urls            = new BackUrl($manager);
+        $this->items                = new ItemList($manager);
+        $this->payer                = new Payer($manager);
+        $this->payment_methods      = new PaymentMethod($manager);
+        $this->shipments            = new Shipment($manager);
+        $this->tracks               = new TrackList($manager);
     }
 
     /**
@@ -167,8 +174,9 @@ class Preference extends AbstractEntity implements RequesterEntityInterface {
      *
      * @return void
      */
-    public function setExcludedProperties(): void {
-        $this->excluded_properties = array();
+    public function setExcludedProperties()
+    {
+        $this->excluded_properties = [];
     }
 
     /**
@@ -176,11 +184,12 @@ class Preference extends AbstractEntity implements RequesterEntityInterface {
      *
      * @return array
      */
-    public function getHeaders(): array {
-        return array(
-            'read' => array(),
-            'save' => array(),
-        );
+    public function getHeaders(): array
+    {
+        return [
+            'read' => [],
+            'save' => [],
+        ];
     }
 
     /**
@@ -188,9 +197,36 @@ class Preference extends AbstractEntity implements RequesterEntityInterface {
      *
      * @return array
      */
-    public function getUris(): array {
+    public function getUris(): array
+    {
         return array(
             'post' => '/v1/asgard/preferences',
         );
+    }
+
+    /**
+     * Creates a preference for Checkout Pro via the asgard-transaction service.
+     *
+     * This method is used to set the preferences for a checkout before redirecting the user to
+     * the MercadoPago payment interface. To make the call to the asgard-transaction, this method
+     * requires the request payload for a preference, which includes details such as:
+     * 'additionalInfo', 'autoReturn', 'binaryMode', 'expirationDateFrom', 'expirationDateTo', 'items'.
+     *
+     * Once the preference is successfully created, the method returns an object that encapsulates
+     * all the details of the created preference, including: 'id', 'dateCreated', 'items', 'totalAmount'.
+     *
+     * In addition to these properties, the returned object contains other fields that provide
+     * additional information about the preference, such as: 'expirationDateFrom', 'notificationUrl', among others.
+     *
+     * Note: This method is inherited from the parent class but specialized for preferences.
+     *
+     * @return mixed The result of the preference creation, typically an instance of a Preference class
+     *                populated with the created details.
+     *
+     * @throws \Exception Throws an exception if something goes wrong during the preference creation.
+     */
+    public function save()
+    {
+        return parent::save();
     }
 }

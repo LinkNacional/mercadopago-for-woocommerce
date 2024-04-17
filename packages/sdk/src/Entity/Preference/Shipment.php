@@ -19,7 +19,8 @@ use MercadoPago\PP\Sdk\Common\Manager;
  *
  * @package MercadoPago\PP\Sdk\Entity\Preference
  */
-class Shipment extends AbstractEntity {
+class Shipment extends AbstractEntity
+{
     /**
      * @var string
      */
@@ -65,7 +66,8 @@ class Shipment extends AbstractEntity {
      *
      * @param Manager|null $manager
      */
-    public function __construct($manager) {
+    public function __construct($manager)
+    {
         parent::__construct($manager);
         $this->free_methods = new FreeMethodList($manager);
         $this->receiver_address = new ReceiverAddress($manager);

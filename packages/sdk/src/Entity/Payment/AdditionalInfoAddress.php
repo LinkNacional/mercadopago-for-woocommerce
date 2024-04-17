@@ -19,7 +19,8 @@ use MercadoPago\PP\Sdk\Common\AbstractEntity;
  *
  * @package MercadoPago\PP\Sdk\Entity\Payment
  */
-class AdditionalInfoAddress extends AbstractEntity {
+class AdditionalInfoAddress extends AbstractEntity
+{
     /**
      * @var string
      */
@@ -30,27 +31,27 @@ class AdditionalInfoAddress extends AbstractEntity {
      */
     protected $zip_code;
 
-    /**
+     /**
      * @var string
      */
     protected $city;
 
-    /**
+     /**
      * @var string
      */
     protected $country;
 
-    /**
+     /**
      * @var string
      */
     protected $state;
 
-    /**
+     /**
      * @var string
      */
     protected $number;
 
-    /**
+     /**
      * @var string
      */
     protected $complement;
@@ -60,7 +61,7 @@ class AdditionalInfoAddress extends AbstractEntity {
      */
     protected $apartment;
 
-    /**
+     /**
      * @var string
      */
     protected $floor;

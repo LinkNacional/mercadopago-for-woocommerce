@@ -1,22 +1,18 @@
 <?php
 
 namespace MercadoPago\PP\Sdk\Common;
-use IteratorAggregate;
-use Countable;
-use JsonSerializable;
-use Traversable;
-use ArrayIterator;
 
 /**
  * Class AbstractCollection
  *
  * @package MercadoPago\PP\Sdk\Common
  */
-abstract class AbstractCollection implements IteratorAggregate, Countable, JsonSerializable {
+abstract class AbstractCollection implements \IteratorAggregate, \Countable, \JsonSerializable
+{
     /**
      * @var array
      */
-    public $collection = array();
+    public $collection = [];
 
     /**
      * @var Manager
@@ -28,7 +24,8 @@ abstract class AbstractCollection implements IteratorAggregate, Countable, JsonS
      *
      * @param Manager|null $manager
      */
-    public function __construct(Manager $manager = null) {
+    public function __construct(Manager $manager = null)
+    {
         $this->manager = $manager;
     }
 
@@ -38,7 +35,8 @@ abstract class AbstractCollection implements IteratorAggregate, Countable, JsonS
      * @param AbstractEntity $entity
      * @param string|null $key
      */
-    public function addEntity(AbstractEntity $entity, string $key = null): void {
+    public function addEntity(AbstractEntity $entity, string $key = null)
+    {
         if (is_null($key)) {
             $this->collection[] = $entity;
         } else {
@@ -51,7 +49,8 @@ abstract class AbstractCollection implements IteratorAggregate, Countable, JsonS
      *
      * @param $entities
      */
-    public function setEntity($entities): void {
+    public function setEntity($entities)
+    {
         if (is_array($entities) || is_object($entities)) {
             foreach ($entities as $value) {
                 $this->add($value);
@@ -62,21 +61,24 @@ abstract class AbstractCollection implements IteratorAggregate, Countable, JsonS
     /**
      * @inheritDoc
      */
-    public function getIterator(): Traversable {
-        return new ArrayIterator($this->collection);
+    public function getIterator(): \Traversable
+    {
+        return new \ArrayIterator($this->collection);
     }
 
     /**
      * @return int|null
      */
-    public function count(): int {
+    public function count(): int
+    {
         return count($this->collection);
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize(): array {
+    public function jsonSerialize(): array
+    {
         return $this->collection;
     }
 }

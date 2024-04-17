@@ -29,7 +29,8 @@ use MercadoPago\PP\Sdk\Common\Manager;
  *
  * @package MercadoPago\PP\Sdk\Entity\Payment
  */
-class Seller extends AbstractEntity {
+class Seller extends AbstractEntity
+{
     /**
      * @var string
      */
@@ -65,17 +66,17 @@ class Seller extends AbstractEntity {
      */
     protected $email;
 
-    /**
+     /**
      * @var string
      */
     protected $collector;
 
-    /**
+     /**
      * @var string
      */
     protected $website;
 
-    /**
+     /**
      * @var string
      */
     protected $platform_url;
@@ -85,22 +86,22 @@ class Seller extends AbstractEntity {
      */
     protected $referral_url;
 
-    /**
+     /**
      * @var string
      */
     protected $register_updated_at;
 
-    /**
+     /**
      * @var string
      */
     protected $document;
 
-    /**
+     /**
      * @var string
      */
     protected $name;
 
-    /**
+     /**
      * @var string
      */
     protected $hired_plan;
@@ -115,7 +116,7 @@ class Seller extends AbstractEntity {
      */
     protected $phone;
 
-    /**
+     /**
      * @var AddtionalInfoAddress
      */
     protected $address;
@@ -125,7 +126,8 @@ class Seller extends AbstractEntity {
      *
      * @param Manager|null $manager
      */
-    public function __construct($manager) {
+    public function __construct($manager)
+    {
         parent::__construct($manager);
         $this->identification = new Identification($manager);
         $this->phone = new Phone($manager);

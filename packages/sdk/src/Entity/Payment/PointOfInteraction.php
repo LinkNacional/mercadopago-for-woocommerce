@@ -16,7 +16,8 @@ use MercadoPago\PP\Sdk\Common\Manager;
  *
  * @package MercadoPago\PP\Sdk\Entity\Payment
  */
-class PointOfInteraction extends AbstractEntity {
+class PointOfInteraction extends AbstractEntity
+{
     /**
      * @var string
      */
@@ -47,7 +48,8 @@ class PointOfInteraction extends AbstractEntity {
      *
      * @param Manager|null $manager
      */
-    public function __construct($manager) {
+    public function __construct($manager)
+    {
         parent::__construct($manager);
         $this->application_data = new ApplicationData($manager);
         $this->transaction_data = new TransactionData($manager);

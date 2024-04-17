@@ -621,9 +621,9 @@ class MP {
 
         $response = MP_Rest_Client::get( $request );
 
-        if ( $response['status'] > 202 ) {
+        if (empty($response) && $response['status'] > 202 ) {
             $log = WC_WooMercadoPago_Log::init_mercado_pago_log( 'get_payment_methods' );
-            $log->write_log( 'API get_payment_methods error: ', $response['response']['message'] );
+            $log->write_log( 'API get_payment_methods error: ', $response['response']['message'] ?? 'empty response please verify your account' );
 
             return null;
         }

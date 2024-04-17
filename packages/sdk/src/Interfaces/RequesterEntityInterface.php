@@ -1,9 +1,9 @@
 <?php
 
 namespace MercadoPago\PP\Sdk\Interfaces;
-use Exception;
 
-interface RequesterEntityInterface {
+interface RequesterEntityInterface
+{
     /**
      * Get and set custom headers for entity.
      *
@@ -24,15 +24,15 @@ interface RequesterEntityInterface {
      * @param array $params
      *
      * @return mixed
-     * @throws Exception
+     * @throws \Exception
      */
-    public function read(array $params = array());
+    public function read(array $params = []);
 
     /**
      * Save method (POST).
      *
      * @return mixed
-     * @throws Exception
+     * @throws \Exception
      */
     public function save();
 }

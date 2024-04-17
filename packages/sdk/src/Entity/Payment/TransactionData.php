@@ -12,7 +12,8 @@ use MercadoPago\PP\Sdk\Common\Manager;
  *
  * @package MercadoPago\PP\Sdk\Entity\Payment
  */
-class TransactionData extends AbstractEntity {
+class TransactionData extends AbstractEntity
+{
     /**
      * @var BankInfo
      */
@@ -23,7 +24,8 @@ class TransactionData extends AbstractEntity {
      *
      * @param Manager|null $manager
      */
-    public function __construct($manager) {
+    public function __construct($manager)
+    {
         parent::__construct($manager);
         $this->bank_info = new BankInfo($manager);
     }

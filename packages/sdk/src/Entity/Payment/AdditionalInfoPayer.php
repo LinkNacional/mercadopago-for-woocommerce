@@ -25,7 +25,8 @@ use MercadoPago\PP\Sdk\Common\Manager;
  *
  * @package MercadoPago\PP\Sdk\Entity\Payment
  */
-class AdditionalInfoPayer extends AbstractEntity {
+class AdditionalInfoPayer extends AbstractEntity
+{
     /**
      * @var string
      */
@@ -41,12 +42,12 @@ class AdditionalInfoPayer extends AbstractEntity {
      */
     protected $registration_date;
 
-    /**
+     /**
      * @var string
      */
     protected $registered_user;
 
-    /**
+     /**
      * @var string
      */
     protected $device_id;
@@ -56,7 +57,7 @@ class AdditionalInfoPayer extends AbstractEntity {
      */
     protected $platform_email;
 
-    /**
+     /**
      * @var string
      */
     protected $register_updated_at;
@@ -66,17 +67,17 @@ class AdditionalInfoPayer extends AbstractEntity {
      */
     protected $user_email;
 
-    /**
+     /**
      * @var string
      */
     protected $authentication_type;
 
-    /**
+     /**
      * @var string
      */
     protected $last_purchase;
 
-    /**
+     /**
      * @var AdditionalInfoAddress
      */
     protected $address;
@@ -101,11 +102,12 @@ class AdditionalInfoPayer extends AbstractEntity {
      *
      * @param Manager|null $manager
      */
-    public function __construct($manager) {
+    public function __construct($manager)
+    {
         parent::__construct($manager);
-        $this->address = new AdditionalInfoAddress($manager);
-        $this->phone = new Phone($manager);
-        $this->mobile = new Phone($manager);
-        $this->identification = new Identification($manager);
+        $this->address         = new AdditionalInfoAddress($manager);
+        $this->phone           = new Phone($manager);
+        $this->mobile          = new Phone($manager);
+        $this->identification  = new Identification($manager);
     }
 }
