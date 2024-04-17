@@ -11,7 +11,8 @@ use MercadoPago\PP\Sdk\Common\AbstractEntity;
  *
  * @package MercadoPago\PP\Sdk\Entity\Preference
  */
-class FreeMethod extends AbstractEntity {
+class FreeMethod extends AbstractEntity
+{
     /**
      * @var int
      */

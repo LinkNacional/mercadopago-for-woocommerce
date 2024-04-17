@@ -10,7 +10,8 @@ use MercadoPago\PP\Sdk\Common\AbstractEntity;
  *
  * @package MercadoPago\PP\Sdk\HttpClient
  */
-class Response {
+class Response
+{
     /**
      * Response status
      *
@@ -28,7 +29,8 @@ class Response {
     /**
      * Response constructor.
      */
-    public function __construct() {
+    public function __construct()
+    {
     }
 
     /**
@@ -36,7 +38,8 @@ class Response {
      *
      * @return int
      **/
-    public function getStatus(): int {
+    public function getStatus(): int
+    {
         return $this->status;
     }
 
@@ -47,7 +50,8 @@ class Response {
      *
      * @return void
      **/
-    public function setStatus(int $status): void {
+    public function setStatus(int $status)
+    {
         $this->status = $status;
     }
 
@@ -56,7 +60,8 @@ class Response {
      *
      * @return object|null
      **/
-    public function getData() {
+    public function getData()
+    {
         return $this->data;
     }
 
@@ -67,7 +72,8 @@ class Response {
      *
      * @return void
      **/
-    public function setData($data): void {
+    public function setData($data)
+    {
         $this->data = $data;
     }
 }

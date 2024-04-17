@@ -12,13 +12,14 @@ use MercadoPago\PP\Sdk\Common\AbstractEntity;
  *
  * @package MercadoPago\PP\Sdk\Entity\Payment
  */
-class Tracking extends AbstractEntity {
+class Tracking extends AbstractEntity
+{
     /**
      * @var string
      */
     protected $code;
 
-    /**
+     /**
      * @var string
      */
     protected $status;

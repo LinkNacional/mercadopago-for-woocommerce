@@ -7,7 +7,15 @@ use MercadoPago\PP\Sdk\Common\Manager;
 use MercadoPago\PP\Sdk\Interfaces\RequesterEntityInterface;
 
 /**
- * Class Notification
+ * Handles integration with the Asgard Notification service.
+ *
+ * Asgard Notification is responsible for handling notifications originating from plugins and platforms.
+ * When a payment is initiated that requires asynchronous approval, a notification is generated and processed
+ * by this class.
+ * This class streamlines the interaction with the Asgard Notification service, allowing the details of a
+ * specific notification to be fetched using its ID. It aims to simplify the complexity associated with
+ * managing and validating notifications, ensuring that only relevant information is forwarded to
+ * platforms and plugins.
  *
  * @property string $notification_id
  * @property string $notification_url
@@ -32,7 +40,8 @@ use MercadoPago\PP\Sdk\Interfaces\RequesterEntityInterface;
  *
  * @package MercadoPago\PP\Sdk\Entity\Notification
  */
-class Notification extends AbstractEntity implements RequesterEntityInterface {
+class Notification extends AbstractEntity implements RequesterEntityInterface
+{
     /**
      * @var string
      */
@@ -138,7 +147,8 @@ class Notification extends AbstractEntity implements RequesterEntityInterface {
      *
      * @param Manager|null $manager
      */
-    public function __construct($manager) {
+    public function __construct($manager)
+    {
         parent::__construct($manager);
         $this->payments_details = new PaymentDetailsList($manager);
         $this->refunds_notifying = new RefundNotifyingList($manager);
@@ -149,8 +159,9 @@ class Notification extends AbstractEntity implements RequesterEntityInterface {
      *
      * @return void
      */
-    public function setExcludedProperties(): void {
-        $this->excluded_properties = array();
+    public function setExcludedProperties()
+    {
+        $this->excluded_properties = [];
     }
 
     /**
@@ -158,11 +169,12 @@ class Notification extends AbstractEntity implements RequesterEntityInterface {
      *
      * @return array
      */
-    public function getHeaders(): array {
-        return array(
-            'read' => array(),
-            'save' => array(),
-        );
+    public function getHeaders(): array
+    {
+        return [
+            'read' => [],
+            'save' => [],
+        ];
     }
 
     /**
@@ -170,9 +182,33 @@ class Notification extends AbstractEntity implements RequesterEntityInterface {
      *
      * @return array
      */
-    public function getUris(): array {
+    public function getUris(): array
+    {
         return array(
             'get' => '/v1/asgard/notification/:id',
         );
+    }
+
+    /**
+     * Retrieves a notification from the Asgard Transaction service.
+     *
+     * Upon invoking this method, a request is made to the Asgard Transaction service
+     * using the provided notification ID. Authentication is performed using
+     * the seller's access token, which should be previously configured in the default headers.
+     *
+     * Note: This method is inherited from the parent class but specialized for notifications.
+     *
+     * @param array $params Associative array containing the parameters for the read operation.
+     *                      It expects an "id" key with the notification ID as its value.
+     *                      Example: $notification->read(['id' => 'P-1316643861'])
+     *
+     * @return mixed The result of the read operation, typically an instance of
+     *               this Notification class populated with the retrieved data.
+     *
+     * @throws \Exception Throws an exception if something goes wrong during the read operation.
+     */
+    public function read(array $params = [])
+    {
+        return parent::read($params);
     }
 }

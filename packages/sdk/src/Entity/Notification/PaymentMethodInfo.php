@@ -15,10 +15,11 @@ use MercadoPago\PP\Sdk\Common\AbstractEntity;
  * @property float $installments
  * @property float $installment_rate
  * @property double $installment_amount
- *
+
  * @package MercadoPago\PP\Sdk\Entity\Notification
  */
-class PaymentMethodInfo extends AbstractEntity {
+class PaymentMethodInfo extends AbstractEntity
+{
     /**
      * @var string
      */

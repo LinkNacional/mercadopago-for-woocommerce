@@ -12,7 +12,8 @@ use MercadoPago\PP\Sdk\Common\AbstractEntity;
  *
  * @package MercadoPago\PP\Sdk\Entity\Payment
  */
-class ApplicationData extends AbstractEntity {
+class ApplicationData extends AbstractEntity
+{
     /**
      * @var string
      */

@@ -19,10 +19,11 @@ use MercadoPago\PP\Sdk\Common\Manager;
  * @property string $status
  * @property string $status_detail
  * @property RefundList $refunds
- *
+
  * @package MercadoPago\PP\Sdk\Entity\Notification
  */
-class PaymentDetails extends AbstractEntity {
+class PaymentDetails extends AbstractEntity
+{
     /**
      * @var int
      */
@@ -83,7 +84,8 @@ class PaymentDetails extends AbstractEntity {
      *
      * @param Manager|null $manager
      */
-    public function __construct($manager) {
+    public function __construct($manager)
+    {
         parent::__construct($manager);
         $this->refunds = new RefundList($manager);
     }

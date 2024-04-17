@@ -11,7 +11,8 @@ use MercadoPago\PP\Sdk\Common\Manager;
  *
  * @package MercadoPago\PP\Sdk\Entity\Payment
  */
-class Multipayment extends Payment {
+class Multipayment extends Payment
+{
     /**
      * @var TransactionInfoList
      */
@@ -22,7 +23,8 @@ class Multipayment extends Payment {
      *
      * @param Manager|null $manager
      */
-    public function __construct($manager) {
+    public function __construct($manager)
+    {
         parent::__construct($manager);
         $this->transaction_info = new TransactionInfoList($manager);
     }

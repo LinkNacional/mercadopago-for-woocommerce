@@ -19,23 +19,24 @@ use MercadoPago\PP\Sdk\Common\Manager;
  *
  * @package MercadoPago\PP\Sdk\Entity\Payment
  */
-class Shipments extends AbstractEntity {
+class Shipments extends AbstractEntity
+{
     /**
      * @var string
      */
     protected $delivery_promise;
 
-    /**
+     /**
      * @var string
      */
     protected $drop_shipping;
 
-    /**
+     /**
      * @var string
      */
     protected $local_pickup;
 
-    /**
+     /**
      * @var string
      */
     protected $express_shipment;
@@ -50,12 +51,12 @@ class Shipments extends AbstractEntity {
      */
     protected $withdrawn;
 
-    /**
+     /**
      * @var Tracking
      */
     protected $tracking;
 
-    /**
+     /**
      * @var AdditionalInfoAddress
      */
     protected $receiver_address;
@@ -65,7 +66,8 @@ class Shipments extends AbstractEntity {
      *
      * @param Manager|null $manager
      */
-    public function __construct($manager) {
+    public function __construct($manager)
+    {
         parent::__construct($manager);
         $this->tracking = new Tracking($manager);
         $this->receiver_address = new AdditionalInfoAddress($manager);

@@ -14,7 +14,8 @@ use MercadoPago\PP\Sdk\Common\AbstractEntity;
  *
  * @package MercadoPago\PP\Sdk\Entity\Payment
  */
-class TransactionInfo extends AbstractEntity {
+class TransactionInfo extends AbstractEntity
+{
     /**
      * @var float
      */

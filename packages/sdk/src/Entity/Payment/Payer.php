@@ -17,10 +17,12 @@ use MercadoPago\PP\Sdk\Common\Manager;
  * @property string $last_name
  * @property string $operator_id
  * @property Address $address
+ * @property Phone $phone
  *
  * @package MercadoPago\PP\Sdk\Entity\Payment
  */
-class Payer extends AbstractEntity {
+class Payer extends AbstractEntity
+{
     /**
      * @var string
      */
@@ -67,13 +69,20 @@ class Payer extends AbstractEntity {
     protected $address;
 
     /**
+     * @var Phone
+     */
+    protected $phone;
+
+    /**
      * Payer constructor.
      *
      * @param Manager|null $manager
      */
-    public function __construct($manager) {
+    public function __construct($manager)
+    {
         parent::__construct($manager);
         $this->identification = new Identification($manager);
         $this->address = new Address($manager);
+        $this->phone = new Phone($manager);
     }
 }

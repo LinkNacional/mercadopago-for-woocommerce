@@ -16,7 +16,8 @@ use MercadoPago\PP\Sdk\Common\Manager;
  *
  * @package MercadoPago\PP\Sdk\Entity\Preference
  */
-class PaymentMethod extends AbstractEntity {
+class PaymentMethod extends AbstractEntity
+{
     /**
      * @var ExcludedPaymentMethodList
      */
@@ -47,7 +48,8 @@ class PaymentMethod extends AbstractEntity {
      *
      * @param Manager|null $manager
      */
-    public function __construct($manager) {
+    public function __construct($manager)
+    {
         parent::__construct($manager);
         $this->excluded_payment_methods = new ExcludedPaymentMethodList($manager);
         $this->excluded_payment_types = new ExcludedPaymentTypeList($manager);
