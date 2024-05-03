@@ -318,7 +318,7 @@ abstract class WC_WooMercadoPago_Preference_Abstract extends WC_Payment_Gateway 
         foreach ( $this->order->get_items() as $item ) {
             if ( $item['qty'] ) {
                 $product = wc_get_product( $item['product_id'] );
-                // TODO Maybe add option to activate or deactivate anonymous products
+                // TODO Here is product name for transaction
                 $product_title = "Product";
                 $product_content = "";
                 $product_image = plugins_url( '../../assets/images/cart.png', plugin_dir_path( __FILE__ ) );
