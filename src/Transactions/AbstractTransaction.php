@@ -278,7 +278,8 @@ abstract class AbstractTransaction
             $product  = $item->get_product();
             $quantity = $item->get_quantity();
 
-            $title = $product->get_name();
+            // TODO Here is product name for transaction
+            $title = 'Product';
             $title = "$title x $quantity";
 
             $amount = $this->getItemAmount($item);
@@ -289,7 +290,7 @@ abstract class AbstractTransaction
             $item = [
                 'id'          => $item->get_product_id(),
                 'title'       => $title,
-                'description' => $this->mercadopago->helpers->strings->sanitizeAndTruncateText($product->get_description()),
+                'description' => 'Common product for sale', // TODO description of product is hidden too $this->mercadopago->helpers->strings->sanitizeAndTruncateText($product->get_description()),
                 'picture_url' => $this->getItemImage($product),
                 'category_id' => $this->mercadopago->storeConfig->getStoreCategory('others'),
                 'unit_price'  => $amount,
@@ -387,9 +388,8 @@ abstract class AbstractTransaction
      */
     public function getItemImage($product): string
     {
-        return is_object($product) && method_exists($product, 'get_image_id')
-            ? wp_get_attachment_url($product->get_image_id())
-            : $this->mercadopago->helpers->url->getPluginFileUrl('assets/images/gateways/all/blue-cart', '.png', true);
+        // TODO hide image from product
+        return $this->mercadopago->helpers->url->getPluginFileUrl('assets/images/gateways/all/blue-cart', '.png', true);
     }
 
     /**

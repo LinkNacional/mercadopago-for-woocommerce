@@ -4,7 +4,7 @@
  * Plugin Name: Mercado Pago by Link Nacional
  * Plugin URI: https://github.com/mercadopago/cart-woocommerce
  * Description: Configure as opções de pagamento e aceite pagamentos com cartões, boleto e dinheiro da conta Mercado Pago.
- * Version: 7.3.5
+ * Version: 7.3.6
  * Author: Mercado Pago
  * Author URI: https://developers.mercadopago.com/
  * Text Domain: lkn-woocommerce-mercadopago
